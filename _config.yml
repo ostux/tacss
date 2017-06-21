@@ -17,7 +17,7 @@ title: taCss
 email: andras@andrastoth.eu
 description: > # this means to ignore newlines until "baseurl:"
   The most configurable CSS framework.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/tacss" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  ostux
 
