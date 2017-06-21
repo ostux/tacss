@@ -225,10 +225,14 @@ $danger-text: $brand-danger-dark !default;
 $base-padding: 1rem !default;
 $primary-margin-bottom: 1rem !default;
 
-//breakpoint name, columns, pixel width mobile end , tablet and desktop start, gutter size
-$breakpoint-mobile: m, 4, 479, .5rem !default;
-$breakpoint-tablet: t, 8, 480, 1rem !default;
-$breakpoint-desktop: d, 12, 900, 1.5rem !default;
+//grid
+//enable or disable gutter by default
+$enable-gutter: false !default;
+
+//breakpoint name, columns, width by pixel in mobile(end), tablet(start), desktop(start), gutter size (used if gutter enabled)
+$breakpoint-mobile: m, 4, 499, .5rem !default;
+$breakpoint-tablet: t, 8, 500, 1rem !default;
+$breakpoint-desktop: d, 12, 999, 1.5rem !default;
 
 // animation
 $animation: cubic-bezier(0.4, 0, 0.2, 1) !default;

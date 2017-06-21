@@ -67,7 +67,7 @@
     width: calc(100% - 10%);
     min-width: calc(100% - #{nth($breakpoint-mobile, 4)}*2);
 
-    &.#{$class-layout-no-gutter} {
+    &.#{$class-grid-no-gutter} {
       transform: translate(5%, -50%);
       width: calc(100% - 10%);
       min-width: calc(100% - 10%);
@@ -80,7 +80,7 @@
     width: calc(100% - 10% - #{nth($breakpoint-mobile, 4)}*2);
     min-width: calc(100% - 10% - #{nth($breakpoint-mobile, 4)}*2);
 
-    &.#{$class-layout-no-gutter} {
+    &.#{$class-grid-no-gutter} {
       transform: translate(10%, -50%);
       width: calc(100% - 20%);
       min-width: calc(100% - 10%);

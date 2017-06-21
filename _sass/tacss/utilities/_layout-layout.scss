@@ -7,13 +7,13 @@
   flex-grow: 1;
 }
 
-.#{$class-layout-row} {
+.#{$class-grid-row} {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
-.#{$class-layout-column} {
+.#{$class-grid-column} {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

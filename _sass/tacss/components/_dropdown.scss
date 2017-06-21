@@ -37,7 +37,7 @@
     transition: transform 0.3s $animation;
     transform: scale(1, 1);
 
-    &[class*="col-"]:not(.#{$class-layout-no-gutter}) {
+    &[class*="col-"]:not(.#{$class-grid-no-gutter}) {
       margin: nth($breakpoint-mobile, 4);
     }
   }

@@ -8,15 +8,21 @@
 
 // Mixins for width calculation.
 @mixin partial-size($size, $columns, $gutter) {
-  flex-basis: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
-  max-width: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
-  margin: ($gutter / 2) $gutter;
-
-  &.#{$class-layout-no-gutter} {
+  @if $enable-gutter {
+    flex-basis: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
+    max-width: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
+    margin: ($gutter / 2) $gutter;
+    &.#{$class-grid-no-gutter} {
+      flex-basis: #{$size / $columns * 100 + "%"};
+      max-width: #{$size / $columns * 100 + "%"};
+      margin: 0;
+    }
+  } @else {
     flex-basis: #{$size / $columns * 100 + "%"};
     max-width: #{$size / $columns * 100 + "%"};
     margin: 0;
   }
+
 }
 
 @function get-col-percent($column-num, $column-num-total) {
@@ -26,13 +32,13 @@
 @mixin grid($namespace, $columns, $maxcollumns, $gutter) {
   @for $i from 1 through $maxcollumns {
     @if (($i / $columns * 100) < 101) {
-      .#{$class-layout-column-prefix}#{$i},
-      .#{$class-layout-column-prefix}#{$namespace}-#{$i} {
+      .#{$class-grid-column-prefix}#{$i},
+      .#{$class-grid-column-prefix}#{$namespace}-#{$i} {
         @include partial-size($i, $columns, $gutter);
       }
     }
     @else {
-      .#{$class-layout-column-prefix}#{$i} {
+      .#{$class-grid-column-prefix}#{$i} {
         @include partial-size($columns, $columns, $gutter);
       }
     }
@@ -41,7 +47,7 @@
 
 @mixin grid-namespace($namespace, $columns, $gutter) {
   @for $i from 1 through $columns {
-    .#{$class-layout-column-prefix}#{$namespace}-#{$i} {
+    .#{$class-grid-column-prefix}#{$namespace}-#{$i} {
       @include partial-size($i, $columns, $gutter);
     }
   }
@@ -49,7 +55,7 @@
 
 @mixin grid-core($columns, $gutter) {
   @for $i from 1 through $columns {
-    .#{$class-layout-column-prefix}#{$i} {
+    .#{$class-grid-column-prefix}#{$i} {
       @include partial-size($i, $columns, $gutter);
     }
   }
@@ -61,12 +67,12 @@
     // Don't include the .off class for the last column
     @if ($i < $maxcollumns) {
       @if ($i < $columns) {
-        .#{$class-layout-off}#{$i},
-        .#{$class-layout-off}#{$namespace}-#{$i} {
+        .#{$class-frid-off}#{$i},
+        .#{$class-frid-off}#{$namespace}-#{$i} {
           margin-left: get-col-percent($i, $columns);
         }
       } @else {
-        .#{$class-layout-off}#{$i} {
+        .#{$class-frid-off}#{$i} {
           display: hidden;
         }
       }
@@ -79,7 +85,7 @@
   @for $i from 1 through $columns {
     // Don't include the .off class for the last column
     @if ($i != $columns) {
-      .#{$class-layout-off}#{$namespace}-#{$i} {
+      .#{$class-frid-off}#{$namespace}-#{$i} {
         margin-left: get-col-percent($i, $columns);
       }
     }
@@ -91,7 +97,7 @@
   @for $i from 1 through $columns {
     // Don't include the .off class for the last column
     @if ($i != $columns) {
-      .#{$class-layout-off}#{$i} {
+      .#{$class-frid-off}#{$i} {
         margin-left: get-col-percent($i, $columns);
       }
     }
@@ -101,7 +107,7 @@
 $max-columns: nth($breakpoint-desktop, 2);
 
 @for $i from 1 through $max-columns {
-  .#{$class-layout-column-prefix}#{$i} {
+  .#{$class-grid-column-prefix}#{$i} {
     @extend %cell-styles;
   }
 }
@@ -116,7 +122,7 @@ $max-columns: nth($breakpoint-desktop, 2);
 
 // mobile
 @for $i from 1 through nth($breakpoint-mobile, 2) {
-  .#{$class-layout-column-prefix}#{nth($breakpoint-mobile, 1)}-#{$i} {
+  .#{$class-grid-column-prefix}#{nth($breakpoint-mobile, 1)}-#{$i} {
     @extend %cell-styles;
   }
 }
@@ -139,7 +145,7 @@ $max-columns: nth($breakpoint-desktop, 2);
 
 // tablet
 @for $i from 1 through nth($breakpoint-tablet, 2) {
-  .#{$class-layout-column-prefix}#{nth($breakpoint-tablet, 1)}-#{$i} {
+  .#{$class-grid-column-prefix}#{nth($breakpoint-tablet, 1)}-#{$i} {
     @extend %cell-styles;
   }
 }
@@ -162,7 +168,7 @@ $max-columns: nth($breakpoint-desktop, 2);
 
 // desktop
 @for $i from 1 through nth($breakpoint-desktop, 2) {
-  .#{$class-layout-column-prefix}#{nth($breakpoint-desktop, 1)}-#{$i} {
+  .#{$class-grid-column-prefix}#{nth($breakpoint-desktop, 1)}-#{$i} {
     @extend %cell-styles;
   }
 }

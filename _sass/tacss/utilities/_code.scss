@@ -19,7 +19,7 @@
   // unicode-bidi: embed
   // white-space: pre-wrap
   // word-break: keep-all
-  overflow: auto;
+  overflow: scroll;
 
   @include border-radius($code-border-radius);
 
@@ -45,6 +45,6 @@
 .#{$class-code-class} {
   font-weight: 700;
   font-family: $console_font;
-  font-size: 0.8em;
+  font-size: 1rem;
   color: $code-class-color;
 }

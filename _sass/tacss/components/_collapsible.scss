@@ -33,7 +33,7 @@
     @include shadow-8dp;
   }
 
-  &[class*="col-"]:not(.#{$class-layout-no-gutter}) {
+  &[class*="col-"]:not(.#{$class-grid-no-gutter}) {
     margin: nth($breakpoint-mobile, 4);
     padding: inherit;
   }

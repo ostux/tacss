@@ -131,14 +131,17 @@ $class-drawer-toggler: "drawer-toggler" !default;
 //* drawer close layer
 $class-drawer-close: "drawer--close" !default;
 
+
+//* grid
+$class-grid-row: "row" !default;
+$class-grid-column: "col" !default;
+$class-grid-column-prefix: "col-" !default;
+$class-frid-off: "off-" !default;
+$class-grid-no-gutter: "no-gutter" !default;
+
 //* layout classnames
 $class-layout-content: "content" !default;
-$class-layout-row: "row" !default;
-$class-layout-column: "col" !default;
-$class-layout-column-prefix: "col-" !default;
-$class-layout-off: "off-" !default;
 $class-layout-nowrap: "nowrap" !default;
-$class-layout-no-gutter: "no-gutter" !default;
 $class-layout-spacer: "spacer" !default;
 $class-layout-start: "l-start" !default;
 $class-layout-end: "l-end" !default;

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Grid
-description: taCSS grid are 12 collumn on desctop 8 collumn on tablet and for on mobile.
+description: taCSS grid are more configurable as you think
 ---
 <style type="text/css">
     .box div[class*="col-"] {
@@ -12,142 +12,180 @@ description: taCSS grid are 12 collumn on desctop 8 collumn on tablet and for on
         border: 1px solid teal;
     }
 </style>
-<section class="m-t-3 col-12">
-    <div class="row">
-        <h6>row / col</h6>
+<div class="row">
+    <div class="col-6 col-t-8 p-3">
         <p>
-            To get one row just use the <span class="code-class">row</span> class. Then your container will be <i>flex</i> container and <i>flex-direction: row</i>. <br>If you want display in column from top to bottom then use the <span class="code-class">col</span> class. Then your container will be <i>flex</i> container and <i>flex-direction: column</i>.
+            Fixed grid system allows given columns across the page. Dynamic grid allows to have different column number each view. (mobile, tablet, desktop) taCss can be whichever you want.
         </p>
-        <h6>column width</h6>
         <p>
-            To set up the width of the columns are easy...<br>
-            taCSS contains 12 colums in desktop screen, 8 colums in tablet and 4 colums in mobile screen.
-            Four type of column:
-            <ul>
-                <li>col-X, off-X
-                    <p>
-                        Universal columns. From: col-1 to col-12. If you use col-6 then in mobile device the width is 100%, in tablet: 75% and in desktop: 50%.
-                        Universal offset. From: off-1 to off-11. Make no sense for off-12...
-                    </p>
-                </li>
-                <li>
-                    col-p-X, off-p-X
-                    <p>
-                        Phone columns. From col-p-1 to col-p-4.
-                        Phone offset. From off-p-1 to off-p-3.
-                    </p>
-                </li>
-                <li>
-                    col-t-X, off-t-X
-                    <p>
-                        Tablet columns. From col-t-1 to col-t-8.
-                        Tablet offset. From off-t-1 to off-t-7.
-                    </p>
-                </li>
-                <li>
-                    col-d-X, off-d-X
-                    <p>
-                        Desktop columns. From col-d-1 to col-d-12.
-                        Desktop offset. From off-d-1 to off-d-11.
-                    </p>
-                </li>
-            </ul>
+            To have fixed grid just change the settings to the same column number in each view.
+        </p>
+        <p>
+            You want gutter by default? Not a problem, howewer the default setup for gutter is false! <span class="code-class">TODO: link for spacing page when done!</span>.
+        </p>
+        <p>
+            <span class="code-class">row</span>: flex container with <i>flex-direction: row</i>
+        </p>
+        <p>
+            <span class="code-class">col</span>: flex container with <i>flex-direction: column</i>
+        </p>
+        <p>
+            <span class="code-class">col-</span> the prefix for grid columns.<br>
+            <span class="code-class">off-</span> the prefix for offsets. The offset use margin-left to push the next content. Make sure you don't add any extra margin, padding or contain even border!
+        </p>
+        <p>
+            <span class="code-class">no-gutter</span>: force the actual column to be gutter free. (If you enabled the gutter, anyway is useless)
         </p>
     </div>
-    <div class="col-12">
-        <h6>off-</h6>
-        <p>
-            The offset use margin-left to push the next content. Make sure you don't add any extra margin, padding or contain even border!
-            <br>
-            The next two example use universal col-X, no extra care for mobile and tablet.
-        </p>
+    <div class="col-6 col-t-8">
+        <h6>grid setup</h6>
+{% highlight scss %}
+/*  grid class names in "core/classnames.scss" */
+$class-grid-row: "row" !default;
+$class-grid-column: "col" !default;
+$class-grid-column-prefix: "col-" !default;
+$class-frid-off: "off-" !default;
+$class-grid-no-gutter: "no-gutter" !default;
+
+/*  grid setups in "core/_variables.scss" */
+/*  enable or disable gutter */
+$enable-gutter: false !default;
+
+/*  breakpoint name, columns, width by pixel in mobile(end), tablet(start),
+    desktop(start), gutter size */
+$breakpoint-mobile: m, 4, 479, .5rem !default;
+$breakpoint-tablet: t, 8, 480, 1rem !default;
+$breakpoint-desktop: d, 12, 900, 1.5rem !default;
+{% endhighlight %}
     </div>
-    <div class="row box">
-        <!-- grid off-X and default col-X example -->
-        <div class="off-11"></div><div class="no-gutter col-1">col-1</div>
-        <div class="off-10"></div><div class="no-gutter col-2">col-2</div>
-        <div class="off-9"></div><div class="no-gutter col-3">col-3</div>
-        <div class="off-8"></div><div class="no-gutter col-4">col-4</div>
-        <div class="off-7"></div><div class="no-gutter col-5">col-5</div>
-        <div class="off-6"></div><div class="no-gutter col-6">col-6</div>
-        <div class="off-5"></div><div class="no-gutter col-7">col-7</div>
-        <div class="off-4"></div><div class="no-gutter col-8">col-8</div>
-        <div class="off-3"></div><div class="no-gutter col-9">col-9</div>
-        <div class="off-2"></div><div class="no-gutter col-10">col-10</div>
-        <div class="off-1"></div><div class="no-gutter col-11">col-11</div>
-        <div class="no-gutter col-12">col-12</div>
-<div class="code info col-12">
+</div>
+<div class="row p-3">
+    <h6>column widths</h6>
+    <ul>
+        <li>
+            <h6>col-X, off-X</h6>
+            <p>
+                Universal columns. From: col-1 to col-12.<br>
+                You can found the maximum columns setup in the "core/_variables.scss" file in the breakpint-desktop array second element.<br>
+                If you use col-6 in mobile device the width is 100% (because in default 4 column in mobile, so 4-12 are 100%), in tablet: 75% and in desktop: 50%.
+                Universal offset. From: off-1 to off-11. Make no sense for off-12...
+            </p>
+        </li>
+        <li>
+            <h6>col-p-X, off-p-X</h6>
+            <p>
+                Phone columns. From col-p-1 to col-p-4.
+                Phone offset. From off-p-1 to off-p-3.
+            </p>
+        </li>
+        <li>
+            <h6>col-t-X, off-t-X</h6>
+            <p>
+                Tablet columns. From col-t-1 to col-t-8.
+                Tablet offset. From off-t-1 to off-t-7.
+            </p>
+        </li>
+        <li>
+            <h6>col-d-X, off-d-X</h6>
+            <p>
+                Desktop columns. From col-d-1 to col-d-12.
+                Desktop offset. From off-d-1 to off-d-11.
+            </p>
+        </li>
+    </ul>
+
+</div>
+<h6>examples</h6>
+<div class="row box p-3">
+    <!-- grid off-X and default col-X example -->
+    <div class="off-11"></div><div class="col-1">col-1</div>
+    <div class="off-10"></div><div class="col-2">col-2</div>
+    <div class="off-9"></div><div class="col-3">col-3</div>
+    <div class="off-8"></div><div class="col-4">col-4</div>
+    <div class="off-7"></div><div class="col-5">col-5</div>
+    <div class="off-6"></div><div class="col-6">col-6</div>
+    <div class="off-5"></div><div class="col-7">col-7</div>
+    <div class="off-4"></div><div class="col-8">col-8</div>
+    <div class="off-3"></div><div class="col-9">col-9</div>
+    <div class="off-2"></div><div class="col-10">col-10</div>
+    <div class="off-1"></div><div class="col-11">col-11</div>
+    <div class="col-12">col-12</div>
+</div>
+<div class="row p-3">
+    <div class="code info col-12 p-3">
 {% highlight html %}
 <!-- grid off-X and default col-X example -->
-<div class="off-11"></div><div class="no-gutter col-1">col-1</div>
-<div class="off-10"></div><div class="no-gutter col-2">col-2</div>
-<div class="off-9"></div><div class="no-gutter col-3">col-3</div>
-<div class="off-8"></div><div class="no-gutter col-4">col-4</div>
-<div class="off-7"></div><div class="no-gutter col-5">col-5</div>
-<div class="off-6"></div><div class="no-gutter col-6">col-6</div>
-<div class="off-5"></div><div class="no-gutter col-7">col-7</div>
-<div class="off-4"></div><div class="no-gutter col-8">col-8</div>
-<div class="off-3"></div><div class="no-gutter col-9">col-9</div>
-<div class="off-2"></div><div class="no-gutter col-10">col-10</div>
-<div class="off-1"></div><div class="no-gutter col-11">col-11</div>
-<div class="no-gutter col-12">col-12</div>
+<div class="off-11"></div><div class="col-1">col-1</div>
+<div class="off-10"></div><div class="col-2">col-2</div>
+<div class="off-9"></div><div class="col-3">col-3</div>
+<div class="off-8"></div><div class="col-4">col-4</div>
+<div class="off-7"></div><div class="col-5">col-5</div>
+<div class="off-6"></div><div class="col-6">col-6</div>
+<div class="off-5"></div><div class="col-7">col-7</div>
+<div class="off-4"></div><div class="col-8">col-8</div>
+<div class="off-3"></div><div class="col-9">col-9</div>
+<div class="off-2"></div><div class="col-10">col-10</div>
+<div class="off-1"></div><div class="col-11">col-11</div>
+<div class="col-12">col-12</div>
 {% endhighlight %}
+    </div>
 </div>
 
-        <div class="no-gutter border col-3">col-3</div><div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-8">col-8</div>
+<div class="row box p-3">
+    <div class="border col-3">col-3</div><div class="border col-1">col-1</div><div class="border col-8">col-8</div>
 
-        <div class="no-gutter border col-5">col-5</div><div class="no-gutter border col-7">col-7</div>
+    <div class="border col-5">col-5</div><div class="border col-7">col-7</div>
 
-        <div class="no-gutter border col-9">col-9</div><div class="no-gutter border col-3">col-3</div>
+    <div class="border col-9">col-9</div><div class="border col-3">col-3</div>
 
-        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+    <div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+    <div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+    <div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+    <div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+    <div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+    <div class="border col-1">col-1</div><div class="border col-1">col-1</div>
 
 
-        <div class="no-gutter border col-3">col-3</div>
-        <div class="no-gutter row col-9" style="padding: 0;">
-            <div class="no-gutter border col-6">col-6</div>
-            <div class="no-gutter border col-6">col-6</div>
-            <div class="no-gutter border col-4">col-4</div>
-            <div class="no-gutter border col-4">col-4</div>
-            <div class="no-gutter border col-4">col-4</div>
-            <div class="no-gutter border col-3">col-3</div>
-            <div class="off-6"></div><div class="no-gutter border col-3">col-3</div>
-            </div>
-        <div class="no-gutter border col-12">col-12</div>
-<div class="code info col-12">
+    <div class="border col-3">col-3</div>
+    <div class="row col-9" style="padding: 0;">
+        <div class="border col-6">col-6</div>
+        <div class="border col-6">col-6</div>
+        <div class="border col-4">col-4</div>
+        <div class="border col-4">col-4</div>
+        <div class="border col-4">col-4</div>
+        <div class="border col-3">col-3</div>
+        <div class="off-6"></div><div class="border col-3">col-3</div>
+        </div>
+    <div class="border col-12">col-12</div>
+</div>
+<div class="row p-3">
+    <div class="code info col-12">
 {% highlight html %}
-<div class="no-gutter border col-3">col-3</div><div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-8">col-8</div>
+<div class="border col-3">col-3</div><div class="border col-1">col-1</div><div class="border col-8">col-8</div>
 
-<div class="no-gutter border col-5">col-5</div><div class="no-gutter border col-7">col-7</div>
+<div class="border col-5">col-5</div><div class="border col-7">col-7</div>
 
-<div class="no-gutter border col-9">col-9</div><div class="no-gutter border col-3">col-3</div>
+<div class="border col-9">col-9</div><div class="border col-3">col-3</div>
 
-<div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-<div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-<div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-<div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-<div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
-<div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+<div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+<div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+<div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+<div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+<div class="border col-1">col-1</div><div class="border col-1">col-1</div>
+<div class="border col-1">col-1</div><div class="border col-1">col-1</div>
 
 
-<div class="no-gutter border col-3">col-3</div>
-<div class="no-gutter row col-9" style="padding: 0;">
-    <div class="no-gutter border col-6">col-6</div>
-    <div class="no-gutter border col-6">col-6</div>
-    <div class="no-gutter border col-4">col-4</div>
-    <div class="no-gutter border col-4">col-4</div>
-    <div class="no-gutter border col-4">col-4</div>
-    <div class="no-gutter border col-3">col-3</div>
-    <div class="off-6"></div><div class="no-gutter border col-3">col-3</div>
+<div class="border col-3">col-3</div>
+<div class="row col-9" style="padding: 0;">
+    <div class="border col-6">col-6</div>
+    <div class="border col-6">col-6</div>
+    <div class="border col-4">col-4</div>
+    <div class="border col-4">col-4</div>
+    <div class="border col-4">col-4</div>
+    <div class="border col-3">col-3</div>
+    <div class="off-6"></div><div class="border col-3">col-3</div>
     </div>
-<div class="no-gutter border col-12">col-12</div>
+<div class="border col-12">col-12</div>
 {% endhighlight %}
-</div>
-
     </div>
-</section>
+</div>
