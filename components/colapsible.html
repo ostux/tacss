@@ -1,0 +1,131 @@
+---
+layout: page
+title: Collapse
+description: The taCSS collapse allows you to toggle content on your pages with a few classes.
+---
+<section class="m-t-3 col-12">
+    <div class="row">
+        <p>
+            The taCSS collapse allows you to toggle content on your pages with a few classes.
+        </p>
+
+        <h6>Contents</h6>
+        <ul>
+            <li><a href="#collapse_example">Example</a></li>
+            <li><a href="#accordion_example">Accordion</a></li>
+        </ul>
+
+        <h6 class="p-t-5" id="collapse_example">Example</h6>
+        <p>
+            The label for attribute targeting the checkbox.<br />
+            The ID of the checkbox input element must be start with: <span class="code-class">collapsible-</span><br />
+            The checkbox must followed by the collapsible content with the <span class="code-class">.collapsible-content</span> class.
+
+        </p>
+        <div class="col-12">
+            <p>
+                <label class="btn btn-primary" toggle-for="collapsible-example">
+                    Click this label to show and hide another element
+                </label>
+            </p>
+            <div class="collapsible-content" id="collapsible-example">
+                <div class="card">
+                    <div class="card-block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatum accusantium odio maiores ipsum molestiae quia tempore ullam quae libero, sapiente, illo voluptates, minus. Esse at fuga sunt ipsam ab!
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+{% highlight html %}
+<p>
+    <label class="btn btn-primary" toggle-for="collapsible-example">
+        Click this label to show and hide another element
+    </label>
+</p>
+<div class="collapsible-content" id="collapsible-example">
+    <div class="card">
+        <div class="card-block">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatum accusantium odio maiores ipsum molestiae quia tempore ullam quae libero, sapiente, illo voluptates, minus. Esse at fuga sunt ipsam ab!
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+</div>
+
+        <h6 class="p-t-5" id="accordion_example">Accordion</h6>
+        <p>
+            Extend the default collapse behavior to create an accordion.
+        </p>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-featured">
+                    <label class="" toggle-for="collapsible-example-1">
+                        Collapsible Group Item #1
+                    </label>
+                </div>
+                <div class="collapsible-content" id="collapsible-example-1">
+                    <div class="card-block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatum accusantium odio maiores ipsum molestiae quia tempore ullam quae libero, sapiente, illo voluptates, minus. Esse at fuga sunt ipsam ab!
+                    </div>
+                </div>
+                <div class="card-featured">
+                    <label class="" toggle-for="collapsible-example-2">
+                        Collapsible Group Item #2
+                    </label>
+                </div>
+                <div class="collapsible-content" id="collapsible-example-2">
+                    <div class="card-block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
+                </div>
+                <div class="card-featured">
+                    <label class="" toggle-for="collapsible-example-3">
+                        Collapsible Group Item #3
+                    </label>
+                </div>
+                <div class="collapsible-content" id="collapsible-example-3">
+                    <div class="card-block">
+                        Sint voluptatum accusantium odio maiores ipsum molestiae quia tempore ullam quae libero, sapiente, illo voluptates, minus. Esse at fuga sunt ipsam ab!
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+{% highlight html %}
+<div class="card">
+    <div class="card-featured">
+        <label class="" toggle-for="collapsible-example-1">
+            Collapsible Group Item #1
+        </label>
+    </div>
+    <div class="collapsible-content" id="collapsible-example-1">
+        <div class="card-block">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatum accusantium odio maiores ipsum molestiae quia tempore ullam quae libero, sapiente, illo voluptates, minus. Esse at fuga sunt ipsam ab!
+        </div>
+    </div>
+    <div class="card-featured">
+        <label class="" toggle-for="collapsible-example-2">
+            Collapsible Group Item #2
+        </label>
+    </div>
+    <div class="collapsible-content" id="collapsible-example-2">
+        <div class="card-block">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+    </div>
+    <div class="card-featured">
+        <label class="" toggle-for="collapsible-example-3">
+            Collapsible Group Item #3
+        </label>
+    </div>
+    <div class="collapsible-content" id="collapsible-example-3">
+        <div class="card-block">
+            Sint voluptatum accusantium odio maiores ipsum molestiae quia tempore ullam quae libero, sapiente, illo voluptates, minus. Esse at fuga sunt ipsam ab!
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+</div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+// Badges
+
+@mixin badge-variant($badge-bg, $badge-border, $badge-text) {
+  &:not([data-badge]) {
+    @include variant($badge-bg, $badge-border, $badge-text);
+  }
+
+  &[data-badge]:after {
+    @include variant($badge-bg, $badge-border, $badge-text);
+  }
+}

@@ -1,0 +1,81 @@
+---
+layout: page
+title: Drawer
+description: taCSS drawer is a left off canvas menu.
+---
+<section class="m-t-3 col-12">
+    <div class="row">
+        <h6>Drawer HTML structure</h6>
+
+        <h6>open up</h6>
+        <p class="col-12">
+            The open icon, button or whatever you want you can put anywhere in your page. What is important to use the <span class="code-class">drawer-toggler</span> class.
+        </p>
+<div class="code info col-12">
+{% highlight html %}
+<nav class="drawer">
+    <!-- drawer content -->
+</nav>
+    <main>
+        <header>
+            <nav class="navbar">
+                <span class="drawer-toggler"></span>
+                ...
+{% endhighlight %}
+</div>
+        <h6>fixed, not fixed</h6>
+        <p class="col-12">
+            Drawer can be fixed or not fixed. It's mean always (all screen size) visible or need to open. Howewer the drawer responsive. On small screen automatic close itself even if is fixed! Small screen not equal to mobile screen size!
+            Small screen breakpoint is half way of the tablet. [(desktop breakpoint - mobile breakpoint) / 2 + mobile breakpoint]<br>
+            To fix the drawer just use the <span class="code-class">drawer-fixed</span> class within the drawer. Like so:
+        </p>
+<div class="code info col-12">
+{% highlight html %}
+<nav class="drawer drawer-fixed">
+    <!-- drawer content -->
+</nav>
+{% endhighlight %}
+</div>
+
+        <h6>drawer title and items</h6>
+        <p class="col-12">
+            Drawer title height is minimum the navbar height.<br>
+            How to use:
+        </p>
+<div class="code info col-12">
+{% highlight html %}
+<nav class="drawer">
+    <span  class="drawer-item drawer-title">title</span>
+    <a class="drawer-item" href="#">link</a>
+    <a class="drawer-item" href="#">link</a>
+    <a class="drawer-item" href="#">link</a>
+</nav>
+{% endhighlight %}
+</div>
+
+        <h6>Collapsed menu in drawer</h6>
+        <p class="col-12">
+            The HTML semantic without javascript (TODO: javascript version):
+        </p>
+<div class="code info col-12">
+{% highlight html %}
+<nav class="drawer">
+    <span  class="drawer-item drawer-title">title</span>
+    <a class="drawer-item" href="#">link</a>
+    <div class="collapsible">
+        <label class="drawer-item drawer-toggle-item" for="collapsible-1">Components</label>
+        <input type="checkbox" class="toggle-checkbox" id="collapsible-1">
+        <div class="collapsible-content">
+            <a class="drawer-item" href="#">link</a>
+            <a class="drawer-item" href="#">link</a>
+        </div>
+    </div>
+    <a class="drawer-item" href="#">link</a>
+</nav>
+{% endhighlight %}
+</div>
+    </div>
+</section>
+
+
+

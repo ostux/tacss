@@ -1,0 +1,10 @@
+/* _footer.sass */
+
+.#{$class-footer} {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: $footer-color-background;
+  padding: $base-padding;
+}

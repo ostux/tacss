@@ -1,0 +1,185 @@
+/* _layout-grid.sass */
+
+%cell-styles {
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+// Mixins for width calculation.
+@mixin partial-size($size, $columns, $gutter) {
+  flex-basis: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
+  max-width: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
+  margin: ($gutter / 2) $gutter;
+
+  &.#{$class-layout-no-gutter} {
+    flex-basis: #{$size / $columns * 100 + "%"};
+    max-width: #{$size / $columns * 100 + "%"};
+    margin: 0;
+  }
+}
+
+@function get-col-percent($column-num, $column-num-total) {
+  @return ($column-num / $column-num-total) * 100%;
+}
+
+@mixin grid($namespace, $columns, $maxcollumns, $gutter) {
+  @for $i from 1 through $maxcollumns {
+    @if (($i / $columns * 100) < 101) {
+      .#{$class-layout-column-prefix}#{$i},
+      .#{$class-layout-column-prefix}#{$namespace}-#{$i} {
+        @include partial-size($i, $columns, $gutter);
+      }
+    }
+    @else {
+      .#{$class-layout-column-prefix}#{$i} {
+        @include partial-size($columns, $columns, $gutter);
+      }
+    }
+  }
+}
+
+@mixin grid-namespace($namespace, $columns, $gutter) {
+  @for $i from 1 through $columns {
+    .#{$class-layout-column-prefix}#{$namespace}-#{$i} {
+      @include partial-size($i, $columns, $gutter);
+    }
+  }
+}
+
+@mixin grid-core($columns, $gutter) {
+  @for $i from 1 through $columns {
+    .#{$class-layout-column-prefix}#{$i} {
+      @include partial-size($i, $columns, $gutter);
+    }
+  }
+}
+
+
+@mixin grid-off($namespace, $columns, $maxcollumns) {
+  @for $i from 1 through $maxcollumns {
+    // Don't include the .off class for the last column
+    @if ($i < $maxcollumns) {
+      @if ($i < $columns) {
+        .#{$class-layout-off}#{$i},
+        .#{$class-layout-off}#{$namespace}-#{$i} {
+          margin-left: get-col-percent($i, $columns);
+        }
+      } @else {
+        .#{$class-layout-off}#{$i} {
+          display: hidden;
+        }
+      }
+    }
+  }
+}
+
+//create  the offset for only one screen size
+@mixin grid-off-namespace($namespace, $columns) {
+  @for $i from 1 through $columns {
+    // Don't include the .off class for the last column
+    @if ($i != $columns) {
+      .#{$class-layout-off}#{$namespace}-#{$i} {
+        margin-left: get-col-percent($i, $columns);
+      }
+    }
+  }
+}
+
+//create  the offset for only one screen size
+@mixin grid-off-core($columns) {
+  @for $i from 1 through $columns {
+    // Don't include the .off class for the last column
+    @if ($i != $columns) {
+      .#{$class-layout-off}#{$i} {
+        margin-left: get-col-percent($i, $columns);
+      }
+    }
+  }
+}
+
+$max-columns: nth($breakpoint-desktop, 2);
+
+@for $i from 1 through $max-columns {
+  .#{$class-layout-column-prefix}#{$i} {
+    @extend %cell-styles;
+  }
+}
+
+//basic gewnerate first so the rest can override the rules.
+@if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
+  @include grid-core(nth($breakpoint-desktop, 2), nth($breakpoint-desktop, 4));
+  @include grid-off-core(nth($breakpoint-desktop, 2));
+} @else {
+
+}
+
+// mobile
+@for $i from 1 through nth($breakpoint-mobile, 2) {
+  .#{$class-layout-column-prefix}#{nth($breakpoint-mobile, 1)}-#{$i} {
+    @extend %cell-styles;
+  }
+}
+
+@media only screen and (max-width: #{nth($breakpoint-mobile, 3)}px) {
+  @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
+    @include grid-namespace(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2), nth($breakpoint-mobile, 4));
+    @include grid-off-namespace(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2));
+  } @else {
+    @include grid(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2), $max-columns, nth($breakpoint-mobile, 4));
+    @include grid-off(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2), $max-columns);
+  }
+
+  .#{nth($breakpoint-mobile, 1)}-hide.#{nth($breakpoint-mobile, 1)}-hide,
+  .#{nth($breakpoint-tablet, 1)}-only.#{nth($breakpoint-tablet, 1)}-only,
+  .#{nth($breakpoint-desktop, 1)}-only.#{nth($breakpoint-desktop, 1)}-only {
+    display: none;
+  }
+}
+
+// tablet
+@for $i from 1 through nth($breakpoint-tablet, 2) {
+  .#{$class-layout-column-prefix}#{nth($breakpoint-tablet, 1)}-#{$i} {
+    @extend %cell-styles;
+  }
+}
+
+@media only screen and (min-width: #{nth($breakpoint-tablet, 3)}px) and (max-width: #{nth($breakpoint-desktop, 3) - 1}px) {
+  @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
+    @include grid-namespace(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2), nth($breakpoint-tablet, 4));
+    @include grid-off-namespace(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2));
+  } @else {
+    @include grid(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2), $max-columns, nth($breakpoint-tablet, 4));
+    @include grid-off(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2), $max-columns);
+  }
+
+  .#{nth($breakpoint-mobile, 1)}-only.#{nth($breakpoint-mobile, 1)}-only,
+  .#{nth($breakpoint-tablet, 1)}-hide.#{nth($breakpoint-tablet, 1)}-hide,
+  .#{nth($breakpoint-desktop, 1)}-only.#{nth($breakpoint-desktop, 1)}-only {
+    display: none;
+  }
+}
+
+// desktop
+@for $i from 1 through nth($breakpoint-desktop, 2) {
+  .#{$class-layout-column-prefix}#{nth($breakpoint-desktop, 1)}-#{$i} {
+    @extend %cell-styles;
+  }
+}
+
+@media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+  //@include grid-namespace(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), nth($breakpoint-tablet, 4));
+  @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
+    @include grid-namespace(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), nth($breakpoint-desktop, 4));
+    @include grid-off-namespace(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2));
+  } @else {
+    @include grid(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), $max-columns, nth($breakpoint-desktop, 4));
+    @include grid-off(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), $max-columns);
+  }
+
+  .#{nth($breakpoint-mobile, 1)}-only.#{nth($breakpoint-mobile, 1)}-only,
+  .#{nth($breakpoint-tablet, 1)}-only.#{nth($breakpoint-tablet, 1)}-only,
+  .#{nth($breakpoint-desktop, 1)}-hide.#{nth($breakpoint-desktop, 1)}-hide {
+    display: none;
+  }
+}

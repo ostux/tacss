@@ -1,0 +1,224 @@
+/* _button.sass */
+
+%typo-button {
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  text-transform: none;
+  letter-spacing: 0;
+  color: $brand-font-color;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  outline: none;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  // to prevent the overflowin text to broke the layout
+  // text0overflow to make sure the user will notice something missing from the button
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &[class*="#{$class-color-outline-prefix}"] {
+    border: 2px solid;
+    background-color: transparent;
+  }
+}
+
+.#{$class-button} {
+  position: relative;
+  display: inline-block;
+  min-width: $button-height * 2;
+  height: $button-height;
+  line-height: $button-height;
+  text-align: center;
+  padding: $button-padding;
+  margin: 0;
+  border: none;
+
+  @include border-radius($button-border-radius);
+
+  @extend %typo-button;
+
+  @if $enable-colors {
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      background-color: $button-default-background;
+      color: set-font-color($button-default-background, $brand-font-color);
+    }
+
+    &:active {
+      background-color: $button-default-active-background;
+      color: set-font-color($button-default-background, $brand-font-color);
+    }
+  }
+
+  &[class*="col-"] {
+    padding: $button-padding;
+    margin: $button-margin-block;
+    width: 100%;
+  }
+
+  &.#{$class-button-block} {
+    margin: $button-margin-block;
+    width: 100%;
+  }
+
+  .material-icons {
+    vertical-align: middle;
+  }
+}
+
+.#{$class-button-mini} {
+  height: $button-height-mini;
+  line-height: $button-height-mini;
+  min-width: $button-height-mini * 2;
+  font-size: 0.75rem;
+}
+
+.#{$class-button-huge} {
+  height: $button-height-huge;
+  line-height: $button-height-huge;
+  min-width: $button-height-huge * 2;
+  font-size: 1.25rem;
+}
+
+.#{$class-button-fab} {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: $button-size-fab;
+  width: $button-size-fab;
+  height: $button-size-fab;
+  line-height: $button-size-fab;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+
+  @if $enable-colors {
+    background-color: $fab-default-background;
+    color: $fab-default-text;
+  }
+
+  @extend %typo-button;
+
+  &.#{$class-button-ripple}:active:after {
+    animation: ripple 1s ease-out forwards;
+  }
+}
+
+.#{$class-button-fab-mini} {
+  height: $button-size-fab-mini;
+  width: $button-size-fab-mini;
+  min-width: $button-size-fab-mini;
+  line-height: $button-size-fab-mini;
+  background-color: transparent;
+}
+
+[disabled], .disabled {
+  &.#{$class-button}, &.#{$class-button-fab} {
+    &.#{$class-button-ripple}:active:after {
+      animation: none;
+    }
+
+    &.#{$class-button-raised} {
+      box-shadow: none;
+    }
+
+    &.#{$class-button-raised}:active {
+      box-shadow: none;
+    }
+  }
+}
+
+.#{$class-button}.disabled {
+  pointer-events: none;
+}
+
+.#{$class-button}.disabled, .#{$class-button}[disabled], fieldset[disabled] .#{$class-button} {
+  cursor: not-allowed;
+}
+
+.#{$class-button-raised} {
+  @include shadow-4dp;
+
+  &:active {
+    @include shadow-2dp;
+  }
+
+  will-change: box-shadow, background-color, color;
+  transition: box-shadow 0.2s $animation, background-color 0.2s $animation, color 0.2s $animation;
+}
+
+.#{$class-button-ripple} {
+  &:active:after {
+    animation: ripple 0.4s ease-out forwards;
+    visibility: visible;
+  }
+
+  &:after {
+    visibility: hidden;
+  }
+}
+
+.#{$class-button}.#{$class-button-ripple}:after, .#{$class-button-fab}.#{$class-button-ripple}:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0.35;
+}
+
+@keyframes ripple {
+  0% {
+    border-color: currentColor;
+  }
+
+  100% {
+    margin-left: -199px;
+    margin-top: -199px;
+    border-width: 199px;
+    border-color: currentColor;
+  }
+}
+
+@if $enable-variants and $enable-button-variants {
+  // Alternate styles
+  // Generate contextual modifier classes for colorizing the button.
+  .#{$class-button-primary} {
+    @include button-variant($button-primary-background, $button-primary-active-background);
+  }
+
+  .#{$class-button-success} {
+    @include button-variant($button-success-background, $button-success-active-background);
+  }
+
+  .#{$class-button-info} {
+    @include button-variant($button-info-background, $button-info-active-background);
+  }
+
+  .#{$class-button-warning} {
+    @include button-variant($button-warning-background, $button-warning-active-background);
+  }
+
+  .#{$class-button-danger} {
+    @include button-variant($button-danger-background, $button-danger-active-background);
+  }
+}

@@ -1,0 +1,185 @@
+---
+layout: page
+title: Alerts
+description: Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+---
+<section class="m-t-3 col-12">
+    <div class="row">
+        <p>
+            Provide contextual feedback messages for typical user actions with flexible alert messages.
+        </p>
+
+        <h5>Examples</h5>
+        <p>
+            Alerts are available for any length of text, as well as an optional dismiss button. For styling, you can use one of the five predefinied classes (
+                <span class="code-class">.primary</span>,
+                <span class="code-class">.success</span>,
+                <span class="code-class">.info</span>,
+                <span class="code-class">.warning</span>,
+                <span class="code-class">.danger</span>) <br>
+            To use the predefinied classes require to set <span class="code-class">$enable-variants: true !default</span> in base/_variations.sass!
+        </p>
+        <div class="row">
+            <div class="col-6 col-t-8">
+                <div class="alert">
+                  <strong>Hello!</strong> This is the basic default alert.
+                </div>
+                <div class="alert primary">
+                  <strong>Well...</strong> You read this primary alert message.
+                </div>
+                <div class="alert success">
+                  <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+                <div class="alert info">
+                  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert warning">
+                  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </div>
+                <div class="alert danger">
+                  <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </div>
+            </div>
+            <div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<div class="alert">
+  <strong>Hello!</strong> This is the basic default alert.
+</div>
+<div class="alert primary">
+  <strong>Well...</strong> You read this primary alert message.
+</div>
+<div class="alert success">
+  <strong>Well done!</strong> You successfully read this important alert message.
+</div>
+<div class="alert info">
+  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+</div>
+<div class="alert warning">
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</div>
+<div class="alert danger">
+  <strong>Oh snap!</strong> Change a few things up and try submitting again.
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h5>Link color</h5>
+        <p>
+            Use the <span class="code-class">.alert-link </span> class to quickly provide matching colored links within any alert.
+        </p>
+        <div class="row">
+            <div class="col-6 col-t-8">
+                <div class="alert">
+                  <strong>Hello!</strong> This is the <a href="#" class="alert-link">default alert</a>.
+                </div>
+                <div class="alert primary">
+                  <strong>Well...</strong> You read <a href="#" class="alert-link">this primary alert message</a>.
+                </div>
+                <div class="alert success">
+                  <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+                </div>
+                <div class="alert info">
+                  <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+                </div>
+                <div class="alert warning">
+                  <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+                </div>
+                <div class="alert danger">
+                  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+                </div>
+            </div>
+            <div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<div class="alert">
+  <strong>Hello!</strong> This is the <a href="#" class="alert-link">default alert</a>.
+</div>
+<div class="alert primary">
+  <strong>Well...</strong> You read <a href="#" class="alert-link">this primary alert message</a>.
+</div>
+<div class="alert success">
+  <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+</div>
+<div class="alert info">
+  <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+</div>
+<div class="alert warning">
+  <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+</div>
+<div class="alert danger">
+  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h5>Additional content</h5>
+        <p>
+            Alerts can also contain additional HTML elements like headings and paragraphs.
+        </p>
+
+        <div class="row">
+            <div class="col-6 col-t-8">
+                <div class="alert success">
+                  <h4 class="alert-title">Well done!</h4>
+                  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                  <p>Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                </div>
+            </div>
+            <div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<div class="alert success">
+  <h4 class="alert-title">Well done!</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <p>Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h5>Dismissing</h5>
+        <p>
+            You can see this example in action. With JavaScript the alert removed from the DOOM permanently.
+        </p>
+        <div class="row">
+            <div class="col-6 col-t-8">
+                <div class="alert alert-closeable danger">
+                  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+                  <a class="alert-close hide">X</a>
+                </div>
+                <div class="alert alert-closeable success">
+                  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+                  <a class="alert-close hide">X</a>
+                </div>
+                <div class="alert alert-closeable info">
+                  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+                  <a class="alert-close hide">X</a>
+                </div>
+                <div class="alert alert-closeable warning">
+                  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+                  <a class="alert-close hide">X</a>
+                </div>
+            </div>
+            <div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<div class="alert alert-closeable danger">
+  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+  <a class="alert-close remove">X</a>
+</div>
+<div class="alert alert-closeable success">
+  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+  <a class="alert-close remove">X</a>
+</div>
+<div class="alert alert-closeable info">
+  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+  <a class="alert-close remove">X</a>
+</div>
+<div class="alert alert-closeable warning">
+  <strong>Close Me!</strong> You should click the X in the right top corner to close this alert.
+  <a class="alert-close remove">X</a>
+</div>
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</section>

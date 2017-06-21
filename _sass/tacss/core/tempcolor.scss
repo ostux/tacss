@@ -1,0 +1,83 @@
+@if $enable--red-palette {
+  @include color-palette($red-palette);
+}
+
+@if $enable--pink-palette {
+  @include color-palette($pink-palette);
+}
+
+@if $enable--purple-palette {
+  @include color-palette($purple-palette);
+}
+
+@if $enable--deep-purple-palette {
+  @include color-palette($deep-purple-palette);
+}
+
+@if $enable--indigo-palette {
+  @include color-palette($indigo-palette);
+}
+
+@if $enable--blue-palette {
+  @include color-palette($blue-palette);
+}
+
+@if $enable--light-blue-palette {
+  @include color-palette($ight-blue-palette);
+}
+
+@if $enable--cyan-palette {
+  @include color-palette($cyan-palette);
+}
+
+@if $enable--teal-palette {
+  @include color-palette($teal-palette);
+}
+
+@if $enable--green-palette {
+  @include color-palette($green-palette);
+}
+
+@if $enable--light-green-palette {
+  @include color-palette($light-green-palette);
+}
+
+@if $enable--lime-palette {
+  @include color-palette($lime-palette);
+}
+
+@if $enable--yellow-palette {
+  @include color-palette($yellow-palette);
+}
+
+@if $enable--amber-palette {
+  @include color-palette($amber-palette);
+}
+
+@if $enable--orange-palette {
+  @include color-palette($orange-palette);
+}
+
+@if $enable--deep-orange-palette {
+  @include color-palette($deep-orange-palette);
+}
+
+@if $enable--brown-palette {
+  @include color-palette($brown-palette);
+}
+
+@if $enable--grey-palette {
+  @include color-palette($grey-palette);
+}
+
+@if $enable--blue-grey-palette {
+  @include color-palette($blue-grey-palette);
+}
+
+@if $enable--black-palette {
+  @include color-palette($black-palette);
+}
+
+@if $enable--white-palette {
+  @include color-palette($white-palette);
+}

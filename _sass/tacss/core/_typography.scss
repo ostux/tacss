@@ -1,0 +1,109 @@
+/* _typography.sass */
+
+html, body {
+  font-family: $brand_font;
+  color: $brand-font-color;
+  font-size: $root-font-size;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 1em 0 0.5em;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: $root-font-size * 3.5;
+}
+
+h2 {
+  font-size: $root-font-size * 3;
+}
+
+h3 {
+  font-size: $root-font-size * 2.5;
+}
+
+h4 {
+  font-size: $root-font-size * 2;
+}
+
+h5 {
+  font-size: $root-font-size * 1.5;
+}
+
+h6 {
+  font-size: $root-font-size * 1.25;
+}
+
+p {
+  font-weight: 400;
+  color: inherit;
+}
+
+a {
+  color: blue;
+  font-weight: 400;
+}
+
+blockquote {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: -0.5em;
+    content: "“";
+  }
+
+  &:after {
+    content: "”";
+    margin-left: -0.05em;
+  }
+}
+
+mark {}
+
+dt {
+  font-weight: 700;
+}
+
+address {}
+
+ul, ol {}
+
+strong {
+  font-weight: 900;
+}
+
+.#{$class-typography-text-left} {
+  text-align: left;
+}
+
+.#{$class-typography-text-right} {
+  text-align: right;
+}
+
+.#{$class-typography-text-center} {
+  text-align: center;
+}
+
+.#{$class-typography-text-justify} {
+  text-align: justify;
+}
+
+.#{$class-typography-text-nowrap} {
+  white-space: nowrap;
+}
+
+.#{$class-typography-text-lowercase} {
+  text-transform: lowercase;
+}
+
+.#{$class-typography-text-uppercase} {
+  text-transform: uppercase;
+}
+
+.#{$class-typography-text-capitalize} {
+  text-transform: capitalize;
+}

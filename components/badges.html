@@ -1,0 +1,140 @@
+---
+layout: page
+title: Badges
+description: Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+---
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<section class="m-t-3 col-12">
+    <div class="row">
+        <p>
+            Examples for inline badges
+        </p>
+        <div class="col-12 col-t-8">
+            <h1>Example heading - h1<span class="badge">New</span></h1>
+            <h2>Example heading - h2<span class="badge badge-primary">New</span></h2>
+            <h3>Example heading - h3<span class="badge badge-success">New</span></h3>
+            <h4>Example heading - h4<span class="badge badge-info">New</span></h4>
+            <h5>Example heading - h5<span class="badge badge-warning badge-outline">New</span></h5>
+            <h6>Example heading - h6<span class="badge badge-danger">New</span></h6>
+        </div>
+    <div class="code info col-12 col-t-8">
+{% highlight html %}
+<h1>Example heading - h1<span class="badge">New</span></h1>
+<h2>Example heading - h2<span class="badge badge-primary">New</span></h2>
+<h3>Example heading - h3<span class="badge badge-success">New</span></h3>
+<h4>Example heading - h4<span class="badge badge-info">New</span></h4>
+<h5>Example heading - h5<span class="badge badge-warning badge-outline">New</span></h5>
+<h6>Example heading - h6<span class="badge badge-danger">New</span></h6>
+{% endhighlight %}
+    </div>
+
+        <p>
+            Examples with the <span class="code-class">data-badge</span> attribute.
+        </p>
+
+        <div class="col-4 col-t-3">
+            <button class="btn raised badge badge-overlap" data-badge="27">button</button>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- Button with overlaped basic badge -->
+<button class="btn raised badge badge-overlap" data-badge="27">button</button>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <button class="btn raised badge badge-overlap badge-danger" data-badge="27">button</button>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- Button with overlaped themed badge -->
+<button class="btn raised badge badge-overlap badge-danger" data-badge="27">button</button>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <button class="btn raised badge badge-overlap badge-success badge-outline" data-badge="27">button</button>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- Button with overlaped themed badge with outline -->
+<button class="btn raised badge badge-overlap badge-success badge-outline" data-badge="27">button</button>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <div class="material-icons badge badge-overlap badge-info" data-badge="31">account_box</div>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- Material Design Icon set are not part of taCSS! You have to include separately.-->
+<!-- https://material.io/icons/ -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- MaterialDesign icon with overlaped themed badge -->
+<div class="material-icons badge badge-overlap badge-info" data-badge="31">account_box</div>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <i class="material-icons text-purple badge badge-overlap badge-info badge-icon--material" data-badge="add_alert">account_box</i>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- MaterialDesign icon with overlaped themed badge -->
+<i class="material-icons text-purple badge badge-overlap badge-info badge-icon--material" data-badge="add_alert">account_box</i>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <a href="#" class="badge badge-danger  badge-icon--material" data-badge="add_alert">this is just a link</a>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- link with NOT overlaped but themed badge -->
+<a href="#" class="badge badge-danger  badge-icon--material" data-badge="add_alert">this is just a link</a>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <label class="badge badge-success badge-outline badge-icon--material" data-badge="add_alert">label label...label</label>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- label with NOT overlaped, themed and outlined badge -->
+<label class="badge badge-success badge-outline badge-icon--material" data-badge="add_alert">label label...label</label>
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <i class="fa fa-camera-retro fa-2x badge badge-overlap badge-outline badge-info badge-icon--fontawesome" data-badge="31"></i>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- FontAwesome Icon set are not part of taCSS! You have to include separately.-->
+<!-- http://fontawesome.io/cheatsheet/ -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- FontAwesome icon with overlaped, outlined, themed badge -->
+<i class="fa fa-camera-retro fa-2x badge badge-overlap badge-outline badge-info badge-icon--fontawesome" data-badge="31"></i>
+
+<!-- <div class="material-icons badge badge-overlap badge-info" data-badge="31">account_box</div> -->
+{% endhighlight %}
+</div>
+
+        <div class="col-4 col-t-3">
+            <label class="badge badge-success badge-icon--fontawesome" data-badge="&#xf086;">label label...label</label>
+        </div>
+<div class="code info col-8 col-t-5">
+{% highlight html %}
+<!-- Label with themed FontAwesome icon badge -->
+<label class="badge badge-success badge-icon--fontawesome" data-badge="&#xf086;">label label...label</label>
+{% endhighlight %}
+</div>
+
+
+
+    </div>
+</section>
+
+<div data-background-icon='&#xf086;'></div>

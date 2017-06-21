@@ -1,0 +1,14 @@
+// Buttons
+
+@mixin button-variant($background, $active-background) {
+    background-color: lighten($background, 10%);
+    &:focus,
+    &:hover {
+        background-color: $background;
+        color: set-font-color($background, $brand-font-color);
+    }
+    &:active {
+        background-color: $active-background;
+        color: set-font-color($active-background, $brand-font-color);
+    }
+}

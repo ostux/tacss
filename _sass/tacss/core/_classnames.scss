@@ -1,0 +1,252 @@
+Fcard {
+  //* helper classnames
+}
+
+$class-disabled: "disabled" !default;
+$class-isVisible: "is-visible" !default;
+$class-isHiding: "is-hideing" !default;
+$class-isHidden: "is-hidden" !default;
+
+$class-right: "right" !default;
+$class-text-muted: "text-muted" !default;
+$class-no-border: "no-border" !default;
+
+$attr-toggler: "toggle-for" !default;
+$class-img-fluid: "img-fluid" !default;
+$class-img-overlay: "img-overlay" !default;
+
+//* extras classnames
+$class-hamburger-icon: "hamburger-icon" !default;
+
+//* alert
+$class-alert: "alert" !default;
+$class-alert-title: "alert-title" !default;
+$class-alert-link: "alert-link" !default;
+$class-alert-close: "alert-close" !default;
+$class-alert-closeable: "alert-closeable" !default;
+
+//* badge
+$class-badge: "badge" !default;
+$class-badge-data: "badge-data" !default;
+$class-badge-no-background: "badge-no-background" !default;
+$class-badge-overlap: "badge-overlap" !default;
+$class-badge-outline: "badge-outline" !default;
+$class-badge-icon--material: "badge-icon--material" !default;
+$class-badge-icon--fontawesome: "badge-icon--fontawesome" !default;
+
+$class-badge-primary: "badge-primary" !default;
+$class-badge-success: "badge-success" !default;
+$class-badge-info: "badge-info" !default;
+$class-badge-warning: "badge-warning" !default;
+$class-badge-danger: "badge-danger" !default;
+
+//* button
+$class-button: "btn" !default;
+$class-button-mini: "btn-mini" !default;
+$class-button-huge: "btn-huge" !default;
+$class-button-block: "btn-block" !default;
+$class-button-block--left: "btn-block--left" !default;
+$class-button-block--right: "btn-block--right" !default;
+$class-button-fab: "fab" !default;
+$class-button-fab-mini: "fab-mini" !default;
+$class-button-raised: "raised" !default;
+$class-button-ripple: "ripple" !default;
+
+$class-button-primary: "btn-primary" !default;
+$class-button-success: "btn-success" !default;
+$class-button-info: "btn-info" !default;
+$class-button-warning: "btn-warning" !default;
+$class-button-danger: "btn-danger" !default;
+
+$class-button-group: "btn-group" !default;
+$class-button-group-vertical: "btn-group-vertical" !default;
+
+//* card
+$class-card: "card" !default;
+$class-card-featured: "card-featured" !default;
+$class-card-block: "card-block" !default;
+
+$class-card-title: "card-title" !default;
+$class-card-subtitle: "card-subtitle" !default;
+$class-card-action: "card-action" !default;
+$class-card-action--bordered: "card-action--bordered" !default;
+$class-card-group: "card-group" !default;
+$class-card-image: "card-image" !default;
+$class-image-overlay: "image-overlay" !default;
+
+// .card-menu definied in dropdown.sass
+$class-card-menu: "card-menu" !default;
+$class-card-menu-link: "card-menu-link" !default;
+
+//* carousel
+$class-carousel: "carousel" !default;
+$class-carousel-mask: "carousel-mask" !default;
+$class-carousel-item: "carousel-item" !default;
+$class-carousel-animation: "carousel-animation" !default;
+$class-carousel-slide: "carousel-slide" !default;
+
+//* collapsibles
+$class-collapsible: "collapsible" !default;
+$class-collapsible-content: "collapsible-content" !default;
+
+//* code
+$class-code: "code" !default;
+$class-code-small: "code-small" !default;
+$class-code-medium: "code-medium" !default;
+$class-code-large: "code-large" !default;
+$class-code-class: "code-class" !default;
+
+//* container
+$class-container:               "container" !default;
+$class-container--mini:         "--mini" !default;
+$class-container--huge:         "--huge" !default;
+
+//* Color variables
+$class-primary: "primary" !default;
+$class-success: "success" !default;
+$class-info: "info" !default;
+$class-warning: "warning" !default;
+$class-danger: "danger" !default;
+
+$class-primary-inverse: "primary-inverse" !default;
+$class-success-inverse: "success-inverse" !default;
+$class-info-inverse: "info-inverse" !default;
+$class-warning-inverse: "warning-inverse" !default;
+$class-danger-inverse: "danger-inverse" !default;
+
+//* drawer
+//* drawer itself
+$class-drawer: "drawer" !default;
+
+//* drawer item
+$class-drawer-item: "drawer-item" !default;
+$class-drawer-title: "drawer-title" !default;
+
+//* drawer always open except the small screen
+$class-drawer-fixed: "drawer-fixed" !default;
+
+//* hamburger icon - ONE / PAGE important!
+$class-drawer-toggler: "drawer-toggler" !default;
+
+//* drawer close layer
+$class-drawer-close: "drawer--close" !default;
+
+//* layout classnames
+$class-layout-content: "content" !default;
+$class-layout-row: "row" !default;
+$class-layout-column: "col" !default;
+$class-layout-column-prefix: "col-" !default;
+$class-layout-off: "off-" !default;
+$class-layout-nowrap: "nowrap" !default;
+$class-layout-no-gutter: "no-gutter" !default;
+$class-layout-spacer: "spacer" !default;
+$class-layout-start: "l-start" !default;
+$class-layout-end: "l-end" !default;
+$class-layout-left: "l-left" !default;
+$class-layout-right: "l-right" !default;
+$class-layout-center: "l-center" !default;
+$class-layout-middle: "l-middle" !default;
+$class-layout-space-between: "l-space-between" !default;
+$class-layout-space-around: "l-space-around" !default;
+
+///**
+// * layout embeded classnames - not changeable
+// * by changing the namespase to each view automatic changing the prefix as well...
+// * m-only
+// * m-hide
+// * t-only
+// * t-hide
+// * d-only
+// * d-hide
+//
+
+//* colors
+$class-color-background-prefix: "bg-" !default;
+$class-color-text-color-prefix: "text-" !default;
+$class-color-outline-prefix: "outline-" !default;
+$class-color-colored: "colored" !default;
+
+//* typography
+$class-typography-text-left: "t-left" !default;
+$class-typography-text-right: "t-right" !default;
+$class-typography-text-center: "t-center" !default;
+$class-typography-text-justify: "t-justify" !default;
+$class-typography-text-nowrap: "t-nowrap" !default;
+$class-typography-text-lowercase: "t-lowercase" !default;
+$class-typography-text-uppercase: "t-uppercase" !default;
+$class-typography-text-capitalize: "t-capitalize" !default;
+
+//* navbar
+$class-navbar: "navbar" !default;
+$class-navbar-fixed: "navbar-fixed" !default;
+$class-navbar-fixed-shadw: "navbar-fixed-shadow" !default;
+$class-navbar-item: "navbar-item" !default;
+$class-navbar-title: "navbar-title" !default;
+$class-navbar-link: "navbar-link" !default;
+
+//* shadow
+$class-shadow-2: "shadow-2" !default;
+$class-shadow-3: "shadow-3" !default;
+$class-shadow-4: "shadow-4" !default;
+$class-shadow-6: "shadow-6" !default;
+$class-shadow-8: "shadow-8" !default;
+$class-shadow-16: "shadow-16" !default;
+$class-shadow-24: "shadow-24" !default;
+$class-shadow--hover: "shadow--hover" !default;
+
+//* menu
+$class-menu: "menu" !default;
+$class-menu-item: "menu-item" !default;
+$class-menu-item-group: "menu-item-group" !default;
+$class-menu-item-activ: "menu-item--activ" !default;
+
+//* dropdown
+$class-dropdown: "dropdown" !default;
+$class-dropdown-content: "dropdown-content" !default;
+$class-dropdown-link: "dropdown-link" !default;
+
+//* footer
+$class-footer: "footer" !default;
+
+//* tab
+$class-nav-tab: "nav-tab" !default;
+$class-nav-tab-item: "tab-item" !default;
+$class-tab-content: "tab-content" !default;
+
+//* dialogs
+$class-dialog: "dialog" !default;
+$class-dialog-title: "dialog-title" !default;
+$class-dialog-border: "dialog-border" !default;
+$class-dialog-content: "dialog-content" !default;
+$class-dialog-actions: "dialog-actions" !default;
+
+//* form
+$class-form: "form" !default;
+$class-form-text: "form-text" !default;
+$class-form-group: "form-group" !default;
+$class-form-inline: "form-inline" !default;
+$class-form-control: "form-control" !default;
+$class-form-check: "form-check" !default;
+$class-form-check-inline: "form-check-inline" !default;
+$class-form-check-label: "form-check-label" !default;
+$class-form-check-input: "form-check-input" !default;
+
+//* input
+$class-input-group: "input-group" !default;
+$class-input-nofloat: "input-nofloat" !default;
+$class-input-full: "input-full" !default;
+
+$class-input-toggle: "tgl" !default;
+$class-input-toggle-button: "tgl-button" !default;
+$class-input-toggle-colored: "tgl-colored" !default;
+$class-input-toggle-red-green: "tgl-red-green" !default;
+
+$class-input--error: "input--error" !default;
+$class-input--info: "input--info" !default;
+
+//* list
+$class-list-group: "list" !default;
+$class-list-item: "list-item" !default;
+$class-list-avatar: "list-avatar" !default;
+$class-list-content: "list-content" !default;
+$class-list-action: "list-action" !default;

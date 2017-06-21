@@ -1,0 +1,53 @@
+/* utilities/_spacing.sass */
+
+@for $i from 1 through length($spacer) {
+  .p-#{$i} {
+    padding: nth($spacer, $i);
+  }
+
+  .p-t-#{$i}, .p-h-#{$i} {
+    padding-top: nth($spacer, $i);
+  }
+
+  .p-r-#{$i}, .p-v-#{$i} {
+    padding-right: nth($spacer, $i);
+  }
+
+  .p-b-#{$i}, .p-h-#{$i} {
+    padding-bottom: nth($spacer, $i);
+  }
+
+  .p-l-#{$i}, .p-v-#{$i} {
+    padding-left: nth($spacer, $i);
+  }
+
+  .m-#{$i} {
+    margin: nth($spacer, $i);
+  }
+
+  .m-t-#{$i}, .m-h-#{$i} {
+    margin-top: nth($spacer, $i);
+  }
+
+  .m-r-#{$i}, .m-v-#{$i} {
+    margin-right: nth($spacer, $i);
+  }
+
+  .m-b-#{$i}, .m-h-#{$i} {
+    margin-bottom: nth($spacer, $i);
+  }
+
+  .m-l-#{$i}, .m-v-#{$i} {
+    margin-left: nth($spacer, $i);
+  }
+}
+
+@for $i from 1 through 4 {
+  .w-#{$i * 25} {
+    width: unquote("#{$i * 25}% !important");
+  }
+
+  .h-#{$i * 25} {
+    height: inquote("#{$i * 25}% !important");
+  }
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include head.html %}
+    </head>
+<body>
+
+    {% include drawer.html %}
+    <main class="main" id="tacss-main">
+        <header class="{% if page.title == 'Tabs' %} shadow-4 {% endif %}">
+            {% include navbar.html %}
+        </header>
+        {{content}}
+        <footer class="footer">
+            {% include footer.html %}
+        </footer>
+    </main>
+    <script src="{{ site.baseurl }}/js/tacss.js"></script>
+</body>
+</html>

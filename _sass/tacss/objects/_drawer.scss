@@ -1,0 +1,136 @@
+/* _drawer.sass */
+%drawer-background {
+  border-right: 1px solid $drawer-border-color;
+  background-color: $drawer-color-background;
+  color: $drawer-color-text;
+}
+
+.#{$class-drawer} {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 #{$drawer-width};
+  justify-content: flex-start;
+  transform: translateX(-#{$drawer-width});
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1900;
+  will-change: transform;
+  transition: transform 0.35s $animation;
+
+  &:not(.#{$class-drawer-fixed}),
+  &.#{$class-isHiding} {
+    @extend %drawer-background;
+  }
+
+  //if drawer menu fixed then show it
+  &.#{$class-drawer-fixed} {
+    transform: translateX(0);
+
+    //if drawer opening or closeing not by user interaction (example portrait - landscape change in mobile)
+    //then don't want to see the animation on drawer open and close
+    &:not(.#{$class-isHiding}):not(.#{$class-isVisible}) {
+      transition-duration: 0s !important;
+
+      //prevent dialog show under the fixed drawer
+      z-index: 1;
+    }
+
+    & ~ * {
+      width: calc( 100vw - #{$drawer-width} );
+      position: relative;
+    }
+
+    //if screen msize mobile hide the drawer menu, even if is fixed
+    @media screen and (max-width: #{(nth($breakpoint-desktop, 3) - nth($breakpoint-mobile, 3)) / 2 + nth($breakpoint-mobile, 3)}px) {
+      &:not(.#{$class-isHiding}):not(.#{$class-isVisible}) {
+        transform: translateX(-#{$drawer-width});
+        transition-duration: 0s !important;
+      }
+
+      &.#{$class-isHiding}:not(.#{$class-isVisible}) {
+        transform: translateX(-#{$drawer-width});
+      }
+
+      & ~ * {
+        width: 100%;
+        position: absolute;
+      }
+    }
+  }
+
+  & .#{$class-drawer-item} {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-height: $drawer-item-height;
+    padding: $drawer-padding;
+    flex-shrink: 0;
+    font-family: $brand_font;
+    font-size: $drawer-font-size;
+    font-weight: 600;
+
+    @if $enable-colors {
+      &:hover:not(.#{$class-drawer-title}) {
+        background-color: $drawer-color-background;
+        -webkit-filter: brightness($drawer-color-active-item);
+        filter: brightness($drawer-color-active-item);
+      }
+    }
+  }
+
+  & .#{$class-drawer-title} {
+    min-height: $navbar-height;
+
+    @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+      min-height: $navbar-height-desktop;
+    }
+  }
+
+  &.#{$class-isVisible} {
+    transform: translateX(0px);
+
+    @extend %drawer-background;
+  }
+}
+
+//set up the layer witch responsible to close the menu if open
+.#{$class-drawer-close} {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1700;
+  opacity: 0.6;
+  background-color: $drawer-close-layer-background;
+  display: block;
+}
+
+//show or hide (hamburger) menu icon...
+@media screen and (min-width: #{(nth($breakpoint-desktop, 3) - nth($breakpoint-mobile, 3)) / 2 + nth($breakpoint-mobile, 3)}px) {
+  .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-drawer-toggler}.#{$class-hamburger-icon} {
+    display: none;
+  }
+}
+
+.#{$class-drawer} {
+  //button in the drawer
+  & .#{$class-button} {
+    width: 100%;
+
+    & > i {
+      right: 10px;
+      position: absolute;
+    }
+  }
+
+  //dropdown in drawer
+  & .#{$class-dropdown} {
+    width: 100%;
+
+    & .#{$class-dropdown-content} {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/* _tabs.sass */
+
+.#{$class-nav-tab} {
+  display: flex;
+
+  & > .#{$class-nav-tab-item} {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+.#{$class-tab-content} {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+.#{$class-tab-content}.#{$class-isVisible} {
+  display: block;
+}

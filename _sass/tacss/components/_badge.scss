@@ -1,0 +1,121 @@
+/* _badge.sass */
+
+.#{$class-badge} {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+
+  @include border-radius($badge-border-radius);
+
+  font-family: $brand_font;
+  font-weight: 400;
+  font-size: $badge-font-size;
+
+  &[data-badge] {
+    margin-right: $badge-size;
+
+    &.#{$class-badge-overlap} {
+      margin-right: $badge-size - $badge-overlap;
+
+      &:after {
+        right: -($badge-size - $badge-overlap);
+        font-family: $console_font;
+        font-size: 1rem;
+      }
+    }
+
+    &.#{$class-badge-outline}:after {
+      border-width: $badge-border-width;
+      border-style: solid;
+    }
+  }
+
+  &.#{$class-badge-no-background}:after {
+    background-color: transparent !important;
+  }
+
+  &.#{$class-badge-icon--material} {
+    &[data-badge]:after {
+      font-family: "Material Icons" !important;
+      text-transform: lowercase;
+    }
+  }
+
+  &.#{$class-badge-icon--fontawesome} {
+    &[data-badge]:after {
+      font-family: "FontAwesome" !important;
+    }
+  }
+
+  &:not([data-badge]) {
+    padding: $badge-padding;
+    text-align: center;
+    vertical-align: baseline;
+    font-size: inherit;
+
+    @include variant($badge-default-bg, $badge-default-border, $badge-default-text);
+
+    &.#{$class-badge-no-background} {
+      background-color: transparent;
+    }
+
+    &.#{$class-badge-outline} {
+      border-width: $badge-border-width;
+      border-style: solid;
+    }
+  }
+
+  &[data-badge]:after {
+    content: attr(data-badge);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: $badge-size;
+    width: $badge-size;
+    position: absolute;
+    top: -($badge-size / 2);
+    right: -$badge-size;
+
+    @include border-radius(50%);
+    @include variant($badge-default-bg, $badge-default-border, $badge-default-text);
+  }
+
+  // Empty badges collapse automatically, Icon can have bage, so need to check the data bage attribute as well
+  // Icon badge can be empty
+  &:empty:not([data-badge]) {
+    display: none;
+  }
+}
+
+// Badges require buttons to overflow
+.#{$class-button}.#{$class-badge} {
+  overflow: visible;
+}
+
+@if $enable-variants and $enable-badge-variants {
+  // Alternate styles
+  // Generate contextual modifier classes for colorizing the badge.
+  .#{$class-badge-primary} {
+    @include badge-variant($badge-primary-bg, $badge-primary-border, $badge-primary-text);
+  }
+
+  .#{$class-badge-success} {
+    @include badge-variant($badge-success-bg, $badge-success-border, $badge-success-text);
+  }
+
+  .#{$class-badge-info} {
+    @include badge-variant($badge-info-bg, $badge-info-border, $badge-info-text);
+  }
+
+  .#{$class-badge-warning} {
+    @include badge-variant($badge-warning-bg, $badge-warning-border, $badge-warning-text);
+  }
+
+  .#{$class-badge-danger} {
+    @include badge-variant($badge-danger-bg, $badge-danger-border, $badge-danger-text);
+  }
+}

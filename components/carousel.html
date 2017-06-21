@@ -1,0 +1,79 @@
+---
+layout: page
+title: Carousel
+description: The carousel is a slideshow for cycling through a series of content.
+---
+<section class="m-t-3 col-12">
+    <div class="row">
+        <p>
+            The carousel is a slideshow for cycling through a series of content.
+        </p>
+         <h6>Contents</h6>
+        <ul>
+            <li><a href="#carousel_example">Example</a></li>
+            <li><a href="#carousel_captions">With captions</a></li>
+        </ul>
+    </section>
+
+    <section class="row" id="carousel_example">
+        <h6>Example</h6>
+        <p>
+            Carousels don’t automatically normalize slide dimensions. As such, you need to use <span class="code-class">style="--carousel-image-widht:width;--carousel-image-height:height;"</span> inline style with the picture witdh and height without any measurement unit or just two number witch follow the picture aspect ratio like: <span class="code-class">style="--carousel-image-widht:16;--carousel-image-height:9;"</span> for 16:9.
+        </p>
+        <div class="col-8 off-desktop-2 col-tablet-8">
+            <div class="carousel carousel-slide-2" style="--carousel-image-widht:1024;--carousel-image-height:375;">
+                <div class="carousel-mask" >
+                    <img class="img-fluid carousel-item-1" src="{{ site.baseurl }}/img/robin_corousel.jpg" alt="Robin"/>
+                    <img class="img-fluid carousel-item-2" src="{{ site.baseurl }}/img/mokus_corousel.jpg" alt="Squirel"/>
+                </div>
+            </div>
+        </div>
+<pre class="code info code-large col-12">
+{% highlight html %}
+<div class="carousel carousel-slide-2" style="--carousel-image-widht:1024;--carousel-image-height:375;">
+    <div class="carousel-mask" >
+        <img class="img-fluid carousel-item-1" src="{{ site.baseurl }}/img/robin_corousel.jpg" alt="Robin"/>
+        <img class="img-fluid carousel-item-2" src="{{ site.baseurl }}/img/mokus_corousel.jpg" alt="Squirel"/>
+    </div>
+</div>
+{% endhighlight %}
+</pre>
+    </section>
+
+    <section class="row" id="carousel_captions">
+        <h6>With captions</h6>
+        <p>
+            Add captions to your slides easily with the <span class="code-class">.img-overlay</span> element within after any <span class="code-class">.carousel-item</span>. They can be easily hidden on smaller viewports, as shown below, with optional display utilities.
+        </p>
+        <div class="col-8 off-desktop-2 col-tablet-8">
+            <div class="carousel carousel-slide-2" style="--carousel-image-widht:1024;--carousel-image-height:375;">
+                <div class="carousel-mask" >
+                    <img class="img-fluid carousel-item-1" src="{{ site.baseurl }}/img/robin_corousel.jpg" alt="Robin"/>
+                    <div class="img-overlay m-hide carousel-item-1 text-white">
+                        <h4 class="card-title">The Robin</h4>
+                        <p class="card-text" style="text-shadow: -1px -1px 1px rgb(0, 0, 0);color:rgb(190, 236, 169);">
+The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird...
+                        </p>
+                    </div>
+                    <img class="img-fluid carousel-item-2" src="{{ site.baseurl }}/img/mokus_corousel.jpg" alt="Squirel"/>
+                </div>
+            </div>
+        </div>
+<pre class="code info code-large col-12">
+{% highlight html %}
+<div class="carousel carousel-slide-2" style="--carousel-image-widht:1024;--carousel-image-height:375;">
+    <div class="carousel-mask" >
+        <img class="img-fluid carousel-item-1" src="{{ site.baseurl }}/img/robin_corousel.jpg" alt="Robin"/>
+        <div class="img-overlay  carousel-item-1 text-white">
+            <h4 class="card-title">The Robin</h4>
+            <p class="card-text" style="text-shadow: -1px -1px 1px rgb(0, 0, 0);color:rgb(190, 236, 169);">
+The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird...
+            </p>
+        </div>
+        <img class="img-fluid carousel-item-2" src="{{ site.baseurl }}/img/mokus_corousel.jpg" alt="Squirel"/>
+    </div>
+</div>
+{% endhighlight %}
+</pre>
+    </div>
+</section>

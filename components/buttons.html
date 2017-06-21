@@ -1,0 +1,299 @@
+---
+layout: page
+title: Buttons
+description: The buttons are very important every website for interaction. So let's take a look how about the buttons look like in taCSS.
+---
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<section class="m-t-3 col-12">
+    <div class="row">
+        <h3>Buttons</h3>
+        <p>
+            The buttons are very important every website for interaction. So let's take a look how about the buttons look like in taCSS.
+
+        </p>
+
+        <h6>Contents</h6>
+        <ul>
+            <li><a href="#button_type">types</a></li>
+            <li><a href="#button_predefined">predefined styles</a></li>
+            <li><a href="#button_effects">effects</a></li>
+            <li><a href="#button_size">size</a></li>
+            <li><a href="#button_color">color</a></li>
+            <li><a href="#button_disabled">disabled</a></li>
+            <li><a href="#button_width">width</a></li>
+            <li><a href="#button_group">groups</a></li>
+        </ul>
+
+        <section class="p-t-5" class="row" id="button_type">
+            <h6>Types</h6>
+            <p>
+                Two <b>type</b> of button: normal button and floating action button (FAB). FAB buttons background color accent by default.
+            </p>
+            <div class="col-12 l-space-around">
+                <a class="btn"> button link </a>
+                <button class="btn"> default button </button>
+                <button class="fab"> fab </button>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- default button style link -->
+<a class="btn"> button link </a>
+
+<!-- default button -->
+<button class="btn"> default button </button>
+
+<!-- floating action button (FAB) -->
+<button class="fab"> fab </button>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_predefined">
+            <h6>Predefined </h6>
+            <p>
+                taCSS includes six divdefined button styles, each serving its own semantic purpose.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn"> default button </button>
+                <button class="btn btn-primary"> button primary </button>
+                <button class="btn btn-success"> button success </button>
+                <button class="btn btn-info"> button info </button>
+                <button class="btn btn-warning"> button warning </button>
+                <button class="btn btn-danger"> button danger </button>
+
+                <button class="fab"> fab </button>
+                <button class="fab btn-primary">primary</button>
+                <button class="fab btn-success">success</button>
+                <button class="fab btn-info">info</button>
+                <button class="fab btn-warning">warning</button>
+                <button class="fab btn-danger">danger</button>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- default button -->
+<button class="btn"> default button </button>
+<button class="btn btn-primary"> button primary </button>
+<button class="btn btn-success"> button success </button>
+<button class="btn btn-info"> button info </button>
+<button class="btn btn-warning"> button warning </button>
+<button class="btn btn-danger"> button danger </button>
+
+<!-- floating action button (FAB) -->
+<button class="fab"> fab </button>
+<button class="fab btn-primary">primary</button>
+<button class="fab btn-success">success</button>
+<button class="fab btn-info">info</button>
+<button class="fab btn-warning">warning</button>
+<button class="fab btn-danger">danger</button>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_effects">
+            <h6 >Effects</h6>
+            <p>
+                The buttons effects can be <span class="code-class">.raised</span> and <span class="code-class">.ripple</span>. The ripple color same as the current text color the given element (oppacity 0.5). Also the ripple effect need overflow: hidden... It's mean, you can't use with bages or any other element which need overflow: visible.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn raised"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+                <button class="btn ripple"> i'm a button </button>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- raised button with FontAwsome icon -->
+<button class="btn raised"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+
+<!-- ripple button -->
+<button class="btn ripple"> i'm a button </button>
+{% endhighlight %}
+</div>
+        <div class="col-12 l-space-around">
+            <button class="fab raised"> <i class="material-icons"> account_circle </i> </button>
+            <button class="fab ripple"> <i class="fa fa-user-o" aria-hidden="true"></i> </button>
+        </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- raised fab with material icon -->
+<button class="fab raised"> <i class="material-icons"> account_circle </i> </button>
+
+<!-- ripple fab with Font Awesome icon -->
+<button class="fab ripple"> <i class="fa fa-user-o" aria-hidden="true"></i> </button>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_size">
+            <h6>Size</h6>
+            <p>
+                Size the buttons with <span class="code-class">.btn-mini</span>, <span class="code-class">.btn-huge</span> or with <span class="code-class">.fab-mini</span> class. The mini FAB buttons background-color: transparent by default.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn btn-mini"> i'm mini button </button>
+                <button class="btn btn-mini raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm mini button </button>
+                <button class="btn btn"> i'm button </button>
+                <button class="btn btn raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+                <button class="btn btn-huge"> i'm huge button </button>
+                <button class="btn btn-huge raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm huge button </button>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- mini button -->
+<button class="btn btn-mini"> i'm mini button </button>
+<button class="btn btn-mini raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm mini button </button>
+<!-- default button -->
+<button class="btn btn"> i'm button </button>
+<button class="btn btn raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+<!-- huge button -->
+<button class="btn btn-huge"> i'm huge button </button>
+<button class="btn btn-huge raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm huge button </button>
+{% endhighlight %}
+</div>
+            <div class="col-12 l-space-around">
+                <button class="fab fab-mini"> <i class="material-icons"> face </i> </button>
+                <button class="fab raised ripple fab-mini"> <i class="fa fa-lg fa-thumbs-o-up" aria-hidden="true"></i> </button>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- mini fab with material icon -->
+<button class="fab fab-mini"> <i class="material-icons"> face </i> </button>
+
+<!-- mini raised, ripple fab with FontAwsome icon -->
+<button class="fab raised ripple fab-mini"> <i class="fa fa-lg fa-thumbs-o-up" aria-hidden="true"></i> </button>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_color">
+            <h6>Color</h6>
+            <p>
+                Button can be colored as well. You can use any color from the <a class="text-blue" href="{{ site.baseurl }}/components/colors.html">color</a> palette. To set the text color readable automaticaly use the <span class="code-class">colored</span> class within your choosen background color. Use the color name with the <span class="code-class">.bg-</span> prefix to set the background color. Colorize just the text, use the <span class="code-class">.text-</span> prefix. To set the outline color and the text then use the <span class="code-class">.outline-</span> prefix with your choosen color. Of course you can use with normal buttons or FAB as well... like any other options.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn bg-orange raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+                <button class="btn btn-mini text-purple-8 raised ripple"> i'm button </button>
+                <button class="bg-blue-2 text-indigo-9 raised ripple fab"> <i class="material-icons"> airplanemode_active </i> </button>
+                <button class="btn outline-teal raised ripple"> i'm button </button>
+            </div>
+    <div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- orange raised, ripple button with FontAwsome icon -->
+<button class="btn bg-orange raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+
+<!-- mini raised, ripple button with colored text to purple -->
+<button class="btn btn-mini text-purple-8 raised ripple"> i'm button </button>
+
+<!-- raised, ripple fab with material icon and colored background and text -->
+<button class="bg-blue-2 text-indigo-9 raised ripple fab"> <i class="material-icons"> airplanemode_active </i> </button>
+
+<!-- raised, ripple button outline colored -->
+<button class="btn outline-teal raised ripple"> i'm button </button>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_disabled">
+            <h6>Disabled</h6>
+            <p>
+                Disabled the button by using the <span class="class">disabled</span> attribute. Use the <span class="class">disabled</span> class with links.
+                Ripple effect and colors are not effecting the disabled buttons.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn bg-orange raised ripple" disabled> i'm button </button>
+                <a class="btn orange raised ripple disabled"> i'm button </a>
+                <button class="fab raised ripple" disabled> <i class="material-icons"> airplanemode_inactive </i> </button>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- disabled raised, ripple and colored button -->
+<button class="btn bg-orange raised ripple" disabled> i'm button </button>
+
+<!-- disabled raised, ripple and colored button style link -->
+<a class="btn orange raised ripple disabled"> i'm button </a>
+
+<!-- disabled raised, ripple and colored fab -->
+<button class="fab raised ripple" disabled> <i class="material-icons"> airplanemode_inactive </i> </button>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_width">
+            <h6>Width</h6>
+            <p >
+                Sometime need a button to take all aviable space. Well then use the <span class="code-class">.btn-block</span> class to achive this. The button will grow up all available space horizontaly. The button height not affected.
+                Don't use <span class="code-class">.ripple</span> efect with full lenght button because the ripple effect diameter 200px, buttons wider than 200px look not nice.<br>
+                The button with possible to setup using the <span class="code-class">.col-X</span> classes as well. The gutter still effecting the button with. If you don't want gutter use the <span class="code-class">no-gutter</span> class.
+            </p>
+            <div class="col-12">
+                <button class="btn outline-teal btn-block t-left">i'm button</button>
+                <button class="btn outline-purple-7 raised btn-block">i'm button</button>
+                <button class="btn bg-teal raised btn-block t-right">i'm button</button>
+                <div class="row">
+                    <button class="btn raised bg-orange left col-6 col-t-4 col-m-2 no-gutter">i'm button</button>
+                    <div class="spacer"></div>
+                    <button class="btn raised col-6 col-t-4 col-m-2 no-gutter">i'm button</button>
+                </div>
+            </div>
+<div class="col-12 code info code-medium">
+{% highlight html %}
+<!-- full lenght, left aligned, outline, raised button -->
+<button class="btn outline-teal btn-block t-left">i'm button</button>
+
+<!-- full lenght, center aligned (default), outline, raised button [ripple effect as well so you can see how terrible if you useing this effect with long buttons...]-->
+<button class="btn outline-purple-7 raised btn-block">i'm button</button>
+
+<!-- full lenght, right aligned, raised button -->
+<button class="btn bg-teal raised btn-block t-right">i'm button</button>
+<div class="row">
+    <!-- col-6 (half of its container) lenght, left aligned, raised button -->
+    <button class="btn raised bg-orange left col-6 col-t-4 col-m-2 no-gutter">i'm button</button>
+    <div class="spacer"></div>
+    <!-- col-6 (half of its container) lenght, raised button -->
+    <button class="btn raised col-6 col-t-4 col-m-2 no-gutter">i'm button</button>
+</div>
+{% endhighlight %}
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_group">
+            <h6>Button group</h6>
+            <p>
+                Button group direction can horizontal or vertical. Wrap the buttons around with <span class="code-class">.btn-group</span> or <span class="code-class">.btn-group-vertical</span> classes.
+            </p>
+
+            <div class="col-4 col-tablet-4">
+                <div class="btn-group ">
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                </div>
+            </div>
+<div class="col-8 col-tablet-4 code info code-medium">
+{% highlight html %}
+<div class="btn-group ">
+    <button class="btn"> button </button>
+    <button class="btn"> button </button>
+    <button class="btn"> button </button>
+</div>
+{% endhighlight %}
+</div>
+            <div class="col-4 col-tablet-4">
+                <div class="btn-group-vertical ">
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                </div>
+            </div>
+<div class="col-8 col-tablet-4 code info code-medium">
+{% highlight html %}
+<div class="btn-group-vertical ">
+    <button class="btn"> button </button>
+    <button class="btn"> button </button>
+    <button class="btn"> button </button>
+</div>
+{% endhighlight %}
+</div>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,301 @@
+// Options
+$enable-rounded: true !default;
+$enable-variants: true !default;
+
+//turn off the colors if you dont want to use any color palette
+$enable-colors: true !default;
+
+//don't forget include minimum the primary and the accent color
+//the palette variables can be found in the "src/sass/base/colorpalette.scss"
+$primary-palette: $teal-palette !default;
+$accent-palette: $deep-orange-palette !default;
+
+$enable--red-palette: true !default;
+$enable--pink-palette: true !default;
+$enable--purple-palette: true !default;
+$enable--deep-purple-palette: true !default;
+$enable--indigo-palette: true !default;
+$enable--blue-palette: true !default;
+$enable--light-blue-palette: true !default;
+$enable--cyan-palette: true !default;
+$enable--teal-palette: true !default;
+$enable--green-palette: true !default;
+$enable--light-green-palette: true !default;
+$enable--lime-palette: true !default;
+$enable--yellow-palette: true !default;
+$enable--amber-palette: true !default;
+$enable--orange-palette: true !default;
+$enable--deep-orange-palette: true !default;
+$enable--brown-palette: true !default;
+$enable--grey-palette: true !default;
+$enable--blue-grey-palette: true !default;
+$enable--black-palette: true !default;
+$enable--white-palette: true !default;
+
+// basic palette contains black, white and the midle colors for the rest. not acient color.
+$enable--basic-palette: true !default;
+
+//base settings
+$root-font-size: 18px !default;
+
+$brand_font: "Source Sans Pro", -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif !default;
+$console_font: "Source Code Pro" monospace !default;
+
+//spacing
+$spacer: 0.25rem, 0.5rem, 1rem, 3rem, 5rem !default;
+
+// border radius
+$brand-border-radius: 0.15rem !default;
+
+$brand-background-color: $white !default;
+$brand-font-color: rgba(0, 0, 0, 0.87) !default;
+$secondary-font-color: rgba(0, 0, 0, 0.54) !default;
+
+//primary and accent color
+$primary-c1: nth(nth($primary-palette, 1), 2) !default;
+$primary-color-light: nth(nth($primary-palette, 2), 2) !default;
+$primary-c3: nth(nth($primary-palette, 3), 2) !default;
+$primary-c4: nth(nth($primary-palette, 4), 2) !default;
+$primary-color: nth(nth($primary-palette, 5), 2) !default;
+$primary-c6: nth(nth($primary-palette, 6), 2) !default;
+$primary-color-dark: nth(nth($primary-palette, 7), 2) !default;
+$primary-c8: nth(nth($primary-palette, 8), 2) !default;
+$primary-c9: nth(nth($primary-palette, 9), 2) !default;
+$accent-c1: nth(nth($accent-palette, 10), 2) !default;
+$accent-color: nth(nth($accent-palette, 11), 2) !default;
+$accent-c4: nth(nth($accent-palette, 12), 2) !default;
+$accent-c7: nth(nth($accent-palette, 13), 2) !default;
+
+// brand colors
+$brand-primary-light: $primary-color-light !default;
+$brand-primary: $primary-color !default;
+$brand-primary-dark: $primary-color-dark !default;
+$brand-success-light: $green-0 !default;
+$brand-success: $green-a4 !default;
+$brand-success-dark: $green-8 !default;
+$brand-info-light: $teal-0 !default;
+$brand-info: $teal-a4 !default;
+$brand-info-dark: $teal-8 !default;
+$brand-warning-light: $orange-0 !default;
+$brand-warning: $orange-a4 !default;
+$brand-warning-dark: $orange-8 !default;
+$brand-danger-light: $red-0 !default;
+$brand-danger: $red-a4 !default;
+$brand-danger-dark: $red-8 !default;
+
+$brand-accent-color: $accent-color !default;
+
+$disabled-background-color: rgba(0, 0, 0, 0.12) !default;
+$disabled-font-color: rgba(0, 0, 0, 0.38) !default;
+
+$text-link-color: $blue !default;
+
+// alert
+$alert-border-width: 1px !default;
+$alert-border-radius: $brand-border-radius !default;
+
+$alert-padding: 1rem !default;
+$alert-margin-bottom: 1rem !default;
+
+$alert-background: $white !default;
+$alert-border-color: $secondary-font-color !default;
+$alert-color: $secondary-font-color !default;
+
+// bage
+$enable-badge-variants: true !default;
+
+$badge-font-size: 1rem !default;
+$badge-size: 1.5rem !default;
+$badge-padding: 0.75rem !default;
+$badge-overlap: 0.75rem !default;
+$badge-border-width: 2px !default;
+$badge-border-radius: $brand-border-radius !default;
+
+$badge-default-bg: $blue-grey-1 !default;
+$badge-default-border: transparent !default;
+$badge-default-text: $brand-accent-color !default;
+
+$badge-primary-bg: $brand-primary-light !default;
+$badge-primary-border: $brand-primary !default;
+$badge-primary-text: $brand-primary !default;
+$badge-success-bg: $brand-success-light !default;
+$badge-success-border: $brand-success !default;
+$badge-success-text: $brand-success !default;
+$badge-info-bg: $brand-info-light !default;
+$badge-info-border: $brand-info !default;
+$badge-info-text: $brand-info !default;
+$badge-warning-bg: $brand-warning-light !default;
+$badge-warning-border: $brand-warning !default;
+$badge-warning-text: $brand-warning !default;
+$badge-danger-bg: $brand-danger-light !default;
+$badge-danger-border: $brand-danger !default;
+$badge-danger-text: $brand-danger !default;
+
+// button
+$enable-button-variants: true !default;
+
+$button-font-size: 1rem !default;
+$button-font-weight: 400 !default;
+$button-height: 2.25rem !default;
+$button-min-width: $button-height * 2 !default;
+$button-padding: 0 0.5rem !default;
+$button-margin: 2px 0 !default;
+$button-margin-block: 0.2rem 0 0.2rem 0 !default;
+$button-border-radius: $brand-border-radius !default;
+$button-height-mini: $button-height * 0.75 !default;
+$button-height-huge: $button-height * 1.5 !default;
+
+$button-size-fab: 3.5rem !default;
+$button-size-fab-mini: 2.5rem !default;
+
+$button-default-background: $grey-3;
+$button-default-color: set-font-color($button-default-background, $brand-font-color) !default;
+$button-default-active-background: $grey-4 !default;
+
+$button-primary-background: $brand-primary;
+$button-primary-active-background: darken($brand-primary, 10%) !default;
+
+$button-success-background: $brand-success;
+$button-success-active-background: darken($brand-success, 10%) !default;
+
+$button-info-background: $brand-info;
+$button-info-active-background: darken($brand-info, 10%) !default;
+
+$button-warning-background: $brand-warning;
+$button-warning-active-background: darken($brand-warning, 10%) !default;
+
+$button-danger-background: $brand-danger;
+$button-danger-active-background: darken($brand-danger, 10%) !default;
+
+// FAB
+$fab-default-background: $brand-accent-color;
+$fab-default-text: set-font-color($accent-color, $brand-font-color);
+
+// button group
+$button-group-border-width: 1px !default;
+$button-group-border-color: $grey-2 !default;
+
+// card
+$card-background: $white !default;
+$card-border-color: $grey-4 !default;
+$card-border-width: 1px !default;
+$card-action-border-width: 1px !default;
+$card-padding: 1rem !default;
+$card-border-radius: $brand-border-radius !default;
+$card-title-margin: 0.75rem !default;
+$card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width}) !default;
+
+// card group
+$card-group-border-width: 1px !default;
+$card-group-border-color: $grey-7 !default;
+
+// carousel
+$carousel-animation-time: 1 !default;
+$carousel-item-show-time: 5 !default;
+$carousel-max-items: 5 !default;
+
+// code
+$code-font-size: 0.75rem !default;
+$code-border-radius: 0.5rem !default;
+$code-class-color: $red-9 !default;
+$code-border-width: 0.2rem !default;
+
+$code-default-bg: transparent !default;
+$code-default-border: rgba(0, 0, 0, 0.54) !default;
+$code-default-text: rgba(0, 0, 0, 0.87) !default;
+
+// color-variants
+$primary-bg: $brand-primary-light !default;
+$primary-border: $brand-primary !default;
+$primary-text: $brand-primary-dark !default;
+$success-bg: $brand-success-light !default;
+$success-border: $brand-success !default;
+$success-text: $brand-success-dark !default;
+$info-bg: $brand-info-light !default;
+$info-border: $brand-info !default;
+$info-text: $brand-info-dark !default;
+$warning-bg: $brand-warning-light !default;
+$warning-border: $brand-warning !default;
+$warning-text: $brand-warning-dark !default;
+$danger-bg: $brand-danger-light !default;
+$danger-border: $brand-danger !default;
+$danger-text: $brand-danger-dark !default;
+
+//layout
+$base-padding: 1rem !default;
+$primary-margin-bottom: 1rem !default;
+
+//breakpoint name, columns, pixel width mobile end , tablet and desktop start, gutter size
+$breakpoint-mobile: m, 4, 479, .5rem !default;
+$breakpoint-tablet: t, 8, 480, 1rem !default;
+$breakpoint-desktop: d, 12, 900, 1.5rem !default;
+
+// animation
+$animation: cubic-bezier(0.4, 0, 0.2, 1) !default;
+
+// navbar
+$navbar-color-background: $primary-color !default;
+$navbar-color-text: set-font-color($primary-color, rgba(0, 0, 0, 0.87));
+$navbar-color-item-hover: 115% !default;
+$navbar-color-item-active: 125% !default;
+$navbar-text-color-hover: set-font-color(lighten($primary-color, 15), rgba(0, 0, 0, 0.87)) !default;
+$navbar-text-color-active: set-font-color(lighten($primary-color, 25), rgba(0, 0, 0, 0.87)) !default;
+
+$navbar-height: 56px !default;
+$navbar-height-desktop: 64px !default;
+
+$navbar-max-fixed-line: 3 !default;
+
+// drawer
+$hamburger-color: set-font-color($navbar-color-background, $brand-font-color);
+
+$drawer-color-background: $primary-c1 !default;
+$drawer-color-text: set-font-color($primary-color-light, $brand-font-color);
+$drawer-border-color: $primary-color-dark !default;
+
+$drawer-color-active-item: 75% !default;
+$drawer-close-layer-background: $black !default;
+
+$drawer-width: 340px;
+$drawer-item-height: 2rem !default;
+$drawer-padding: 0 $base-padding 0 $base-padding !default;
+$drawer-font-size: 1rem !default;
+
+// dropdown
+$dropdown-padding-left: 8px !default;
+
+// menu
+$menu-color-background: $white !default;
+$menu-color-active-background: 85% !default;
+$menu-color-text: $brand-font-color !default;
+
+$menu-height: 2.5rem;
+$manu-padding: 0 $base-padding !default;
+
+// foter
+$footer-color-background: $accent-color !default;
+
+// dialog
+$dialog-color-background: $white !default;
+
+// form
+$form-control-border-radius: $brand-border-radius !default;
+
+//$input-btn-border-width:        $border-width !default // For form controls and buttons
+
+// input
+$input-text-font-size: 16px !default;
+$input-text-width: 100% !default;
+$input-text-margin: 10px 0 2px 0 !default;
+$input-text-padding: 4px 4px 4px 0 !default;
+$input-text-vertical-spacing: 16px !default;
+
+$input-text-button-size: 36px !default;
+$input-text-floating-label-fontsize: 12px !default;
+$input-text-expandable-icon-top: 16px !default;
+$input-group-padding: 8px 8px 16px 8px !default;
+$input-group-margin: 2px 0px !default;
+
+// table
+$table-breakpoint: #{nth($breakpoint-tablet, 3)}px;
+$table-color-hover-line: $primary-c1 !default;

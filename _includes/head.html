@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="keywords" content="css framework ">
+<meta name="copyright" content="The MIT License © 2017">
+<meta name="author" content="Andras Toth">
+<meta name="designer" content="Andras Toth">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<title>
+  {% if page.title %}
+    {{ page.title }} &middot; {{ site.title }}
+  {% else %}
+    {{ site.title }} &middot; {{ site.description }}
+  {% endif %}
+</title>
+
+<!-- taCss core CSS -->
+{% if site.github %}
+  <link href="{{ site.baseurl }}/css/tacss.css" rel="stylesheet">
+{% else %}
+  <link href="{{ site.baseurl }}/css/tacss.css" rel="stylesheet">
+{% endif %}
+<link href="{{ site.baseurl }}/assets/main.css" rel="stylesheet">

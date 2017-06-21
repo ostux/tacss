@@ -1,0 +1,62 @@
+/* _layout-layout.sass */
+
+.#{$class-layout-content} {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.#{$class-layout-row} {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.#{$class-layout-column} {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.#{$class-layout-nowrap} {
+  flex-wrap: nowrap;
+}
+
+.#{$class-layout-spacer} {
+  flex-grow: 1;
+}
+
+.#{$class-layout-start} {
+  justify-content: flex-start;
+}
+
+.#{$class-layout-end} {
+  justify-content: flex-end;
+}
+
+.#{$class-layout-center} {
+  justify-content: center;
+  align-items: center;
+}
+
+.#{$class-layout-left} {
+  align-items: flex-start;
+}
+
+.#{$class-layout-right} {
+  align-items: flex-end;
+}
+
+.#{$class-layout-middle} {
+  vertical-align: middle;
+  align-self: center;
+}
+
+.#{$class-layout-space-between} {
+  justify-content: space-between;
+}
+
+.#{$class-layout-space-around} {
+  justify-content: space-around;
+}

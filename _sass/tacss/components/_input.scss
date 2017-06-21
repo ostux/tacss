@@ -1,0 +1,73 @@
+/* _input.sass */
+.#{$class-input-toggle} {
+  display: none;
+
+  &::selection {
+    background: none;
+  }
+
+  & + .#{$class-input-toggle-button} {
+    outline: none;
+    display: inline-block;
+    width: 36px;
+    height: 12px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    background: $primary-color-light;
+    border-radius: 16px;
+    padding: 0;
+    transition: all 0.4s ease;
+    margin-right: 8px;
+
+    &:after, &:before {
+      position: relative;
+      display: block;
+      content: "";
+      top: -4px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:after {
+      left: 0;
+      border-radius: 50%;
+      color: $accent-color;
+      background: currentColor;
+      transition: all 0.2s ease;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &:checked + .#{$class-input-toggle-button}:after {
+    left: 16px;
+    color: $primary-color-dark;
+  }
+}
+
+.#{$class-input-toggle-red-green} {
+  & + .#{$class-input-toggle-button} {
+    background: #E57373;
+    border-radius: 16px;
+    padding: 0;
+    transition: all 0.4s ease;
+
+    &:after {
+      border-radius: 50%;
+      color: #B71C1C;
+      background-color: currentColor;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &:checked + .#{$class-input-toggle-button} {
+    background: #81C784;
+
+    &:after {
+      color: #1B5E20;
+    }
+  }
+}

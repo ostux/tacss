@@ -1,0 +1,50 @@
+/* utilities/_code.sass */
+
+//%typo-code
+
+.#{$class-code} {
+  display: block;
+  padding: 1rem !important;
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  border-color: $code-default-border;
+  border-left-width: $code-border-width;
+  border-right-width: $code-border-width;
+  font-family: $console_font;
+  font-size: $code-font-size;
+  font-weight: 400;
+  line-height: $code-font-size * 1.6;
+
+  // unicode-bidi: embed
+  // white-space: pre-wrap
+  // word-break: keep-all
+  overflow: auto;
+
+  @include border-radius($code-border-radius);
+
+  background-color: $code-default-bg;
+  color: $code-default-text;
+
+  &.#{$class-code-small} {
+    max-height: 5rem;
+    overflow-y: auto;
+  }
+
+  &.#{$class-code-medium} {
+    max-height: 10rem;
+    overflow-y: auto;
+  }
+
+  &.#{$class-code-large} {
+    max-height: 18rem;
+    overflow-y: auto;
+  }
+}
+
+.#{$class-code-class} {
+  font-weight: 700;
+  font-family: $console_font;
+  font-size: 0.8em;
+  color: $code-class-color;
+}

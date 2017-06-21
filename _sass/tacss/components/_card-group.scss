@@ -1,0 +1,44 @@
+// Make the div behave like a card
+@media only screen and (min-width: #{nth($breakpoint-mobile, 3)}px) {
+  .#{$class-card-group} {
+    position: relative;
+    display: inline-flex;
+
+    // make sure the group take all aviable with
+    width: 100%;
+
+    > .#{$class-card} {
+      position: relative;
+      flex: 0 1 auto;
+      margin: 0;
+    }
+
+    // Prevent double borders when cards are next to each other
+    .#{$class-card}  + .#{$class-card} {
+      margin-left: -$card-group-border-width;
+    }
+  }
+
+  // Set corners individual because sometimes a single card can be in a .#{$class-card-group} and we need :first-child and :last-child to both match
+  .#{$class-card-group} > .#{$class-card} {
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+
+      &:not(:last-child) {
+        @include border-right-radius(0);
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:not(:first-child) {
+        @include border-left-radius(0);
+      }
+    }
+  }
+}

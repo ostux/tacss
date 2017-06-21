@@ -1,0 +1,90 @@
+/* _collapsible.sass */
+
+.#{$class-collapsible} {
+  position: relative;
+  background-color: inherit;
+}
+
+.#{$class-collapsible-content} {
+  position: relative;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+
+  &.#{$class-right} {
+    right: 0;
+    left: auto;
+  }
+
+  max-height: 0;
+  transition: transform 0.2s $animation;
+  transform-origin: 50% top;
+  transform: scale(1, 0);
+  margin: 0;
+  padding: 0;
+}
+
+.#{$class-collapsible-content}.#{$class-isVisible} {
+  max-height: 5000px;
+  transition: transform 0.3s $animation;
+  transform: scale(1, 1);
+
+  &.#{$class-menu} {
+    @include shadow-8dp;
+  }
+
+  &[class*="col-"]:not(.#{$class-layout-no-gutter}) {
+    margin: nth($breakpoint-mobile, 4);
+    padding: inherit;
+  }
+}
+
+//NAVBAR EXCEPTIONS!!!
+.#{$class-navbar} {
+  & > .#{$class-collapsible} {
+    width: auto;
+  }
+
+  //the first collapsible-content class position absolute. to leave the flex-container.
+  //make sure the parent position absolute or relative!
+  & > .#{$class-collapsible} > .#{$class-collapsible-content} {
+    position: absolute;
+    top: 100%;
+  }
+}
+
+//CARD EXCEPTIONS!!!
+.#{$class-card} {
+  & .#{$class-collapsible}.#{$class-card-menu} {
+    width: auto;
+  }
+
+  & .#{$class-collapsible}.#{$class-card-menu} .#{$class-collapsible-content} {
+    position: absolute;
+    top: $card-padding * 3;
+    right: $card-padding;
+    left: auto;
+
+    @media screen and (max-width: #{nth($breakpoint-mobile, 3)}px) {
+      left: $card-padding;
+    }
+  }
+
+  & .#{$class-collapsible}.#{$class-card-menu} label.#{$class-button}.#{$class-button-fab} ~ .#{$class-collapsible-content} {
+    top: calc( #{$button-size-fab} + #{$card-padding} );
+  }
+
+  & .#{$class-collapsible}.#{$class-card-menu} label.#{$class-button-fab}.#{$class-button-mini} ~ .#{$class-collapsible-content} {
+    top: calc( #{$button-size-fab-mini} + #{$card-padding} );
+  }
+
+  & .#{$class-collapsible}.#{$class-card-menu} label.#{$class-button} ~ .#{$class-collapsible-content} {
+    position: absolute;
+    top: calc( #{$button-height} + #{$card-padding} );
+  }
+
+  & .#{$class-collapsible}.#{$class-card-menu} label.#{$class-button-mini} ~ .#{$class-collapsible-content} {
+    position: absolute;
+    top: calc( #{$button-height-mini} + #{$card-padding} );
+  }
+}

@@ -1,0 +1,49 @@
+/* utilities/_variant.sass */
+@if $enable-variants {
+  // Alternate styles
+  // Generate contextual modifier classes for colorizing some element.
+  // Example:
+  //      - Alert
+  //      - Card
+  //      - Code
+
+  .#{$class-primary}.#{$class-primary} {
+    @include variant($primary-bg, $primary-border, $primary-text);
+  }
+
+  .#{$class-success}.#{$class-success} {
+    @include variant($success-bg, $success-border, $success-text);
+  }
+
+  .#{$class-info}.#{$class-info} {
+    @include variant($info-bg, $info-border, $info-text);
+  }
+
+  .#{$class-warning}.#{$class-warning} {
+    @include variant($warning-bg, $warning-border, $warning-text);
+  }
+
+  .#{$class-danger}.#{$class-danger} {
+    @include variant($danger-bg, $danger-border, $danger-text);
+  }
+
+  .#{$class-primary-inverse}.#{$class-primary-inverse} {
+    @include variant($primary-border, $primary-border, $primary-bg);
+  }
+
+  .#{$class-success-inverse}.#{$class-success-inverse} {
+    @include variant($success-border, $success-border, set-font-color($success-border, $brand-font-color));
+  }
+
+  .#{$class-info-inverse}.#{$class-info-inverse} {
+    @include variant($info-border, $info-border, set-font-color($info-border, $brand-font-color));
+  }
+
+  .#{$class-warning-inverse}.#{$class-warning-inverse} {
+    @include variant($warning-border, $warning-border, set-font-color($warning-border, $brand-font-color));
+  }
+
+  .#{$class-danger-inverse}.#{$class-danger-inverse} {
+    @include variant($danger-border, $danger-border, set-font-color($danger-border, $brand-font-color));
+  }
+}

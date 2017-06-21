@@ -1,0 +1,89 @@
+/* _dialog.sass */
+
+.#{$class-dialog} {
+  @include shadow-24dp;
+
+  display: none;
+  flex-wrap: nowrap;
+
+  //chrome fixed element bugfix - fixed element can be rendered under other element on the page solution:
+  //http://www.webdesignerforum.co.uk/topic/82517-very-strange-chrome-bug-with-z-index-and-positionfixed/?p=491323
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+
+  @if $enable-colors {
+    background-color: $dialog-color-background;
+  }
+
+  & .#{$class-dialog-title} {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    padding: 24px 24px 20px;
+    margin: 0;
+    font-family: $brand_font;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  & .#{$class-dialog-actions} {
+    display: flex;
+    flex: 1 0 auto;
+    position: relative;
+    bottom: 0;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+
+  & .#{$class-dialog-content} {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    height: auto;
+    padding: 0 24px 24px 24px;
+  }
+
+  & > .#{$class-dialog-content} {
+    padding-top: 20px;
+  }
+}
+
+.#{$class-dialog}.#{$class-isVisible} {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-height: 90%;
+  overflow: hidden;
+  width: 100%;
+
+  @media only screen and (max-width: #{nth($breakpoint-mobile, 3)}px) {
+    left: 0;
+    transform: translate(0, -50%);
+    width: calc(100% - 10%);
+    min-width: calc(100% - #{nth($breakpoint-mobile, 4)}*2);
+
+    &.#{$class-layout-no-gutter} {
+      transform: translate(5%, -50%);
+      width: calc(100% - 10%);
+      min-width: calc(100% - 10%);
+    }
+  }
+
+  @media only screen and (min-width: #{nth($breakpoint-tablet, 3)}px) and (max-width: #{nth($breakpoint-desktop, 3) / 3 * 2}px) {
+    left: 0;
+    transform: translate(5%, -50%);
+    width: calc(100% - 10% - #{nth($breakpoint-mobile, 4)}*2);
+    min-width: calc(100% - 10% - #{nth($breakpoint-mobile, 4)}*2);
+
+    &.#{$class-layout-no-gutter} {
+      transform: translate(10%, -50%);
+      width: calc(100% - 20%);
+      min-width: calc(100% - 10%);
+    }
+  }
+}

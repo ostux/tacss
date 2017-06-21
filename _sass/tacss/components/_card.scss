@@ -1,0 +1,92 @@
+/* _card.sass */
+
+%card-border {
+  border-bottom: $card-border-width solid;
+  border-top: $card-border-width solid;
+  border-color: inherit;
+
+  &:first-child {
+    border-top: none;
+    border-bottom: $card-border-width solid;
+    border-color: inherit;
+  }
+
+  &:last-child {
+    border-top: $card-border-width solid;
+    border-bottom: none;
+    border-color: inherit;
+  }
+}
+
+.#{$class-card} {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: $card-background;
+  border: $card-border-width solid $card-border-color;
+
+  @include border-radius($card-border-radius);
+
+  padding: 0;
+  overflow: hidden;
+  z-index: 1;
+
+  // Card header or footer depending it is the first or last child
+  & .#{$class-card-featured} {
+    position: relative;
+    padding: ($card-padding / 2) $card-padding;
+
+    //border color must be same the rest of the card even if used the "color-variant" class
+    //(primary, succcess, info, warning, danger)
+    @extend %card-border;
+  }
+
+  & .#{$class-card-block} {
+    display: block;
+    padding: $card-padding;
+    flex-grow: 1;
+  }
+
+  & .#{$class-card-title} {
+    margin-top: 0;
+    margin-bottom: $card-padding;
+  }
+
+  & .#{$class-card-subtitle} {
+    margin-top: -($card-padding / 2);
+    margin-bottom: $card-padding;
+  }
+
+  & .#{$class-card-action} {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    justify-content: flex-end;
+
+    &.#{$class-card-action--bordered} {
+      @extend %card-border;
+    }
+  }
+}
+
+.#{$class-card-featured},
+.#{$class-card-block},
+.#{$class-card-action} {
+  &:first-child {
+    @include border-top-radius($card-border-radius);
+  }
+
+  &:last-child {
+    @include border-bottom-radius($card-border-radius);
+  }
+}
+
+//!!!TODO: atvinni a menube!!!//
+.#{$class-card-menu} {
+  & .#{$class-card-menu-link} {
+    position: absolute;
+    z-index: 99;
+  }
+}

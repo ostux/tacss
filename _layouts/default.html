@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include head.html %}
+    </head>
+<body>
+    {% include drawer.html %}
+    <main class="main" id="tacss-main">
+        <header>
+            {% include navbar.html %}
+        </header>
+        {{content}}
+    </main>
+    <script src="{{ site.baseurl }}/js/tacss.js"></script>
+</body>
+</html>

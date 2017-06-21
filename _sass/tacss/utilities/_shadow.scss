@@ -1,0 +1,84 @@
+/* _shadow.sass */
+.#{$class-shadow-2} {
+  @include shadow-2dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-2dp;
+    }
+  }
+}
+
+.#{$class-shadow-3} {
+  @include shadow-3dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-3dp;
+    }
+  }
+}
+
+.#{$class-shadow-4} {
+  @include shadow-4dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-4dp;
+    }
+  }
+}
+
+.#{$class-shadow-6} {
+  @include shadow-6dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-6dp;
+    }
+  }
+}
+
+.#{$class-shadow-8} {
+  @include shadow-8dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-8dp;
+    }
+  }
+}
+
+.#{$class-shadow-16} {
+  @include shadow-16dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-16dp;
+    }
+  }
+}
+
+.#{$class-shadow-24} {
+  @include shadow-24dp;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-24dp;
+    }
+  }
+}

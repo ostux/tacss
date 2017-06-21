@@ -1,0 +1,55 @@
+/* alert.sass */
+
+.#{$class-alert} {
+  position: relative;
+  padding: $alert-padding;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid;
+
+  @include border-radius($alert-border-radius);
+
+  @if $enable-colors {
+    background-color: $alert-background;
+    border-color: $alert-border-color;
+    color: $alert-color;
+  }
+
+  & > * {
+    color: inherit;
+  }
+
+  .#{$class-alert-close} {
+    position: absolute;
+    padding: $alert-padding $alert-padding;
+    display: block;
+    top: 0;
+    right: 0;
+
+    &:hover {
+      cursor: pointer;
+      cursor: hand;
+      text-decoration: none !important;
+    }
+  }
+
+  &.#{$class-isHidden} {
+    display: none;
+  }
+}
+
+.#{$class-alert-closeable} {
+  padding-right: 2rem;
+}
+
+// Title for larger alerts
+.#{$class-alert-title} {
+  color: inherit;
+}
+
+// Provide class for links that match alerts
+.#{$class-alert-link} {
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+//working with: (primary, succcess, info, warning, danger) - if $enable-variants = true

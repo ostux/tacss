@@ -1,0 +1,129 @@
+/* _form.sass */
+.#{$class-form} {
+  display: block;
+  width: 100%;
+
+  @if $enable-colors {
+    background-color: $white;
+  }
+}
+
+.#{$class-form-text} {
+  display: block;
+}
+
+.#{$class-form-inline} {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  & .#{$class-form-control} {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  & .#{$class-form-check} {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.#{$class-form-group} {
+  margin-bottom: 1rem;
+}
+
+fieldset.#{$class-form-group} {
+  @if $enable-colors {
+    border-color: $brand-accent-color;
+  }
+  @else {
+    border: none;
+  }
+
+  border-width: 1px;
+}
+
+.#{$class-form-control} {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: $secondary-font-color;
+  background-color: inherit;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+
+  @include border-radius($form-control-border-radius);
+
+  &:focus {
+    color: $brand-font-color;
+
+    @if $enable-colors {
+      border-color: $brand-accent-color;
+      outline: 0;
+    }
+  }
+
+  &.disabled {
+    .#{$class-form-check-label} {
+      color: $secondary-font-color;
+      cursor: not-allowed;
+    }
+  }
+
+  //just for fan :)
+  &[class*="shadow-2"]:focus {
+    box-shadow: none;
+  }
+
+  &[class*="shadow-3"]:focus {
+    @include shadow-2dp;
+  }
+
+  &[class*="shadow-4"]:focus {
+    @include shadow-3dp;
+  }
+
+  &[class*="shadow-6"]:focus {
+    @include shadow-4dp;
+  }
+
+  &[class*="shadow-8"]:focus {
+    @include shadow-6dp;
+  }
+
+  &[class*="shadow-16"]:focus {
+    @include shadow-8dp;
+  }
+
+  &[class*="shadow-24"]:focus {
+    @include shadow-16dp;
+  }
+}
+
+.#{$class-form-check} {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: inherit;
+
+  &.#{$class-form-check-inline} {
+    display: inline-block;
+    width: auto;
+  }
+
+  &.disabled {
+    & .#{$class-form-check-label} {
+      background-color: inherit;
+      color: $secondary-font-color;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// .#{$class-form-check-label}
+
+// .#{$class-form-check-input}

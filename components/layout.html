@@ -1,0 +1,58 @@
+---
+layout: page
+title: Layout
+description: taCSS layout example.
+---
+<section class="m-t-3 col-12">
+    <div class="row">
+        <h6>Page HTML structure</h6>
+
+        <p class="col-12">
+            The basic layout:
+        </p>
+<div class="code info col-12">
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="tacss.min.css">
+        <!-- any extra style -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Important: ONE drawer / PAGE. -->
+        <nav class="drawer">
+            <!-- drawer content -->
+        </nav>
+        <!-- All other element must to be in the main element.
+             Or don't get surprise if the drawer menu and the page not working together -->
+        <main>
+            <header>
+                <!-- navigation bars -->
+                <nav class="navbar">
+                    <!-- hamburger icon -->
+                    <!-- drawer-toggler class inportant. This class responsible to the drawer behaviour.
+                        hamburger-icon class just a css hamburget background.  -->
+                    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+
+                    <!-- navigation bar content -->
+                </nav>
+            </header>
+            <!-- the page content -->
+            <footer>
+                <!-- footer content -->
+            </footer>
+        </main>
+        <script src="tacss.min.js"></script>
+    </body>
+</html>
+{% endhighlight %}
+</div>
+    </div>
+</section>
+
+
+

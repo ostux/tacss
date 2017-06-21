@@ -1,0 +1,17 @@
+/* hamburger.sass */
+
+.#{$class-hamburger-icon} {
+  background-position: center center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 17.5%, currentColor 17.5%, currentColor 27.5%, rgba(255, 255, 255, 0) 27.5%, rgba(255, 255, 255, 0) 45%, currentColor 45%, currentColor 55%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 72.5%, currentColor 72.5%, currentColor 82.5%, rgba(255, 255, 255, 0) 82.5%, rgba(255, 255, 255, 0) 100%);
+}
+
+.#{$class-navbar} .#{$class-hamburger-icon} {
+  height: 100%;
+  min-width: $navbar-height;
+
+  @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+    min-width: $navbar-height-desktop;
+  }
+}

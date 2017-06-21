@@ -1,0 +1,44 @@
+/* _dropdown.sass */
+
+.#{$class-dropdown-content} {
+  background-color: $white;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  width: auto;
+  top: 100%;
+  left: 0;
+
+  &.#{$class-right} {
+    right: 0;
+    left: auto;
+  }
+
+  max-height: 0;
+  transition: transform 0.2s $animation;
+  transform-origin: 50% 0%;
+  transform: scale(1, 0);
+  margin: 0;
+}
+
+.#{$class-dropdown} {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+  background-color: inherit;
+
+  &:hover {
+    z-index: 99;
+  }
+
+  &:hover .#{$class-dropdown-content} {
+    z-index: 199;
+    max-height: 5000px;
+    transition: transform 0.3s $animation;
+    transform: scale(1, 1);
+
+    &[class*="col-"]:not(.#{$class-layout-no-gutter}) {
+      margin: nth($breakpoint-mobile, 4);
+    }
+  }
+}

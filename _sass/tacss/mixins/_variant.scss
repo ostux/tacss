@@ -1,0 +1,11 @@
+@mixin variant($background, $border-color, $color) {
+  background-color: $background;
+  border-color: $border-color;
+  color: $color;
+
+  & > * {
+    background-color: $background;
+    border-color: $border-color;
+    color: $color;
+  }
+}

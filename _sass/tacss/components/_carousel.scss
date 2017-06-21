@@ -1,0 +1,106 @@
+/* _carousel.sass */
+
+.carousel {
+  background: black;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    display: block;
+    content: "";
+    padding-top: calc( var(--carousel-image-height) / var(--carousel-image-widht) * 100% );
+  }
+
+  > .carousel-mask {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    > [class*="#{$class-carousel-item}"] {
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover [class*="#{$class-carousel-item}"] {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@for $i from 2 through $carousel-max-items {
+  $carousel-animation-full-time: ($carousel-animation-time + $carousel-item-show-time) * $i;
+
+  .#{$class-carousel-slide}-#{$i} {
+    @for $carousel-item from 1 through $i {
+      .#{$class-carousel-item}-#{$carousel-item} {
+        animation: #{$class-carousel-animation}-#{$i}-#{$carousel-item} #{$carousel-animation-full-time}s linear 0s forwards infinite;
+      }
+    }
+  }
+}
+
+@for $i from 2 through $carousel-max-items {
+  $carousel-animation-full-time: ($carousel-animation-time + $carousel-item-show-time) * $i;
+  $animation-percentage: 100 / $carousel-animation-full-time;
+  $show-time: $carousel-item-show-time / ($carousel-animation-full-time / 100);
+  $animation-time: $carousel-animation-time / ($carousel-animation-full-time / 100);
+
+  @for $carousel-item from 1 through $i {
+    @keyframes #{$class-carousel-animation}-#{$i}-#{$carousel-item} {
+      @if $carousel-item == 1 {
+        0% {
+          transform: translateX(0);
+        }
+
+        #{$show-time}% {
+          transform: translateX(0);
+        }
+
+        #{$show-time + $animation-time}% {
+          transform: translateX(100%);
+        }
+
+        #{100 - $animation-time}% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+      @else {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        #{($show-time + $animation-time) * ($carousel-item - 1) - $animation-time}% {
+          transform: translateX(-100%);
+        }
+
+        #{($show-time + $animation-time) * ($carousel-item - 1)}% {
+          transform: translateX(0);
+        }
+
+        #{($show-time + $animation-time) * ($carousel-item - 1) + $show-time}% {
+          transform: translateX(0);
+        }
+
+        #{($show-time + $animation-time) * ($carousel-item - 1) + $show-time + $animation-time}% {
+          transform: translateX(100%);
+        }
+
+        @if $carousel-item != $i {
+          100% {
+            transform: translateX(100%);
+          }
+        }
+      }
+    }
+  }
+}
