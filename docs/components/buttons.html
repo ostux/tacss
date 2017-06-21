@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="keywords" content="css framework ">
+<meta name="copyright" content="The MIT License © 2017">
+<meta name="author" content="Andras Toth">
+<meta name="designer" content="Andras Toth">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<title>
+  
+    Buttons &middot; taCss
+  
+</title>
+
+<!-- taCss core CSS -->
+
+  <link href="/css/tacss.css" rel="stylesheet">
+
+<link href="/assets/main.css" rel="stylesheet">
+
+    </head>
+<body>
+
+    <nav class="drawer drawer-fixed">
+    <div  class="drawer-item l-end drawer-title">
+        <img class="img-fluid" src="/img/taCss-logo.png" alt="tacss logo">
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-start">Getting Started</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-start">
+            <a class="drawer-item l-end" href="#template">install</a>
+            <a class="drawer-item l-end" href="#template">about</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-tmp">Templates</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-tmp">
+            <a class="drawer-item l-end" href="#template">template</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-obj">Objects</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-obj">
+            <a class="drawer-item l-end" href="/components/grid.html">grid</a>
+            <a class="drawer-item l-end" href="/components/drawer.html">drawer</a>
+            <a class="drawer-item l-end" href="/components/navbar.html">navbar</a>
+            <a class="drawer-item l-end" href="/components/dialog.html">dialogs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-comp">Components</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-comp">
+            <a class="drawer-item l-end" href="/components/alert.html">alert</a>
+            <a class="drawer-item l-end" href="/components/badges.html">badges</a>
+            <a class="drawer-item l-end" href="/components/buttons.html">buttons</a>
+            <a class="drawer-item l-end" href="/components/cards.html">cards</a>
+            <a class="drawer-item l-end" href="/components/carousel.html"">carousel</a>
+            <a class="drawer-item l-end" href="/components/colapsible.html">collapse</a>
+
+            <a class="drawer-item l-end" href="/components/dropdown.html">dropdown</a>
+            <a class="drawer-item l-end" href="/components/layout.html">layout</a>
+            <a class="drawer-item l-end" href="/components/forms.html">forms</a>
+            <a class="drawer-item l-end" href="#list">list</a>
+            <a class="drawer-item l-end" href="#table">table</a>
+            <a class="drawer-item l-end" href="/components/tabs.html">tabs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-util">Utilities</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-util">
+            <a class="drawer-item l-end" href="/components/colors.html">colors</a>
+        </div>
+    </div>
+    <a class="drawer-item l-end" href="https://andrastoth.eu">About</a>
+</nav>
+
+    <main class="main" id="tacss-main">
+        <header class="">
+            <nav class="navbar navbar-fixed  shadow-4 ">
+    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+    
+    <span class="navbar-title">
+          Buttons
+    </span>
+
+    
+</nav>
+
+
+        </header>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<section class="m-t-3 col-12">
+    <div class="row">
+        <h3>Buttons</h3>
+        <p>
+            The buttons are very important every website for interaction. So let's take a look how about the buttons look like in taCSS.
+
+        </p>
+
+        <h6>Contents</h6>
+        <ul>
+            <li><a href="#button_type">types</a></li>
+            <li><a href="#button_predefined">predefined styles</a></li>
+            <li><a href="#button_effects">effects</a></li>
+            <li><a href="#button_size">size</a></li>
+            <li><a href="#button_color">color</a></li>
+            <li><a href="#button_disabled">disabled</a></li>
+            <li><a href="#button_width">width</a></li>
+            <li><a href="#button_group">groups</a></li>
+        </ul>
+
+        <section class="p-t-5" class="row" id="button_type">
+            <h6>Types</h6>
+            <p>
+                Two <b>type</b> of button: normal button and floating action button (FAB). FAB buttons background color accent by default.
+            </p>
+            <div class="col-12 l-space-around">
+                <a class="btn"> button link </a>
+                <button class="btn"> default button </button>
+                <button class="fab"> fab </button>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- default button style link --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button link <span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- default button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> default button <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- floating action button (FAB) --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab"</span><span class="nt">&gt;</span> fab <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_predefined">
+            <h6>Predefined </h6>
+            <p>
+                taCSS includes six divdefined button styles, each serving its own semantic purpose.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn"> default button </button>
+                <button class="btn btn-primary"> button primary </button>
+                <button class="btn btn-success"> button success </button>
+                <button class="btn btn-info"> button info </button>
+                <button class="btn btn-warning"> button warning </button>
+                <button class="btn btn-danger"> button danger </button>
+
+                <button class="fab"> fab </button>
+                <button class="fab btn-primary">primary</button>
+                <button class="fab btn-success">success</button>
+                <button class="fab btn-info">info</button>
+                <button class="fab btn-warning">warning</button>
+                <button class="fab btn-danger">danger</button>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- default button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> default button <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span> button primary <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-success"</span><span class="nt">&gt;</span> button success <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span> button info <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-warning"</span><span class="nt">&gt;</span> button warning <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-danger"</span><span class="nt">&gt;</span> button danger <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- floating action button (FAB) --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab"</span><span class="nt">&gt;</span> fab <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab btn-primary"</span><span class="nt">&gt;</span>primary<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab btn-success"</span><span class="nt">&gt;</span>success<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab btn-info"</span><span class="nt">&gt;</span>info<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab btn-warning"</span><span class="nt">&gt;</span>warning<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab btn-danger"</span><span class="nt">&gt;</span>danger<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_effects">
+            <h6 >Effects</h6>
+            <p>
+                The buttons effects can be <span class="code-class">.raised</span> and <span class="code-class">.ripple</span>. The ripple color same as the current text color the given element (oppacity 0.5). Also the ripple effect need overflow: hidden... It's mean, you can't use with bages or any other element which need overflow: visible.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn raised"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+                <button class="btn ripple"> i'm a button </button>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- raised button with FontAwsome icon --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn raised"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-thumbs-o-up"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- ripple button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn ripple"</span><span class="nt">&gt;</span> i'm a button <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        <div class="col-12 l-space-around">
+            <button class="fab raised"> <i class="material-icons"> account_circle </i> </button>
+            <button class="fab ripple"> <i class="fa fa-user-o" aria-hidden="true"></i> </button>
+        </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- raised fab with material icon --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab raised"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span> account_circle <span class="nt">&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- ripple fab with Font Awesome icon --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab ripple"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-user-o"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_size">
+            <h6>Size</h6>
+            <p>
+                Size the buttons with <span class="code-class">.btn-mini</span>, <span class="code-class">.btn-huge</span> or with <span class="code-class">.fab-mini</span> class. The mini FAB buttons background-color: transparent by default.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn btn-mini"> i'm mini button </button>
+                <button class="btn btn-mini raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm mini button </button>
+                <button class="btn btn"> i'm button </button>
+                <button class="btn btn raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+                <button class="btn btn-huge"> i'm huge button </button>
+                <button class="btn btn-huge raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm huge button </button>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- mini button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-mini"</span><span class="nt">&gt;</span> i'm mini button <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-mini raised ripple"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-thumbs-o-up"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> i'm mini button <span class="nt">&lt;/button&gt;</span>
+<span class="c">&lt;!-- default button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn"</span><span class="nt">&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn raised ripple"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-thumbs-o-up"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span>
+<span class="c">&lt;!-- huge button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-huge"</span><span class="nt">&gt;</span> i'm huge button <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-huge raised ripple"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-thumbs-o-up"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> i'm huge button <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+            <div class="col-12 l-space-around">
+                <button class="fab fab-mini"> <i class="material-icons"> face </i> </button>
+                <button class="fab raised ripple fab-mini"> <i class="fa fa-lg fa-thumbs-o-up" aria-hidden="true"></i> </button>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- mini fab with material icon --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab fab-mini"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span> face <span class="nt">&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- mini raised, ripple fab with FontAwsome icon --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab raised ripple fab-mini"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-lg fa-thumbs-o-up"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_color">
+            <h6>Color</h6>
+            <p>
+                Button can be colored as well. You can use any color from the <a class="text-blue" href="/components/colors.html">color</a> palette. To set the text color readable automaticaly use the <span class="code-class">colored</span> class within your choosen background color. Use the color name with the <span class="code-class">.bg-</span> prefix to set the background color. Colorize just the text, use the <span class="code-class">.text-</span> prefix. To set the outline color and the text then use the <span class="code-class">.outline-</span> prefix with your choosen color. Of course you can use with normal buttons or FAB as well... like any other options.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn bg-orange raised ripple"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> i'm button </button>
+                <button class="btn btn-mini text-purple-8 raised ripple"> i'm button </button>
+                <button class="bg-blue-2 text-indigo-9 raised ripple fab"> <i class="material-icons"> airplanemode_active </i> </button>
+                <button class="btn outline-teal raised ripple"> i'm button </button>
+            </div>
+    <div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- orange raised, ripple button with FontAwsome icon --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn bg-orange raised ripple"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-thumbs-o-up"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- mini raised, ripple button with colored text to purple --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-mini text-purple-8 raised ripple"</span><span class="nt">&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- raised, ripple fab with material icon and colored background and text --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"bg-blue-2 text-indigo-9 raised ripple fab"</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span> airplanemode_active <span class="nt">&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- raised, ripple button outline colored --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn outline-teal raised ripple"</span><span class="nt">&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_disabled">
+            <h6>Disabled</h6>
+            <p>
+                Disabled the button by using the <span class="class">disabled</span> attribute. Use the <span class="class">disabled</span> class with links.
+                Ripple effect and colors are not effecting the disabled buttons.
+            </p>
+            <div class="col-12 l-space-around">
+                <button class="btn bg-orange raised ripple" disabled> i'm button </button>
+                <a class="btn orange raised ripple disabled"> i'm button </a>
+                <button class="fab raised ripple" disabled> <i class="material-icons"> airplanemode_inactive </i> </button>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- disabled raised, ripple and colored button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn bg-orange raised ripple"</span> <span class="na">disabled</span><span class="nt">&gt;</span> i'm button <span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- disabled raised, ripple and colored button style link --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn orange raised ripple disabled"</span><span class="nt">&gt;</span> i'm button <span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- disabled raised, ripple and colored fab --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"fab raised ripple"</span> <span class="na">disabled</span><span class="nt">&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span> airplanemode_inactive <span class="nt">&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_width">
+            <h6>Width</h6>
+            <p >
+                Sometime need a button to take all aviable space. Well then use the <span class="code-class">.btn-block</span> class to achive this. The button will grow up all available space horizontaly. The button height not affected.
+                Don't use <span class="code-class">.ripple</span> efect with full lenght button because the ripple effect diameter 200px, buttons wider than 200px look not nice.<br>
+                The button with possible to setup using the <span class="code-class">.col-X</span> classes as well. The gutter still effecting the button with. If you don't want gutter use the <span class="code-class">no-gutter</span> class.
+            </p>
+            <div class="col-12">
+                <button class="btn outline-teal btn-block t-left">i'm button</button>
+                <button class="btn outline-purple-7 raised btn-block">i'm button</button>
+                <button class="btn bg-teal raised btn-block t-right">i'm button</button>
+                <div class="row">
+                    <button class="btn raised bg-orange left col-6 col-t-4 col-m-2 no-gutter">i'm button</button>
+                    <div class="spacer"></div>
+                    <button class="btn raised col-6 col-t-4 col-m-2 no-gutter">i'm button</button>
+                </div>
+            </div>
+<div class="col-12 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- full lenght, left aligned, outline, raised button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn outline-teal btn-block t-left"</span><span class="nt">&gt;</span>i'm button<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- full lenght, center aligned (default), outline, raised button [ripple effect as well so you can see how terrible if you useing this effect with long buttons...]--&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn outline-purple-7 raised btn-block"</span><span class="nt">&gt;</span>i'm button<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- full lenght, right aligned, raised button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn bg-teal raised btn-block t-right"</span><span class="nt">&gt;</span>i'm button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- col-6 (half of its container) lenght, left aligned, raised button --&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn raised bg-orange left col-6 col-t-4 col-m-2 no-gutter"</span><span class="nt">&gt;</span>i'm button<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"spacer"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="c">&lt;!-- col-6 (half of its container) lenght, raised button --&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn raised col-6 col-t-4 col-m-2 no-gutter"</span><span class="nt">&gt;</span>i'm button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+        </section>
+
+        <section class="p-t-5" class="row" id="button_group">
+            <h6>Button group</h6>
+            <p>
+                Button group direction can horizontal or vertical. Wrap the buttons around with <span class="code-class">.btn-group</span> or <span class="code-class">.btn-group-vertical</span> classes.
+            </p>
+
+            <div class="col-4 col-tablet-4">
+                <div class="btn-group ">
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                </div>
+            </div>
+<div class="col-8 col-tablet-4 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group "</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+            <div class="col-4 col-tablet-4">
+                <div class="btn-group-vertical ">
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                    <button class="btn"> button </button>
+                </div>
+            </div>
+<div class="col-8 col-tablet-4 code info code-medium">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group-vertical "</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+        </section>
+    </div>
+</section>
+
+        <footer class="footer">
+            <div class="col-12 t-center">
+    taCSS - The MIT License &copy; 2017 Andras Toth
+</div>
+
+        </footer>
+    </main>
+    <script src="/js/tacss.js"></script>
+</body>
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="keywords" content="css framework ">
+<meta name="copyright" content="The MIT License © 2017">
+<meta name="author" content="Andras Toth">
+<meta name="designer" content="Andras Toth">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<title>
+  
+    Cards &middot; taCss
+  
+</title>
+
+<!-- taCss core CSS -->
+
+  <link href="/css/tacss.css" rel="stylesheet">
+
+<link href="/assets/main.css" rel="stylesheet">
+
+    </head>
+<body>
+
+    <nav class="drawer drawer-fixed">
+    <div  class="drawer-item l-end drawer-title">
+        <img class="img-fluid" src="/img/taCss-logo.png" alt="tacss logo">
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-start">Getting Started</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-start">
+            <a class="drawer-item l-end" href="#template">install</a>
+            <a class="drawer-item l-end" href="#template">about</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-tmp">Templates</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-tmp">
+            <a class="drawer-item l-end" href="#template">template</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-obj">Objects</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-obj">
+            <a class="drawer-item l-end" href="/components/grid.html">grid</a>
+            <a class="drawer-item l-end" href="/components/drawer.html">drawer</a>
+            <a class="drawer-item l-end" href="/components/navbar.html">navbar</a>
+            <a class="drawer-item l-end" href="/components/dialog.html">dialogs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-comp">Components</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-comp">
+            <a class="drawer-item l-end" href="/components/alert.html">alert</a>
+            <a class="drawer-item l-end" href="/components/badges.html">badges</a>
+            <a class="drawer-item l-end" href="/components/buttons.html">buttons</a>
+            <a class="drawer-item l-end" href="/components/cards.html">cards</a>
+            <a class="drawer-item l-end" href="/components/carousel.html"">carousel</a>
+            <a class="drawer-item l-end" href="/components/colapsible.html">collapse</a>
+
+            <a class="drawer-item l-end" href="/components/dropdown.html">dropdown</a>
+            <a class="drawer-item l-end" href="/components/layout.html">layout</a>
+            <a class="drawer-item l-end" href="/components/forms.html">forms</a>
+            <a class="drawer-item l-end" href="#list">list</a>
+            <a class="drawer-item l-end" href="#table">table</a>
+            <a class="drawer-item l-end" href="/components/tabs.html">tabs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-util">Utilities</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-util">
+            <a class="drawer-item l-end" href="/components/colors.html">colors</a>
+        </div>
+    </div>
+    <a class="drawer-item l-end" href="https://andrastoth.eu">About</a>
+</nav>
+
+    <main class="main" id="tacss-main">
+        <header class="">
+            <nav class="navbar navbar-fixed  shadow-4 ">
+    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+    
+    <span class="navbar-title">
+          Cards
+    </span>
+
+    
+</nav>
+
+
+        </header>
+        <div class="m-t-3 col-12">
+    <div class="row">
+        <p>
+            A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
+        </p>
+
+        <h6>Contents</h6>
+        <ul>
+            <li><a href="#card_example">Example</a></li>
+            <li><a href="#card_blocks">Blocks</a></li>
+            <li><a href="#card_title">Title, subtitle</a></li>
+            <li><a href="#card_featured">Header and footer</a></li>
+            <li><a href="#card_size">Size</a></li>
+            <li><a href="#card_images">Images</a></li>
+            <li><a href="#card_styles">Card styles</a></li>
+            <li><a href="#card_group">Group</a></li>
+        </ul>
+
+        <h6 class="p-t-5" id="card_example">Example</h6>
+        <p>
+            Cards are built with as little markup and styles as possible, but still manage to deliver a lot of control and customization. Built with flexbox, they offer easy alignment and mix well with other taCSS components.
+        </p>
+        <p>
+            Below is an example of a basic card with mixed content and a maximised width. Cards have no fixed width to start, so they’ll naturally fill the full width of its parent element. This is easily customized with any sizing options.
+        </p>
+
+        <div class="col-6 col-tablet-3 l-center">
+            <div class="card" style="max-width: 30rem;">
+                <img class="img-fluid" src="/img/robin.jpg">
+                <div class="img-overlay text-white">
+                    The robin...
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">The Robin</h4>
+                    <p class="card-text">
+            The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird, specifically a chat, that was formerly classified as a member of the thrush family (Turdidae) but is now considered to be an Old World flycatcher. About 12.5–14.0 cm (5.0–5.5 inch) in length, the male and female are similar in colouration, with an orange breast and face lined with grey, brown upperparts and a whitish belly. It is found across Europe, east to Western Siberia and south to North Africa; it is sedentary in most of its range except the far north.
+                    </p>
+                </div>
+                <div class="card-action card-action--bordered">
+                    <button class="btn btn-primary">Do something</button>
+                </div>
+            </div>
+        </div>
+<div class="col-6 col-tablet-5 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span> <span class="na">style=</span><span class="s">"max-width: 30rem;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-fluid"</span> <span class="na">src=</span><span class="s">"/img/robin.jpg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"img-overlay text-white"</span><span class="nt">&gt;</span>
+        The robin...
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"card-title"</span><span class="nt">&gt;</span>The Robin<span class="nt">&lt;/h4&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"card-text"</span><span class="nt">&gt;</span>
+The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird, specifically a chat, that was formerly classified as a member of the thrush family (Turdidae) but is now considered to be an Old World flycatcher. About 12.5–14.0 cm (5.0–5.5 inch) in length, the male and female are similar in colouration, with an orange breast and face lined with grey, brown upperparts and a whitish belly. It is found across Europe, east to Western Siberia and south to North Africa; it is sedentary in most of its range except the far north.
+        <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-action card-action--bordered"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Do something<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+        <h6 class="p-t-5" id="card_blocks">Blocks</h6>
+        <p>
+            The building block of a card is the <span class="code-class">.card-block</span>. Use it whenever you need a padded div within a card.
+        </p>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-block">
+                    This is some text within a card block.
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+        This is some text within a card block.
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+        <h6 class="p-t-5" id="card_text">Title, subtitle</h6>
+        <p>
+            Card titles are used by adding <span class="code-class">.card-title</span>, subtitles by adding <span class="code-class">.card-subtitle</span> to a <span class="code-class">&lt;h*&gt;</span> tag.
+        </p>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-block">
+                    <h3 class="card-title">Card title</h3>
+                    <h6 class="card-subtitle text-grey">Card subtitle</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, sit perferendis, ex quae alias animi, porro provident deserunt redivhenderit qui rem adipisci!</p>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"card-title"</span><span class="nt">&gt;</span>Card title<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"card-subtitle text-grey"</span><span class="nt">&gt;</span>Card subtitle<span class="nt">&lt;/h6&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, sit perferendis, ex quae alias animi, porro provident deserunt redivhenderit qui rem adipisci!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+        <h6 class="p-t-5" id="card_featured">Header and footer</h6>
+        <p>
+            Add an optional header and/or footer within a card by <span class="code-class">.card-featured</span> class.
+        </p>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-featured bg-grey-3">
+                    Header
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">Special title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, sit perferendis, ex quae alias animi.</p>
+                    <a href="#" class="btn btn-primary">Do something</a>
+                </div>
+                <div class="card-featured bg-grey-3">
+                    Footer
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+        Header
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"card-title"</span><span class="nt">&gt;</span>Special title<span class="nt">&lt;/h4&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, sit perferendis, ex quae alias animi.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Do something<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+        Footer
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+        <h6 class="p-t-5" id="card_size">Sizing</h6>
+        <p>
+            Cards assume no specific width to start, so they’ll be 100% wide unless otherwise stated. You can change this as needed with custom CSS, grid classes or utilities.
+        </p>
+        <div class="col-12">
+            <div class="row">
+                <div class="card col-2">
+                    <div class="card-featured bg-grey-3">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card (width: col-2)
+                    </div>
+                </div>
+                <div class="card col-4">
+                    <div class="card-featured bg-grey-3">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card (width: col-4)
+                    </div>
+                    <div class="card-featured bg-grey-3">
+                        Footer
+                    </div>
+                </div>
+                <div class="card col-3">
+                    <div class="card-block">
+                        Simple card (width: col-3)
+                    </div>
+                    <div class="card-featured bg-grey-3">
+                        Footer
+                    </div>
+                </div>
+                <div class="card" style="max-width:10rem;">
+                    <div class="card-block">
+                        Simple card (max-width: 10rem)
+                        heighter then the rest becouse no gutter around...
+                    </div>
+                    <div class="card-featured bg-grey-3">
+                        Footer
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (width: col-2)
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (width: col-4)
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+            Footer
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-3"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (width: col-3)
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+            Footer
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span> <span class="na">style=</span><span class="s">"max-width:10rem;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (max-width: 10rem)
+            heighter then the rest becouse no gutter around...
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-grey-3"</span><span class="nt">&gt;</span>
+            Footer
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+        <h6 class="p-t-5" id="card_images">Images</h6>
+        <p>
+            Card csn contain images, images can contain anything else within element with the <span class="code-class">.img-overlay</span> class right after the image.
+        </p>
+        <div class="col-12">
+            <div class="row">
+                <div class="card col-4">
+                    <img class="img-fluid" src="/img/robin.jpg">
+                    <div class="card-block">
+                        <h4 class="card-title">The Robin</h4>
+                        <p class="card-text">
+                The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird...
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-4">
+                    <img class="img-fluid" src="/img/robin.jpg">
+                    <div class="img-overlay text-white">
+                        <h4 class="card-title">The Robin</h4>
+                        <p class="card-text" style="text-shadow: -1px -1px 1px rgb(0, 0, 0);color:rgb(190, 236, 169);">
+            The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-fluid"</span> <span class="na">src=</span><span class="s">"/img/robin.jpg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"card-title"</span><span class="nt">&gt;</span>The Robin<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"card-text"</span><span class="nt">&gt;</span>
+    The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird...
+            <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-fluid"</span> <span class="na">src=</span><span class="s">"/img/robin.jpg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"img-overlay text-white"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"card-title"</span><span class="nt">&gt;</span>The Robin<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"card-text"</span> <span class="na">style=</span><span class="s">"text-shadow: -1px -1px 1px rgb(0, 0, 0);color:rgb(190, 236, 169);"</span><span class="nt">&gt;</span>
+The European robin (Erithacus rubecula), known simply as the robin or robin redbreast in the British Isles, is a small insectivorous passerine bird...
+            <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+        <h6 class="p-t-5" id="card_styles">Card styles</h6>
+        <p>
+            Cards include various options for customizing their <a class="slide-item" href="/components/colors.html">backgrounds</a>, borders, and <a class="slide-item" href="/components/colors.html">color</a>.
+        </p>
+        <div class="col-12">
+            <div class="row">
+                <div class="card col-2">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card default
+                    </div>
+                </div>
+                <div class="card col-2 primary">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card success
+                    </div>
+                </div>
+                <div class="card col-2 success">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card success
+                    </div>
+                </div>
+                <div class="card col-2 info">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card (width: col-2)
+                    </div>
+                </div>
+                <div class="card col-2 warning">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card (width: col-2)
+                    </div>
+                </div>
+                <div class="card col-2 danger">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card (width: col-2)
+                    </div>
+                </div>
+                <div class="card col-2 ">
+                    <div class="card-featured bg-indigo colored">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card default
+                    </div>
+                </div>
+                <div class="card col-2 ">
+                    <div class="card-featured bg-blue colored">
+                        Header
+                    </div>
+                    <div class="card-block text-red-7">
+                        Simple card default
+                    </div>
+                </div>
+                <div class="card outline-red col-2 ">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block text-red-7">
+                        Simple card default
+                    </div>
+                </div>
+                <div class="card col-2 outline-blue success">
+                    <div class="card-featured">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card default
+                    </div>
+                </div>
+                <div class="card col-2 outline-green success">
+                    <div class="card-featured bg-green-3 colored">
+                        Header
+                    </div>
+                    <div class="card-block">
+                        Simple card default
+                    </div>
+                </div>
+                <div class="card col-2 outline-orange success">
+                    <div class="card-featured bg-purple-3 colored">
+                        Header
+                    </div>
+                    <div class="card-block text-black">
+                        Simple card default
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 primary"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card success
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 success"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card success
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 info"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (width: col-2)
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 warning"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (width: col-2)
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 danger"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card (width: col-2)
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 "</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-indigo colored"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 "</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-blue colored"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block text-red-7"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card outline-red col-2 "</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block text-red-7"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 outline-blue success"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 outline-green success"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-green-3 colored"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-2 outline-orange success"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured bg-purple-3 colored"</span><span class="nt">&gt;</span>
+            Header
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block text-black"</span><span class="nt">&gt;</span>
+            Simple card default
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+        <h6 class="p-t-5" id="card_group">Card group</h6>
+        <p>
+            Use card groups to render cards as a single, attached element with equal width and height columns. Card groups use display: flex; to achieve their uniform sizing.
+        </p>
+        <div class="col-12">
+            <div class="row">
+                <div class="card-group" style="justify-content:center;">
+                    <div class="card col-4">
+                        <div class="card-featured">
+                            Header
+                        </div>
+                        <div class="card-block">
+                            Simple card
+                        </div>
+                    </div>
+                    <div class="card success col-4">
+                        <img class="img-fluid" src="/img/robin.jpg">
+                        <div class="card-block">
+                            <h6>Robin</h6>
+                            <p>
+                                One beautiful bird...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-4">
+                        <div class="card-featured">
+                            Header
+                        </div>
+                        <div class="card-block">
+                            Simple card
+                        </div>
+                        <div class="card-featured">
+                            Footer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-12 code info code-large">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-group"</span> <span class="na">style=</span><span class="s">"justify-content:center;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-4"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+                Header
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+                Simple card
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card success col-4"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-fluid"</span> <span class="na">src=</span><span class="s">"/img/robin.jpg"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h6&gt;</span>Robin<span class="nt">&lt;/h6&gt;</span>
+                <span class="nt">&lt;p&gt;</span>
+                    One beautiful bird...
+                <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card col-4"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+                Header
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+                Simple card
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-featured"</span><span class="nt">&gt;</span>
+                Footer
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+    </div>
+</div>
+
+        <footer class="footer">
+            <div class="col-12 t-center">
+    taCSS - The MIT License &copy; 2017 Andras Toth
+</div>
+
+        </footer>
+    </main>
+    <script src="/js/tacss.js"></script>
+</body>
+</html>

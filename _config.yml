@@ -30,3 +30,5 @@ theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
+
+destination: docs

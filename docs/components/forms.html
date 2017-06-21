@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="keywords" content="css framework ">
+<meta name="copyright" content="The MIT License © 2017">
+<meta name="author" content="Andras Toth">
+<meta name="designer" content="Andras Toth">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<title>
+  
+    Forms &middot; taCss
+  
+</title>
+
+<!-- taCss core CSS -->
+
+  <link href="/css/tacss.css" rel="stylesheet">
+
+<link href="/assets/main.css" rel="stylesheet">
+
+    </head>
+<body>
+
+    <nav class="drawer drawer-fixed">
+    <div  class="drawer-item l-end drawer-title">
+        <img class="img-fluid" src="/img/taCss-logo.png" alt="tacss logo">
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-start">Getting Started</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-start">
+            <a class="drawer-item l-end" href="#template">install</a>
+            <a class="drawer-item l-end" href="#template">about</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-tmp">Templates</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-tmp">
+            <a class="drawer-item l-end" href="#template">template</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-obj">Objects</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-obj">
+            <a class="drawer-item l-end" href="/components/grid.html">grid</a>
+            <a class="drawer-item l-end" href="/components/drawer.html">drawer</a>
+            <a class="drawer-item l-end" href="/components/navbar.html">navbar</a>
+            <a class="drawer-item l-end" href="/components/dialog.html">dialogs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-comp">Components</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-comp">
+            <a class="drawer-item l-end" href="/components/alert.html">alert</a>
+            <a class="drawer-item l-end" href="/components/badges.html">badges</a>
+            <a class="drawer-item l-end" href="/components/buttons.html">buttons</a>
+            <a class="drawer-item l-end" href="/components/cards.html">cards</a>
+            <a class="drawer-item l-end" href="/components/carousel.html"">carousel</a>
+            <a class="drawer-item l-end" href="/components/colapsible.html">collapse</a>
+
+            <a class="drawer-item l-end" href="/components/dropdown.html">dropdown</a>
+            <a class="drawer-item l-end" href="/components/layout.html">layout</a>
+            <a class="drawer-item l-end" href="/components/forms.html">forms</a>
+            <a class="drawer-item l-end" href="#list">list</a>
+            <a class="drawer-item l-end" href="#table">table</a>
+            <a class="drawer-item l-end" href="/components/tabs.html">tabs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-util">Utilities</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-util">
+            <a class="drawer-item l-end" href="/components/colors.html">colors</a>
+        </div>
+    </div>
+    <a class="drawer-item l-end" href="https://andrastoth.eu">About</a>
+</nav>
+
+    <main class="main" id="tacss-main">
+        <header class="">
+            <nav class="navbar navbar-fixed  shadow-4 ">
+    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+    
+    <span class="navbar-title">
+          Forms
+    </span>
+
+    
+</nav>
+
+
+        </header>
+        <section class="m-t-3 col-12">
+    <div class="row">
+        <p>
+            taCSS provides several form control styles, layout options, and custom components for creating a wide variety of forms.
+        </p>
+        <h6>Contents</h6>
+        <ul>
+            <li><a href="#form_controls">Form controls</a></li>
+            <li><a href="#card_blocks">Blocks</a></li>
+            <li><a href="#card_title">Title, subtitle</a></li>
+            <li><a href="#card_featured">Header and footer</a></li>
+            <li><a href="#card_size">Size</a></li>
+            <li><a href="#card_images">Images</a></li>
+            <li><a href="#card_styles">Card styles</a></li>
+            <li><a href="#card_group">Group</a></li>
+        </ul>
+
+        <h6 class="p-t-5" id="form_controls">Form controls</h6>
+        <p>
+            The example form below demonstrates common HTML form elements that receive updated styles from taCSS with additional classes.
+        </p>
+
+        <form class="form m-t-2">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect1">Example select</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect2">Example multiple select</label>
+            <select multiple class="form-control" id="exampleSelect2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleTextarea">Example textarea</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+          </div>
+          <fieldset class="form-group">
+            <legend>Radio buttons</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Option one is this and that&mdash;be sure to include why it's great
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                Option two can be something else and selecting it will deselect option one
+              </label>
+            </div>
+            <div class="form-check disabled">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                Option three is disabled
+              </label>
+            </div>
+          </fieldset>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+              Check me out
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+<div class="code warning code-large col-12 col-t-8">
+
+</div>
+
+    </div>
+</section>
+
+        <footer class="footer">
+            <div class="col-12 t-center">
+    taCSS - The MIT License &copy; 2017 Andras Toth
+</div>
+
+        </footer>
+    </main>
+    <script src="/js/tacss.js"></script>
+</body>
+</html>

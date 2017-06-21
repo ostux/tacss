@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="keywords" content="css framework ">
+<meta name="copyright" content="The MIT License © 2017">
+<meta name="author" content="Andras Toth">
+<meta name="designer" content="Andras Toth">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<title>
+  
+    Grid &middot; taCss
+  
+</title>
+
+<!-- taCss core CSS -->
+
+  <link href="/css/tacss.css" rel="stylesheet">
+
+<link href="/assets/main.css" rel="stylesheet">
+
+    </head>
+<body>
+
+    <nav class="drawer drawer-fixed">
+    <div  class="drawer-item l-end drawer-title">
+        <img class="img-fluid" src="/img/taCss-logo.png" alt="tacss logo">
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-start">Getting Started</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-start">
+            <a class="drawer-item l-end" href="#template">install</a>
+            <a class="drawer-item l-end" href="#template">about</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-tmp">Templates</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-tmp">
+            <a class="drawer-item l-end" href="#template">template</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-obj">Objects</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-obj">
+            <a class="drawer-item l-end" href="/components/grid.html">grid</a>
+            <a class="drawer-item l-end" href="/components/drawer.html">drawer</a>
+            <a class="drawer-item l-end" href="/components/navbar.html">navbar</a>
+            <a class="drawer-item l-end" href="/components/dialog.html">dialogs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-comp">Components</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-comp">
+            <a class="drawer-item l-end" href="/components/alert.html">alert</a>
+            <a class="drawer-item l-end" href="/components/badges.html">badges</a>
+            <a class="drawer-item l-end" href="/components/buttons.html">buttons</a>
+            <a class="drawer-item l-end" href="/components/cards.html">cards</a>
+            <a class="drawer-item l-end" href="/components/carousel.html"">carousel</a>
+            <a class="drawer-item l-end" href="/components/colapsible.html">collapse</a>
+
+            <a class="drawer-item l-end" href="/components/dropdown.html">dropdown</a>
+            <a class="drawer-item l-end" href="/components/layout.html">layout</a>
+            <a class="drawer-item l-end" href="/components/forms.html">forms</a>
+            <a class="drawer-item l-end" href="#list">list</a>
+            <a class="drawer-item l-end" href="#table">table</a>
+            <a class="drawer-item l-end" href="/components/tabs.html">tabs</a>
+        </div>
+    </div>
+    <div class="collapsible">
+        <label class="drawer-item l-end" toggle-for="drawer-collapsible-util">Utilities</label>
+        <div class="collapsible-content is-visible" id="drawer-collapsible-util">
+            <a class="drawer-item l-end" href="/components/colors.html">colors</a>
+        </div>
+    </div>
+    <a class="drawer-item l-end" href="https://andrastoth.eu">About</a>
+</nav>
+
+    <main class="main" id="tacss-main">
+        <header class="">
+            <nav class="navbar navbar-fixed  shadow-4 ">
+    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+    
+    <span class="navbar-title">
+          Grid
+    </span>
+
+    
+</nav>
+
+
+        </header>
+        <style type="text/css">
+    .box div[class*="col-"] {
+        background-color:  lightgreen;
+        padding: 5px;
+    }
+    .box .border {
+        border: 1px solid teal;
+    }
+</style>
+<section class="m-t-3 col-12">
+    <div class="row">
+        <h6>row / col</h6>
+        <p>
+            To get one row just use the <span class="code-class">row</span> class. Then your container will be <i>flex</i> container and <i>flex-direction: row</i>. <br>If you want display in column from top to bottom then use the <span class="code-class">col</span> class. Then your container will be <i>flex</i> container and <i>flex-direction: column</i>.
+        </p>
+        <h6>column width</h6>
+        <p>
+            To set up the width of the columns are easy...<br>
+            taCSS contains 12 colums in desktop screen, 8 colums in tablet and 4 colums in mobile screen.
+            Four type of column:
+            <ul>
+                <li>col-X, off-X
+                    <p>
+                        Universal columns. From: col-1 to col-12. If you use col-6 then in mobile device the width is 100%, in tablet: 75% and in desktop: 50%.
+                        Universal offset. From: off-1 to off-11. Make no sense for off-12...
+                    </p>
+                </li>
+                <li>
+                    col-p-X, off-p-X
+                    <p>
+                        Phone columns. From col-p-1 to col-p-4.
+                        Phone offset. From off-p-1 to off-p-3.
+                    </p>
+                </li>
+                <li>
+                    col-t-X, off-t-X
+                    <p>
+                        Tablet columns. From col-t-1 to col-t-8.
+                        Tablet offset. From off-t-1 to off-t-7.
+                    </p>
+                </li>
+                <li>
+                    col-d-X, off-d-X
+                    <p>
+                        Desktop columns. From col-d-1 to col-d-12.
+                        Desktop offset. From off-d-1 to off-d-11.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="col-12">
+        <h6>off-</h6>
+        <p>
+            The offset use margin-left to push the next content. Make sure you don't add any extra margin, padding or contain even border!
+            <br>
+            The next two example use universal col-X, no extra care for mobile and tablet.
+        </p>
+    </div>
+    <div class="row box">
+        <!-- grid off-X and default col-X example -->
+        <div class="off-11"></div><div class="no-gutter col-1">col-1</div>
+        <div class="off-10"></div><div class="no-gutter col-2">col-2</div>
+        <div class="off-9"></div><div class="no-gutter col-3">col-3</div>
+        <div class="off-8"></div><div class="no-gutter col-4">col-4</div>
+        <div class="off-7"></div><div class="no-gutter col-5">col-5</div>
+        <div class="off-6"></div><div class="no-gutter col-6">col-6</div>
+        <div class="off-5"></div><div class="no-gutter col-7">col-7</div>
+        <div class="off-4"></div><div class="no-gutter col-8">col-8</div>
+        <div class="off-3"></div><div class="no-gutter col-9">col-9</div>
+        <div class="off-2"></div><div class="no-gutter col-10">col-10</div>
+        <div class="off-1"></div><div class="no-gutter col-11">col-11</div>
+        <div class="no-gutter col-12">col-12</div>
+<div class="code info col-12">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- grid off-X and default col-X example --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-11"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-10"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-2"</span><span class="nt">&gt;</span>col-2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-9"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-8"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-7"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-5"</span><span class="nt">&gt;</span>col-5<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-6"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-6"</span><span class="nt">&gt;</span>col-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-5"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-7"</span><span class="nt">&gt;</span>col-7<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-4"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-8"</span><span class="nt">&gt;</span>col-8<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-3"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-9"</span><span class="nt">&gt;</span>col-9<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-2"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-10"</span><span class="nt">&gt;</span>col-10<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-1"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-11"</span><span class="nt">&gt;</span>col-11<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter col-12"</span><span class="nt">&gt;</span>col-12<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+        <div class="no-gutter border col-3">col-3</div><div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-8">col-8</div>
+
+        <div class="no-gutter border col-5">col-5</div><div class="no-gutter border col-7">col-7</div>
+
+        <div class="no-gutter border col-9">col-9</div><div class="no-gutter border col-3">col-3</div>
+
+        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+        <div class="no-gutter border col-1">col-1</div><div class="no-gutter border col-1">col-1</div>
+
+
+        <div class="no-gutter border col-3">col-3</div>
+        <div class="no-gutter row col-9" style="padding: 0;">
+            <div class="no-gutter border col-6">col-6</div>
+            <div class="no-gutter border col-6">col-6</div>
+            <div class="no-gutter border col-4">col-4</div>
+            <div class="no-gutter border col-4">col-4</div>
+            <div class="no-gutter border col-4">col-4</div>
+            <div class="no-gutter border col-3">col-3</div>
+            <div class="off-6"></div><div class="no-gutter border col-3">col-3</div>
+            </div>
+        <div class="no-gutter border col-12">col-12</div>
+<div class="code info col-12">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-8"</span><span class="nt">&gt;</span>col-8<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-5"</span><span class="nt">&gt;</span>col-5<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-7"</span><span class="nt">&gt;</span>col-7<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-9"</span><span class="nt">&gt;</span>col-9<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-1"</span><span class="nt">&gt;</span>col-1<span class="nt">&lt;/div&gt;</span>
+
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter row col-9"</span> <span class="na">style=</span><span class="s">"padding: 0;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-6"</span><span class="nt">&gt;</span>col-6<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-6"</span><span class="nt">&gt;</span>col-6<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-4"</span><span class="nt">&gt;</span>col-4<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"off-6"</span><span class="nt">&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-3"</span><span class="nt">&gt;</span>col-3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"no-gutter border col-12"</span><span class="nt">&gt;</span>col-12<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div>
+
+    </div>
+</section>
+
+        <footer class="footer">
+            <div class="col-12 t-center">
+    taCSS - The MIT License &copy; 2017 Andras Toth
+</div>
+
+        </footer>
+    </main>
+    <script src="/js/tacss.js"></script>
+</body>
+</html>
