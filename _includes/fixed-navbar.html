@@ -1,0 +1,15 @@
+ <nav class="navbar navbar-fixed shadow-4">
+    <div  class="navbar-title">
+        <img class="img-fluid" src="{{ site.baseurl }}/img/taCss-logo-54.png" alt="tacss logo">
+    </div>
+    {% if page.title %}
+    <span class="navbar-title">
+          {{ page.title }}
+    </span>
+
+    {% else %}
+        <span class="small-screen-hide">taCSS - the most configurable CSS framework</span>
+    {% endif %}
+    <div class="spacer"></div>
+    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+</nav>

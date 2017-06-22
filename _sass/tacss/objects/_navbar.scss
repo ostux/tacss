@@ -93,7 +93,8 @@
       }
     }
 
-    &:nth-child(#{$i}) + .#{$class-navbar} {
+    &:nth-child(#{$i}) + .#{$class-navbar},
+    &:nth-child(#{$i}) ~ main {
       margin-top: $navbar-height * $i;
 
       @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {

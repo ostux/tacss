@@ -253,6 +253,10 @@ $navbar-max-fixed-line: 3 !default;
 // drawer
 $hamburger-color: set-font-color($navbar-color-background, $brand-font-color);
 
+//*  drawer-fixed in opening view not colorized to get the page color theme, howewer
+//    if you want just turn tu true. Even if this variant false the drawer will use this colors
+//    when not fixed. */
+$enable-drawer-colors-for-default: false !default;
 $drawer-color-background: $primary-c1 !default;
 $drawer-color-text: set-font-color($primary-color-light, $brand-font-color);
 $drawer-border-color: $primary-color-dark !default;

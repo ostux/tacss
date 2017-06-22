@@ -3,8 +3,8 @@
     <head>
         {% include head.html %}
     </head>
-<body>
-
+<body class="drawer-fixed navbar-fixed">
+    {% include fixed-navbar.html %}
     {% include drawer.html %}
     <main class="main" id="tacss-main">
         <header class="{% if page.title == 'Tabs' %} shadow-4 {% endif %}">

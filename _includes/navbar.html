@@ -1,14 +1,3 @@
-<nav class="navbar navbar-fixed {% if page.title <> 'Tabs' %} shadow-4 {% endif %}">
-    <span class="drawer-toggler navbar-item hamburger-icon"></span>
-    {% if page.title %}
-    <span class="navbar-title">
-          {{ page.title }}
-    </span>
-
-    {% else %}
-        <span class="small-screen-hide">taCSS - the most configurable CSS framework</span>
-    {% endif %}
-</nav>
 {% if page.title == "Tabs" %}
 <nav class="navbar nav-tab">
     <a href="#tab1" class="tab-item" toggle-for="alert">basic alert</a>

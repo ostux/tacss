@@ -46,11 +46,11 @@ header {
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
-  min-height: $navbar-height;
+  // min-height: $navbar-height;
 
-  @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-    min-height: $navbar-height-desktop;
-  }
+  // @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+  //   min-height: $navbar-height-desktop;
+  // }
 
   z-index: 2;
 }

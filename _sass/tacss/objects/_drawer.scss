@@ -18,9 +18,16 @@
   will-change: transform;
   transition: transform 0.35s $animation;
 
+  @if $enable-drawer-colors-for-default {
+    @extend %drawer-background;
+  }
+
   &:not(.#{$class-drawer-fixed}),
   &.#{$class-isHiding} {
-    @extend %drawer-background;
+    @if $enable-colors {
+      @extend %drawer-background;
+    }
+    top: 0 !important;
   }
 
   //if drawer menu fixed then show it
@@ -89,8 +96,9 @@
 
   &.#{$class-isVisible} {
     transform: translateX(0px);
-
-    @extend %drawer-background;
+    @if $enable-colors {
+      @extend %drawer-background;
+    }
   }
 }
 
@@ -108,8 +116,11 @@
 }
 
 //show or hide (hamburger) menu icon...
+//if the navbar full width than you have to use javascript for this behavior
+//unfortunately css dont have parent selector
 @media screen and (min-width: #{(nth($breakpoint-desktop, 3) - nth($breakpoint-mobile, 3)) / 2 + nth($breakpoint-mobile, 3)}px) {
-  .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-drawer-toggler}.#{$class-hamburger-icon} {
+  .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-drawer-toggler}.#{$class-hamburger-icon},
+  .#{$class-drawer-fixed} > .#{$class-navbar} .#{$class-drawer-toggler}.#{$class-hamburger-icon} {
     display: none;
   }
 }
@@ -131,6 +142,35 @@
 
     & .#{$class-dropdown-content} {
       width: 100%;
+    }
+  }
+}
+
+//fixed navbar full width
+body > .#{$class-navbar} {
+  &.#{$class-navbar-fixed} {
+    @for $i from 1 through $navbar-max-fixed-line {
+      &:nth-of-type(#{$i}) ~ .#{$class-navbar-fixed-shadw} {
+        height: $navbar-height * $i;
+
+        @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+          height: $navbar-height-desktop * $i;
+        }
+      }
+      &:nth-child(#{$i}) + .#{$class-navbar} {
+        margin-top: $navbar-height * $i;
+
+        @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+          margin-top: $navbar-height-desktop * $i;
+        }
+      }
+      &:nth-child(#{$i}) + .#{$class-drawer} {
+        top: $navbar-height * $i + 5px;
+
+        @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+          top: $navbar-height-desktop * $i + 5px;
+        }
+      }
     }
   }
 }
