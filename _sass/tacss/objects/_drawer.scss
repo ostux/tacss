@@ -117,7 +117,7 @@
 
 //show or hide (hamburger) menu icon...
 //if the navbar full width than you have to use javascript for this behavior
-//unfortunately css dont have parent selector
+//unfortunately css dont have parent selector or use the $class-drawer-fixed class in the body or wrapper element witch contains the drawer and the navbar as well
 @media screen and (min-width: #{(nth($breakpoint-desktop, 3) - nth($breakpoint-mobile, 3)) / 2 + nth($breakpoint-mobile, 3)}px) {
   .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-drawer-toggler}.#{$class-hamburger-icon},
   .#{$class-drawer-fixed} > .#{$class-navbar} .#{$class-drawer-toggler}.#{$class-hamburger-icon} {
