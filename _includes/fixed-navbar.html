@@ -10,6 +10,10 @@
     {% else %}
         <span class="small-screen-hide">taCSS - the most configurable CSS framework</span>
     {% endif %}
+
     <div class="spacer"></div>
+    {% if page.source %}
+        <a target="_blank" href="{{ page.source }}">check the source</a>
+    {% endif %}
     <span class="drawer-toggler navbar-item hamburger-icon"></span>
 </nav>

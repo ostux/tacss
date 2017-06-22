@@ -165,10 +165,12 @@ body > .#{$class-navbar} {
         }
       }
       &:nth-child(#{$i}) + .#{$class-drawer} {
-        top: $navbar-height * $i + 5px;
+        top: $navbar-height * $i;
+        max-height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
 
         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-          top: $navbar-height-desktop * $i + 5px;
+          top: $navbar-height-desktop * $i;
+          max-height: calc( 100% - ( #{$navbar-height} * #{$i} ));
         }
       }
     }
