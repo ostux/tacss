@@ -1,18 +1,34 @@
 /* _navbar.sass */
+
+%navbar-item {
+  display: flex;
+  margin: 0;
+  flex-shrink: 0;
+  height: 100%;
+  line-height: inherit;
+  padding: 0 ($base-padding / 2) 0 ($base-padding / 2);
+  color: inherit;
+  align-items: center;
+  max-width: max-content;
+}
+
 .#{$class-navbar} {
   position: relative;
   z-index: 1300;
+
   display: flex;
+  flex: 1 0 100%;
   flex-wrap: nowrap;
-  overflow-x: auto;
   flex-direction: row;
+
+  overflow-x: auto;
+
   height: $navbar-height;
+  max-height: $navbar-height;
   line-height: $navbar-height;
+
   padding-left: $base-padding;
   padding-right: $base-padding;
-  left: 0;
-  right: 0;
-  font-weight: 400;
 
   @if $enable-colors {
     background-color: $navbar-color-background;
@@ -20,29 +36,17 @@
   }
 
   & .#{$class-navbar-item} {
-    display: flex;
-    margin: 0;
-    flex-shrink: 0;
-    height: $navbar-height;
-    line-height: $navbar-height;
-    padding: 0 ($base-padding / 2) 0 ($base-padding / 2);
-    color: inherit;
-    font-size: 1.5rem;
-    align-items: center;
+    @extend %navbar-item;
+    font-size: 1.25rem;
 
-    & > * {
-      line-height: $navbar-height;
+    @if $enable-colors {
+      color: $navbar-color-text;
     }
   }
 
   & .#{$class-navbar-title} {
-    font-size: 2rem;
-    margin: 0;
-    flex-shrink: 0;
-    height: $navbar-height;
-    line-height: $navbar-height;
-    padding: 0 ($base-padding / 2) 0 ($base-padding / 2);
-    align-items: center;
+    @extend %navbar-item;
+    font-size: 1.75rem;
 
     @if $enable-colors {
       color: $navbar-color-text;
@@ -64,27 +68,26 @@
       color: $navbar-text-color-active;
     }
   }
-}
 
-.#{$class-navbar},
-.#{$class-navbar} .#{$class-navbar-item},
-.#{$class-navbar-item} > *,
-.#{$class-navbar} .#{$class-navbar-title},
-.#{$class-navbar-title} > * {
   @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
     height: $navbar-height-desktop;
+    max-height: $navbar-height-desktop;
     line-height: $navbar-height-desktop;
   }
 }
 
+
 .#{$class-navbar-fixed} {
   position: fixed;
+  width: 100%;
   z-index: 1400;
+}
 
+.#{$class-navbar} {
   //webkit bug fix - do not remove - http://stackoverflow.com/questions/14732403/position-fixed-not-working-for-header
   -webkit-transform: translate3d(0, 0, 0);
 
-  @for $i from 1 through $navbar-max-fixed-line {
+  @for $i from 1 through $navbar-max-nth-child {
     &:nth-of-type(#{$i}) ~ .#{$class-navbar-fixed-shadw} {
       height: $navbar-height * $i;
 
@@ -93,18 +96,34 @@
       }
     }
 
-    &:nth-child(#{$i}) + .#{$class-navbar},
-    &:nth-child(#{$i}) ~ main {
-      margin-top: $navbar-height * $i;
+    &:nth-child(#{$i}).#{$class-navbar-fixed} + .#{$class-navbar},
+    &:nth-child(#{$i}).#{$class-navbar-fixed} ~ main {
+      margin-top: calc( #{$navbar-height} *  #{$i} );
 
       @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-        margin-top: $navbar-height-desktop * $i;
+        margin-top: calc( #{$navbar-height-desktop} *  #{$i} );
+      }
+    }
+    &:nth-child(#{$i}):not(.#{$class-navbar-fixed}) ~ main {
+      height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
+
+      @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+        height: calc( 100% - ( #{$navbar-height-desktop} *  #{$i} ));
+      }
+    }
+    &:nth-child(#{$i}) + .#{$class-drawer} {
+      top: $navbar-height * $i;
+      height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
+
+      @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+        top: $navbar-height-desktop * $i;
+        height: calc( 100% - ( #{$navbar-height-desktop} *  #{$i} ));
       }
     }
   }
 }
 
-// fixed shadow must be last in navbar list
+//fixed shadow must be last in navbar list
 .#{$class-navbar-fixed-shadw} {
   position: fixed;
   display: block;
@@ -117,6 +136,7 @@
   -webkit-transform: translate3d(0, 0, 0);
 }
 
+// if the navbar side by the drawer and fixed need special rule to keep position
 .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-navbar-fixed},
 .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-navbar-fixed-shadw}, {
   left: #{$drawer-width};

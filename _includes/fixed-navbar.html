@@ -1,4 +1,4 @@
- <nav class="navbar navbar-fixed shadow-4">
+ <nav class="navbar -navbar-fixed shadow-4">
     <div  class="navbar-title">
         <img class="img-fluid" src="{{ site.baseurl }}/img/taCss-logo-54.png" alt="tacss logo">
     </div>
@@ -10,10 +10,31 @@
     {% else %}
         <span class="small-screen-hide">taCSS - the most configurable CSS framework</span>
     {% endif %}
-
+    <a href="#" class="navbar-item">navbar item</a>
+    <a href="#" class="navbar-item navbar-link">navbar link</a>
     <div class="spacer"></div>
     {% if page.source %}
         <a target="_blank" href="{{ page.source }}">check the source</a>
     {% endif %}
-    <span class="drawer-toggler navbar-item hamburger-icon"></span>
+    <span class="drawer-toggler drawer-fixed-toggler navbar-item hamburger-icon"></span>
+</nav>
+
+ <nav class="navbar -navbar-fixed shadow-4">
+    <div  class="navbar-title">
+        <img class="img-fluid" src="{{ site.baseurl }}/img/taCss-logo-54.png" alt="tacss logo">
+    </div>
+    {% if page.title %}
+    <span class="navbar-title">
+          {{ page.title }}
+    </span>
+
+    {% else %}
+        <span class="small-screen-hide">taCSS - the most configurable CSS framework</span>
+    {% endif %}
+    <a href="#" class="navbar-item">navbar item</a>
+    <a href="#" class="navbar-item navbar-link">navbar link</a>
+    <div class="spacer"></div>
+    {% if page.source %}
+        <a target="_blank" href="{{ page.source }}">check the source</a>
+    {% endif %}
 </nav>

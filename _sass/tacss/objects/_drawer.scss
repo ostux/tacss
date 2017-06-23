@@ -6,14 +6,16 @@
 }
 
 .#{$class-drawer} {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   flex: 0 0 #{$drawer-width};
+  min-width: #{$drawer-width};
   justify-content: flex-start;
   transform: translateX(-#{$drawer-width});
   overflow-x: hidden;
   overflow-y: auto;
+  height: 100%;
   z-index: 1900;
   will-change: transform;
   transition: transform 0.35s $animation;
@@ -27,7 +29,6 @@
     @if $enable-colors {
       @extend %drawer-background;
     }
-    top: 0 !important;
   }
 
   //if drawer menu fixed then show it
@@ -43,9 +44,10 @@
       z-index: 1;
     }
 
-    & ~ * {
+    & + * {
       width: calc( 100vw - #{$drawer-width} );
       position: relative;
+      left: #{$drawer-width};
     }
 
     //if screen msize mobile hide the drawer menu, even if is fixed
@@ -59,11 +61,18 @@
         transform: translateX(-#{$drawer-width});
       }
 
-      & ~ * {
+      & + * {
         width: 100%;
-        position: absolute;
+        position: relative;
+        left: 0;
       }
     }
+  }
+
+  &.#{$class-isVisible},
+  &.#{$class-isHiding},
+  &:not(.#{$class-drawer-fixed}) {
+    top: 0 !important;
   }
 
   & .#{$class-drawer-item} {
@@ -119,9 +128,8 @@
 //if the navbar full width than you have to use javascript for this behavior
 //unfortunately css dont have parent selector or use the $class-drawer-fixed class in the body or wrapper element witch contains the drawer and the navbar as well
 @media screen and (min-width: #{(nth($breakpoint-desktop, 3) - nth($breakpoint-mobile, 3)) / 2 + nth($breakpoint-mobile, 3)}px) {
-  .#{$class-drawer}.#{$class-drawer-fixed} ~ main .#{$class-drawer-toggler}.#{$class-hamburger-icon},
-  .#{$class-drawer-fixed} > .#{$class-navbar} .#{$class-drawer-toggler}.#{$class-hamburger-icon} {
-    display: none;
+  .#{$class-drawer-fixed-toggler} {
+    display: none !important;
   }
 }
 
@@ -146,33 +154,33 @@
   }
 }
 
-//fixed navbar full width
-body > .#{$class-navbar} {
-  &.#{$class-navbar-fixed} {
-    @for $i from 1 through $navbar-max-fixed-line {
-      &:nth-of-type(#{$i}) ~ .#{$class-navbar-fixed-shadw} {
-        height: $navbar-height * $i;
+// fixed navbar full width
+// body > .#{$class-navbar} {
+//   &.#{$class-navbar-fixed} {
+//     @for $i from 1 through $navbar-max-nth-child {
+//       &:nth-of-type(#{$i}) ~ .#{$class-navbar-fixed-shadw} {
+//         height: $navbar-height * $i;
 
-        @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-          height: $navbar-height-desktop * $i;
-        }
-      }
-      &:nth-child(#{$i}) + .#{$class-navbar} {
-        margin-top: $navbar-height * $i;
+//         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+//           height: $navbar-height-desktop * $i;
+//         }
+//       }
+//       &:nth-child(#{$i}) + .#{$class-navbar} {
+//         margin-top: $navbar-height * $i;
 
-        @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-          margin-top: $navbar-height-desktop * $i;
-        }
-      }
-      &:nth-child(#{$i}) + .#{$class-drawer} {
-        top: $navbar-height * $i;
-        max-height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
+//         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+//           margin-top: $navbar-height-desktop * $i;
+//         }
+//       }
+//       &:nth-child(#{$i}) + .#{$class-drawer} {
+//         top: $navbar-height * $i;
+//         max-height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
 
-        @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-          top: $navbar-height-desktop * $i;
-          max-height: calc( 100% - ( #{$navbar-height} * #{$i} ));
-        }
-      }
-    }
-  }
-}
+//         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
+//           top: $navbar-height-desktop * $i;
+//           max-height: calc( 100% - ( #{$navbar-height} * #{$i} ));
+//         }
+//       }
+//     }
+//   }
+// }

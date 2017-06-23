@@ -64,6 +64,9 @@ function handleClick(event) {
 
 /* toggle fixed drawer */
 function toggleFixedDrawer(drawer) {
+    console.log( "fixed: " + isFixed(DRAWER));
+    console.log( "width: " + document.body.clientWidth < BRP_S);
+    console.log( "visible: " + drawer.classList.contains(VISIBLE));
     if ((!isFixed(DRAWER) || document.body.clientWidth < BRP_S) && (drawer.classList.contains(VISIBLE))) {
         var closeLayer = document.createElement("div");
         closeLayer.classList.add(DRAWER_CLOSE);
@@ -71,6 +74,7 @@ function toggleFixedDrawer(drawer) {
         closeLayer.addEventListener("click", function () {
             closeLayer.parentNode.removeChild(closeLayer);
             drawer.classList.add(HIDEING);
+            console.log("mi a fasz?");
             drawer.classList.toggle(VISIBLE);
             setTimeout(function() {
                drawer.classList.remove(HIDEING);

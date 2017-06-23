@@ -248,7 +248,7 @@ $navbar-text-color-active: set-font-color(lighten($primary-color, 25), rgba(0, 0
 $navbar-height: 56px !default;
 $navbar-height-desktop: 64px !default;
 
-$navbar-max-fixed-line: 3 !default;
+$navbar-max-nth-child: 3 !default;
 
 // drawer
 $hamburger-color: set-font-color($navbar-color-background, $brand-font-color);
