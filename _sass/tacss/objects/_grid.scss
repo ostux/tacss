@@ -37,13 +37,14 @@
   @for $i from 1 through $maxcollumns {
     @if (($i / $columns * 100) < 101) {
       .#{$class-grid-column-prefix}#{$i},
-      .#{$class-grid-column-prefix}#{$namespace}-#{$i} {
+      //increase the priority for namespaced screen size against the default
+      .#{$class-grid-column-prefix}#{$namespace}-#{$i}.#{$class-grid-column-prefix}#{$namespace}-#{$i} {
         @include partial-size($i, $columns, $gutter);
       }
     }
     @else {
       .#{$class-grid-column-prefix}#{$i},
-      .#{$class-grid-column-prefix}#{$namespace}-#{$i} {
+      .#{$class-grid-column-prefix}#{$namespace}-#{$i}.#{$class-grid-column-prefix}#{$namespace}-#{$i} {
         @include partial-size($columns, $columns, $gutter);
       }
     }

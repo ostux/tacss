@@ -2,43 +2,43 @@
 
 @for $i from 1 through length($spacer) {
   .p-#{$i} {
-    padding: nth($spacer, $i);
+    padding: nth($spacer, $i) !important;
   }
 
   .p-t-#{$i}, .p-h-#{$i} {
-    padding-top: nth($spacer, $i);
+    padding-top: nth($spacer, $i) !important;
   }
 
   .p-r-#{$i}, .p-v-#{$i} {
-    padding-right: nth($spacer, $i);
+    padding-right: nth($spacer, $i) !important;
   }
 
   .p-b-#{$i}, .p-h-#{$i} {
-    padding-bottom: nth($spacer, $i);
+    padding-bottom: nth($spacer, $i) !important;
   }
 
   .p-l-#{$i}, .p-v-#{$i} {
-    padding-left: nth($spacer, $i);
+    padding-left: nth($spacer, $i) !important;
   }
 
   .m-#{$i} {
-    margin: nth($spacer, $i);
+    margin: nth($spacer, $i) !important;
   }
 
   .m-t-#{$i}, .m-h-#{$i} {
-    margin-top: nth($spacer, $i);
+    margin-top: nth($spacer, $i) !important;
   }
 
   .m-r-#{$i}, .m-v-#{$i} {
-    margin-right: nth($spacer, $i);
+    margin-right: nth($spacer, $i) !important;
   }
 
   .m-b-#{$i}, .m-h-#{$i} {
-    margin-bottom: nth($spacer, $i);
+    margin-bottom: nth($spacer, $i) !important;
   }
 
   .m-l-#{$i}, .m-v-#{$i} {
-    margin-left: nth($spacer, $i);
+    margin-left: nth($spacer, $i) !important;
   }
 }
 

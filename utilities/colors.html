@@ -1,0 +1,281 @@
+---
+layout: page
+title: Color Palette
+description: taCss color palette same as the Material Design Lite color palette.
+utilities: true
+---
+<div class="row p-3">
+    <h6>color setup</h6>
+    <div class="code col-12 info p-3 m-b-3">
+{% highlight scss %}
+
+/*  colors setups in "core/_variables.scss" */
+/*  enable/disable the default colors for components */
+$enable-colors: true !default;
+
+/*  don't forget include minimum the primary and the accent color */
+/*  the palette variables can be found in the "core/_colorpalette.scss" */
+$primary-palette: $teal-palette !default;
+$accent-palette: $deep-orange-palette !default;
+
+$enable--red-palette: true !default;
+$enable--pink-palette: true !default;
+$enable--purple-palette: true !default;
+$enable--deep-purple-palette: true !default;
+$enable--indigo-palette: true !default;
+$enable--blue-palette: true !default;
+$enable--light-blue-palette: true !default;
+$enable--cyan-palette: true !default;
+$enable--teal-palette: true !default;
+$enable--green-palette: true !default;
+$enable--light-green-palette: true !default;
+$enable--lime-palette: true !default;
+$enable--yellow-palette: true !default;
+$enable--amber-palette: true !default;
+$enable--orange-palette: true !default;
+$enable--deep-orange-palette: true !default;
+$enable--brown-palette: true !default;
+$enable--grey-palette: true !default;
+$enable--blue-grey-palette: true !default;
+$enable--black-palette: true !default;
+$enable--white-palette: true !default;
+
+/*  basic palette contains black, white and the midle colors for the rest even if the color-palette not enabled. no accent color.  */
+$enable--basic-palette: true !default;
+{% endhighlight %}
+    </div>
+    <h6>background</h6>
+    <p>
+        Use the <span class="code-class">bg-</span> prefix with your <i>color</i> of choice.
+    </p>
+    <p class="col-6 col-t-8 ">
+        <button class='btn bg-red'> red </button>
+        <button class='btn bg-pink'> pink </button>
+        <button class='btn bg-purple'> purple </button>
+        <button class='btn bg-deep-purple'> deep-purple </button>
+        <button class='btn bg-indigo'> indigo </button>
+        <button class='btn bg-blue'> blue </button>
+        <button class='btn bg-light-blue'> light-blue </button>
+        <button class='btn bg-lime'> lime </button>
+        <button class='btn bg-yellow'> yellow </button>
+        <button class='btn bg-amber'> amber </button>
+        <button class='btn bg-orange'> orange </button>
+        <button class='btn bg-deep-orange'> deep-orange </button>
+        <button class='btn bg-brown'> brown </button>
+        <button class='btn bg-grey'> grey </button>
+        <button class='btn bg-blue-grey'> blue-grey </button>
+        <button class='btn bg-black'> black </button>
+        <button class='btn bg-white'> white </button>
+    </p>
+
+    <div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<button class='btn bg-red'> red </button>
+<button class='btn bg-pink'> pink </button>
+<button class='btn bg-purple'> purple </button>
+<button class='btn bg-deep-purple'> deep-purple </button>
+<button class='btn bg-indigo'> indigo </button>
+<button class='btn bg-blue'> blue </button>
+<button class='btn bg-light-blue'> light-blue </button>
+<button class='btn bg-lime'> lime </button>
+<button class='btn bg-yellow'> yellow </button>
+<button class='btn bg-amber'> amber </button>
+<button class='btn bg-orange'> orange </button>
+<button class='btn bg-deep-orange'> deep-orange </button>
+<button class='btn bg-brown'> brown </button>
+<button class='btn bg-grey'> grey </button>
+<button class='btn bg-blue-grey'> blue-grey </button>
+<button class='btn bg-black'> black </button>
+<button class='btn bg-white'> white </button>
+{% endhighlight %}
+    </div>
+
+    <h6>auto textcolor</h6>
+    <p>
+        To choose readable font color automatic to the choosen background use the <span class="code-class">colored</span> class.
+    </p>
+    <p class="col-6 col-t-8 ">
+        <button class='colored btn bg-red'> red </button>
+        <button class='colored btn bg-pink'> pink </button>
+        <button class='colored btn bg-purple'> purple </button>
+        <button class='colored btn bg-deep-purple'> deep-purple </button>
+        <button class='colored btn bg-indigo'> indigo </button>
+        <button class='colored btn bg-blue'> blue </button>
+        <button class='colored btn bg-light-blue'> light-blue </button>
+        <button class='colored btn bg-lime'> lime </button>
+        <button class='colored btn bg-yellow'> yellow </button>
+        <button class='colored btn bg-amber'> amber </button>
+        <button class='colored btn bg-orange'> orange </button>
+        <button class='colored btn bg-deep-orange'> deep-orange </button>
+        <button class='colored btn bg-brown'> brown </button>
+        <button class='colored btn bg-grey'> grey </button>
+        <button class='colored btn bg-blue-grey'> blue-grey </button>
+        <button class='colored btn bg-black'> black </button>
+        <button class='colored btn bg-white'> white </button>
+    </p>
+    <div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<button class='colored btn bg-red'> red </button>
+<button class='colored btn bg-pink'> pink </button>
+<button class='colored btn bg-purple'> purple </button>
+<button class='colored btn bg-deep-purple'> deep-purple </button>
+<button class='colored btn bg-indigo'> indigo </button>
+<button class='colored btn bg-blue'> blue </button>
+<button class='colored btn bg-light-blue'> light-blue </button>
+<button class='colored btn bg-lime'> lime </button>
+<button class='colored btn bg-yellow'> yellow </button>
+<button class='colored btn bg-amber'> amber </button>
+<button class='colored btn bg-orange'> orange </button>
+<button class='colored btn bg-deep-orange'> deep-orange </button>
+<button class='colored btn bg-brown'> brown </button>
+<button class='colored btn bg-grey'> grey </button>
+<button class='colored btn bg-blue-grey'> blue-grey </button>
+<button class='colored btn bg-black'> black </button>
+<button class='colored btn bg-white'> white </button>
+{% endhighlight %}
+    </div>
+
+    <h6>outline (border and text color)</h6>
+    <p>
+        Use the <span class="code-class">outline-</span> prefix with your <i>color</i> of choice to get colored border and text.
+    </p>
+    <p class="col-6 col-t-9">
+        <button class='btn outline-red'> red </button>
+        <button class='btn outline-pink'> pink </button>
+        <button class='btn outline-purple'> purple </button>
+        <button class='btn outline-deep-purple'> deep-purple </button>
+        <button class='btn outline-indigo'> indigo </button>
+        <button class='btn outline-blue'> blue </button>
+        <button class='btn outline-light-blue'> light-blue </button>
+        <button class='btn outline-lime'> lime </button>
+        <button class='btn outline-yellow'> yellow </button>
+        <button class='btn outline-amber'> amber </button>
+        <button class='btn outline-orange'> orange </button>
+        <button class='btn outline-deep-orange'> deep-orange </button>
+        <button class='btn outline-brown'> brown </button>
+        <button class='btn outline-grey'> grey </button>
+        <button class='btn outline-blue-grey'> blue-grey </button>
+        <button class='btn outline-black'> black </button>
+        <button class='btn outline-white'> white </button>
+    </p>
+<div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<button class='btn outline-red'> red </button>
+<button class='btn outline-pink'> pink </button>
+<button class='btn outline-purple'> purple </button>
+<button class='btn outline-deep-purple'> deep-purple </button>
+<button class='btn outline-indigo'> indigo </button>
+<button class='btn outline-blue'> blue </button>
+<button class='btn outline-light-blue'> light-blue </button>
+<button class='btn outline-lime'> lime </button>
+<button class='btn outline-yellow'> yellow </button>
+<button class='btn outline-amber'> amber </button>
+<button class='btn outline-orange'> orange </button>
+<button class='btn outline-deep-orange'> deep-orange </button>
+<button class='btn outline-brown'> brown </button>
+<button class='btn outline-grey'> grey </button>
+<button class='btn outline-blue-grey'> blue-grey </button>
+<button class='btn outline-black'> black </button>
+<button class='btn outline-white'> white </button>
+{% endhighlight %}
+</div>
+    <h6>text color</h6>
+    <p>
+        Use the <span class="code-class">text-</span> prefix with your <i>color</i> of choice to get colored text.
+    </p>
+    <p class="col-6 col-t-8">
+        <button class='btn text-red'> red </button>
+        <button class='btn text-pink'> pink </button>
+        <button class='btn text-purple'> purple </button>
+        <button class='btn text-deep-purple'> deep-purple </button>
+        <button class='btn text-indigo'> indigo </button>
+        <button class='btn text-blue'> blue </button>
+        <button class='btn text-light-blue'> light-blue </button>
+        <button class='btn text-lime'> lime </button>
+        <button class='btn text-yellow'> yellow </button>
+        <button class='btn text-amber'> amber </button>
+        <button class='btn text-orange'> orange </button>
+        <button class='btn text-deep-orange'> deep-orange </button>
+        <button class='btn text-brown'> brown </button>
+        <button class='btn text-grey'> grey </button>
+        <button class='btn text-blue-grey'> blue-grey </button>
+        <button class='btn text-black'> black </button>
+        <button class='btn text-white'> white </button>
+    </p>
+<div class="code info code-large col-6 col-t-8">
+{% highlight html %}
+<button class='btn text-red'> red </button>
+<button class='btn text-pink'> pink </button>
+<button class='btn text-purple'> purple </button>
+<button class='btn text-deep-purple'> deep-purple </button>
+<button class='btn text-indigo'> indigo </button>
+<button class='btn text-blue'> blue </button>
+<button class='btn text-light-blue'> light-blue </button>
+<button class='btn text-lime'> lime </button>
+<button class='btn text-yellow'> yellow </button>
+<button class='btn text-amber'> amber </button>
+<button class='btn text-orange'> orange </button>
+<button class='btn text-deep-orange'> deep-orange </button>
+<button class='btn text-brown'> brown </button>
+<button class='btn text-grey'> grey </button>
+<button class='btn text-blue-grey'> blue-grey </button>
+<button class='btn text-black'> black </button>
+<button class='btn text-white'> white </button>
+{% endhighlight %}
+</div>
+
+    <h6>the full color palette</h6>
+    <div class="row" id="colorPalettesBlock">
+    </div>
+
+    <div class="row" id=textColorPalettesBlock>
+    </div>
+        <script type="text/javascript">
+            var basicPalette = [
+                "red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue", "lime",
+                "yellow", "amber", "orange", "deep-orange", "brown", "grey", "blue-grey", "black", "white",
+            ];
+            var redPalette = ['red-0','red-1','red-2','red-3','red-4','red','red-6','red-7','red-8','red-9','red-a1','red-a2','red-a3','red-a4'];
+            var pinkPalette = ['pink-0','pink-1','pink-2','pink-3','pink-4','pink','pink-6','pink-7','pink-8','pink-9','pink-a1','pink-a2','pink-a3','pink-a4'];
+            var purplePalette = ['purple-0','purple-1','purple-2','purple-3','purple-4','purple','purple-6','purple-7','purple-8','purple-9','purple-a1','purple-a2','purple-a3','purple-a4'];
+            var deepPurplePalette = ['deep-purple-0','deep-purple-1','deep-purple-2','deep-purple-3','deep-purple-4','deep-purple','deep-purple-6','deep-purple-7','deep-purple-8','deep-purple-9','deep-purple-a1','deep-purple-a2','deep-purple-a3','deep-purple-a3'];
+            var indigoPalette = ['indigo-0','indigo-1','indigo-2','indigo-3','indigo-4','indigo','indigo-6','indigo-7','indigo-8','indigo-9','indigo-a1','indigo-a2','indigo-a3','indigo-a4'];
+            var bluePalette = ['blue-0','blue-1','blue-2','blue-3','blue-4','blue','blue-6','blue-7','blue-8','blue-9','blue-a1','blue-a2','blue-a3','blue-a4'];
+            var lightBluePalette = ['light-blue-0','light-blue-1','light-blue-2','light-blue-3','light-blue-4','light-blue','light-blue-6','light-blue-7','light-blue-8','light-blue-9','light-blue-a1','light-blue-a2','light-blue-a3','light-blue-a4'];
+            var cyanPalette = ['cyan-0','cyan-1','cyan-2','cyan-3','cyan-4','cyan','cyan-6','cyan-7','cyan-8','cyan-9','cyan-a1','cyan-a2','cyan-a3','cyan-a4'];
+            var tealPalette = ['teal-0','teal-1','teal-2','teal-3','teal-4','teal','teal-6','teal-7','teal-8','teal-9','teal-a1','teal-a2','teal-a3','teal-a4'];
+            var greenPalette = ['green-0','green-1','green-2','green-3','green-4','green','green-6','green-7','green-8','green-9','green-a1','green-a2','green-a3','green-a4'];
+            var lightGreenPalette = ['light-green-0','light-green-1','light-green-2','light-green-3','light-green-4','light-green','light-green-6','light-green-7','light-green-8','light-green-9','light-green-a1','light-green-a2','light-green-a3','light-green-a4'];
+            var limePalette = ['lime-0','lime-1','lime-2','lime-3','lime-4','lime','lime-6','lime-7','lime-8','lime-9','lime-a1','lime-a2','lime-a3','lime-a4'];
+            var yellowPalette = ['yellow-0','yellow-1','yellow-2','yellow-3','yellow-4','yellow','yellow-6','yellow-7','yellow-8','yellow-9','yellow-a1','yellow-a2','yellow-a3','yellow-a4'];
+            var amberPalette = ['amber-0','amber-1','amber-2','amber-3','amber-4','amber','amber-6','amber-7','amber-8','amber-9','amber-a1','amber-a2','amber-a3','amber-a4'];
+            var orangePalette = ['orange-0','orange-1','orange-2','orange-3','orange-4','orange','orange-6','orange-7','orange-8','orange-9','orange-a1','orange-a2','orange-a3','orange-a4'];
+            var deepOrangePalette = ['deep-orange-0','deep-orange-1','deep-orange-2','deep-orange-3','deep-orange-4','deep-orange','deep-orange-6','deep-orange-7','deep-orange-8','deep-orange-9','deep-orange-a1','deep-orange-a2','deep-orange-a3','deep-orange-a4'];
+            var brownPalette = ['brown-0','brown-1','brown-2','brown-3','brown-4','brown','brown-6','brown-7','brown-8','brown-9'];
+            var greyPalette = ['grey-0','grey-1','grey-2','grey-3','grey-4','grey','grey-6','grey-7','grey-8','grey-9'];
+            var blueGreyPalette = ['blue-grey-0','blue-grey-1','blue-grey-2','blue-grey-3','blue-grey-4','blue-grey','blue-grey-6','blue-grey-7','blue-grey-8','blue-grey-9'];
+            var blackPalette = ['black'];
+            var whitePalette = ['white'];
+            var colorPalettes = ['redPalette','pinkPalette','purplePalette','deepPurplePalette','indigoPalette','bluePalette','lightBluePalette','cyanPalette','tealPalette','greenPalette','lightGreenPalette','limePalette','yellowPalette','amberPalette','orangePalette','deepOrangePalette','brownPalette','greyPalette','blueGreyPalette']; //+'blackPalette','whitePalette'
+
+            str = '';
+            str = "<div class='no-gutter col col-m-2 col-t-4 col-6'><div class='bg-black p-1 w-100 t-center colored'>black</div></div><div class='no-gutter col col-m-2 col-t-4 col-6'><div class='bg-white p-1 w-100 t-center colored'>white</div></div><div class='no-gutter col col-m-2 col-t-4 col-6'><div class='bg-white p-1 w-100 t-center colored'>black</div></div><div class='no-gutter col col-m-2 col-t-4 col-6'><div class='bg-black p-1 w-100 t-center colored'>white</div></div>";
+
+            for (var i = 0; i < colorPalettes.length; i++) {
+                str += "<div class='no-gutter col col-2 bg-" + window[colorPalettes[i]][9]  + "'>";
+                for (var j = 0; j < window[colorPalettes[i]].length; j++) {
+                    str += "<div class='bg-" + window[colorPalettes[i]][j]  + " p-1 w-100 t-center colored'> " + window[colorPalettes[i]][j]  + " </div>";
+                }
+                str += "</div>";
+            }
+
+            for (var i = 0; i < colorPalettes.length; i++) {
+                str += "<div class='bg-black no-gutter col col-2'>";
+                for (var j = 0; j < window[colorPalettes[i]].length; j++) {
+                    str += "<div class='text-" + window[colorPalettes[i]][j]  + " p-1 w-100 t-center colored'> " + window[colorPalettes[i]][j]  + " </div>";
+                }
+                str += "</div>";
+            }
+            document.getElementById("colorPalettesBlock").innerHTML = str;
+        </script>
+</div>

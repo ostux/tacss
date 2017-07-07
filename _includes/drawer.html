@@ -23,7 +23,7 @@
     </div>
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-comp">Components</label>
-        <div class="collapsible-content" id="drawer-collapsible-comp">
+        <div class="collapsible-content {% if page.components %}is-visible{% endif %}" id="drawer-collapsible-comp">
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/alert.html">alert</a>
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/badges.html">badges</a>
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/buttons.html">buttons</a>
@@ -41,8 +41,8 @@
     </div>
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-util">Utilities</label>
-        <div class="collapsible-content" id="drawer-collapsible-util">
-            <a class="drawer-item l-end" href="{{ site.baseurl }}/components/colors.html">colors</a>
+        <div class="collapsible-content {% if page.utilities %}is-visible{% endif %}" id="drawer-collapsible-util">
+            <a class="drawer-item l-end" href="{{ site.baseurl }}/utilities/colors.html">colors</a>
         </div>
     </div>
     <a class="drawer-item l-end" href="https://andrastoth.eu">About</a>

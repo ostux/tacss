@@ -59,19 +59,17 @@
   z-index: 9999;
   max-height: 90%;
   overflow: hidden;
-  width: 100%;
+  width: 75%;
 
   @media only screen and (max-width: #{nth($breakpoint-mobile, 3)}px) {
     left: 0;
     transform: translate(5%, -50%);
     width: calc(100% - 10%);
-    min-width: calc(100% - 10%);
   }
 
   @media only screen and (min-width: #{nth($breakpoint-tablet, 3)}px) and (max-width: #{nth($breakpoint-desktop, 3) / 3 * 2}px) {
     left: 0;
     transform: translate(10%, -50%);
     width: calc(100% - 20%);
-    min-width: calc(100% - 10%);
   }
 }

@@ -30,7 +30,7 @@ $dialog-color-background: $white !default;
     </p>
     <h6>responsible dialog and allert width</h6>
     <p>
-        On phone screen the dialog width: 90% fixed. Up to 3/2 part of tablet screen the dialog width: 80% fixed.
+        On phone screen the dialog default width: 90%. Up to 3/2 part of tablet screen: 80%, from that point 75%.
         Otherwise the dialog wide what you request within the <span class="code-class">dialog</span> class.
     </p>
     <p>
@@ -49,19 +49,50 @@ $dialog-color-background: $white !default;
         To use the predefinied classes require to set <span class="code-class">$enable-variants: true !default</span> in core/_variations.sass!
     </p>
     <h6>shadow</h6>
-    You can use shadow around the dialog which one you want. <span class="code-class">TODO:Link to SHADOW PAGE</span> Howewer the I prefer to use the <span class="code-class">shadow-full</span> class for it. This shadow class "designed" to the alert and dialog.
+    <p>
+        You can use shadow around the dialog which one you want. <span class="code-class">TODO:Link to SHADOW PAGE</span> Howewer the I prefer to use the <span class="code-class">shadow-full</span> class for it. This shadow class "designed" to the alert and dialog.
+    </p>
 </div>
 <div class="row p-3">
     <h6>
         Examples
     </h6>
-    <p class="col-6 m-b-3">
-        <button class="btn ripple bg-blue colored" toggle-for="dialog-js">dialog</button>
-    </p>
-    <p class="col-6 m-b-3">
-        <button class="btn ripple bg-blue colored" toggle-for="alert-js">alert style dialog</button>
-    </p>
-    <div class="dialog col-6 col-t-8 shadow-full" id="dialog-js">
+    <div class="col-6 col-t-8">
+        <button class="btn ripple bg-blue colored m-b-2" toggle-for="dialog-js">dialog</button>
+        <div class="code info">
+    {% highlight html %}
+    <button class="btn ripple bg-blue colored" toggle-for="dialog-js">dialog</button>
+    <div class="dialog col-6 col-t-6 shadow-full" id="dialog-js">
+        <span class="dialog-title"> Dialog title </span>
+        <div class="dialog-content">
+            ...
+        </div>
+        <div class="dialog-actions">
+            <button class="btn ripple text-green"> ok </button>
+            <button class="btn ripple text-red" toggle-for="dialog-js"> cancel </button>
+        </div>
+    </div>
+    {% endhighlight %}
+        </div>
+    </div>
+    <div class="col-6 col-t-8">
+        <button class="btn ripple bg-blue colored m-b-2" toggle-for="alert-js">alert style dialog</button>
+        <div class="code info">
+    {% highlight html %}
+    <button class="btn ripple bg-blue colored" toggle-for="alert-js">alert style dialog</button>
+    <div class="dialog success col-4 col-t-5 shadow-full" id="alert-js">
+        <span class="dialog-content"> Discard draft? </span>
+        <div class="dialog-actions">
+            <button class="btn ripple text-blue"> discard </button>
+            <button class="btn ripple text-blue" toggle-for="alert-js"> cancel </button>
+        </div>
+    </div>
+    {% endhighlight %}
+        </div>
+    </div>
+
+
+    <div class="dialog col-6 col-t-6 shadow-full" id="dialog-js">
         <span class="dialog-title"> Dialog title </span>
         <div class="dialog-content">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestiae unde aspernatur id, ratione distinctio, neque, repellat debitis vero redivhenderit aliquid, corrupti vitae placeat recusandae totam tenetur hic iste. Quia!
@@ -80,38 +111,13 @@ $dialog-color-background: $white !default;
             <button class="btn ripple text-red" toggle-for="dialog-js"> cancel </button>
         </div>
     </div>
-    <div class="code info col-6 col-t-8">
-{% highlight html %}
-<button class="btn ripple bg-blue colored" toggle-for="dialog-js">dialog</button>
-<div class="dialog col-6 col-tablet-6 shadow-full" id="dialog-js">
-    <span class="dialog-title"> Dialog title </span>
-    <div class="dialog-content">
-        ...
-    </div>
-    <div class="dialog-actions">
-        <button class="btn ripple text-green"> ok </button>
-        <button class="btn ripple text-red" toggle-for="dialog-js"> cancel </button>
-    </div>
-</div>
-{% endhighlight %}
-    </div>
-    <div class="dialog success col-4 shadow-full" id="alert-js">
+
+    <div class="dialog success col-4 col-t-5 shadow-full" id="alert-js">
         <span class="dialog-content"> Discard draft? </span>
         <div class="dialog-actions">
             <button class="btn ripple text-blue"> discard </button>
             <button class="btn ripple text-blue" toggle-for="alert-js"> cancel </button>
         </div>
     </div>
-    <div class="code info col-6 col-t-8">
-{% highlight html %}
-<button class="btn ripple bg-blue colored" toggle-for="alert-js">alert style dialog</button>
-<div class="dialog success col-4" id="alert-js">
-    <span class="dialog-content"> Discard draft? </span>
-    <div class="dialog-actions">
-        <button class="btn ripple text-blue"> discard </button>
-        <button class="btn ripple text-blue" toggle-for="alert-js"> cancel </button>
-    </div>
-</div>
-{% endhighlight %}
-    </div>
+
 </div>

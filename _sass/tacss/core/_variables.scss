@@ -227,12 +227,12 @@ $primary-margin-bottom: 1rem !default;
 
 //grid
 //enable or disable gutter by default
-$enable-gutter: false !default;
+$enable-gutter: true !default;
 
 //breakpoint name, columns, width by pixel in mobile(end), tablet(start), desktop(start), gutter size (used if gutter enabled)
-$breakpoint-mobile: m, 4, 499, .5rem !default;
-$breakpoint-tablet: t, 8, 500, 1rem !default;
-$breakpoint-desktop: d, 12, 999, 1.5rem !default;
+$breakpoint-mobile: m, 4, 499, .25rem !default;
+$breakpoint-tablet: t, 8, 500, .25rem !default;
+$breakpoint-desktop: d, 12, 999, .5rem !default;
 
 // animation
 $animation: cubic-bezier(0.4, 0, 0.2, 1) !default;
