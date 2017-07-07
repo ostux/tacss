@@ -1,0 +1,195 @@
+---
+layout: page
+title: Navbar
+description: taCSS  is a left off canvas menu.
+source: https://github.com/ostux/tacss/blob/master/_sass/tacss/objects/_navbar.scss
+objects: true
+---
+<div class="row p-3">
+    <p class="col-12">
+        Navbar are a very useful element can be. Especially to hold your menu.
+    </p>
+    <h6>navbar setup</h6>
+    <div class="code col-12 info p-3">
+{% highlight scss %}
+/*  navbar class names in "core/classnames.scss" */
+$class-navbar: "navbar" !default;
+$class-navbar-fixed: "navbar-fixed" !default;
+$class-navbar-fixed-shadw: "navbar-fixed-shadow" !default;
+$class-navbar-item: "navbar-item" !default;
+$class-navbar-title: "navbar-title" !default;
+$class-navbar-link: "navbar-link" !default;
+
+/*  navbar setups in "core/_variables.scss" */
+/*  navbar background and text color aply only if $enable-colors: true; */
+$navbar-color-background: $primary-color !default;
+$navbar-color-text: set-font-color($primary-color, rgba(0, 0, 0, 0.87));
+$navbar-color-item-hover: 115% !default;
+$navbar-color-item-active: 125% !default;
+$navbar-text-color-hover: set-font-color(lighten($primary-color, 15), rgba(0, 0, 0, 0.87)) !default;
+$navbar-text-color-active: set-font-color(lighten($primary-color, 25), rgba(0, 0, 0, 0.87)) !default;
+$navbar-height: 56px !default;
+$navbar-height-desktop: 64px !default;
+$navbar-max-nth-child: 3 !default;
+$hamburger-color: set-font-color($navbar-color-background, $brand-font-color);
+{% endhighlight %}
+    </div>
+    <h6>example</h6>
+    <div class="code info col-12">
+{% highlight html %}
+<body>
+    <nav class="navbar">
+    <!-- if you use drawer then the navbar have to be wraped together with the document content and the footer as well.-->
+    <main>
+        <!-- to wrap to the header are optional if you dont use shadow -->
+        <header>
+            <nav class="navbar">
+                ...
+            </nav>
+        </header>
+        <!-- content -->
+    </main>
+
+</body>
+{% endhighlight %}
+    </div>
+</div>
+<div class="row p-3">
+    <h6>fixed navbar</h6>
+    <p class="col-12">
+        The fixed navbar come with the feature like the navbar always on top of the page, and with lot of headache.
+        Because the fixed navbar out of the normal flow (position: fixed) to take care the rest of the document a bit  tricky specialy without using any javascript. taCSS prefering the CSS way. Using javascript if is necessery or way easier then using pure CSS.
+
+        You can use as many non fixed navbar as you wish. Howewer, this is not true with the fixed navbar. You can use up to 3 with the basic setup. Of course you can increase or even decrease this in the variables file. Look for the <span class="code-class">$navbar-max-fixed-line: 3 !default</span> setting.
+    </p>
+    <div class="code info col-12">
+{% highlight html %}
+<header>
+    <nav class="navbar navbar-fixed">
+        ...
+    </nav>
+</header>
+{% endhighlight %}
+    </div>
+</div>
+<div class="row p-3">
+    <h6>shadow</h6>
+    <p class="col-6">
+        If you have just non fixed navbar or navbars use the <span class="code-class">shadow-X</span> class (X = 2, 3, 4, 6, 8, 16, 24) within the header element.
+        If you have only one fixed navbar you can use the <span class="code-class">shadow-X</span> class within the <span class="code-class">navbar</span>. In this case do not use with the header.
+    </p>
+    <div class="code code-medium info col-6 m-b-3">
+{% highlight html %}
+<!-- not fixed -->
+<header class="shadow-4">
+    <nav class="navbar">
+        ...
+    </nav>
+</header>
+
+<!-- fixed -->
+<header>
+    <nav class="navbar navbar-fixed shadow-4">
+        ...
+    </nav>
+</header>
+{% endhighlight %}
+    </div>
+    <p class="col-6">
+        If you have more than one fixed navbar than you have to use the <span class="code-class">&lt;div class='navbar-fixed-shadow shadow-X'&gt;&lt;/div&gt;</span> element. This element must be the last nav element.
+        If you have one ore more fixed and one or more not fixed navbar than you have to use the <span class="code-class">&lt;div class='navbar-fixed-shadow  shadow-X'&gt;&lt;/div&gt;</span> element after all navbar (include the not fixed as well) and use the <span class="code-class">shadow-X</span> on the header element.
+    </p>
+    <div class="code code-large info col-6 m-b-3">
+{% highlight html %}
+<!-- fixed -->
+<header>
+    <nav class="navbar navbar-fixed">
+        ...
+    </nav>
+    <nav class="navbar navbar-fixed">
+        ...
+    </nav>
+    <div class='navbar-fixed-shadow'></div>
+</header>
+<!-- fixed and non fixed -->
+<header class="shadow-4">
+    <nav class="navbar navbar-fixed">
+        ...
+    </nav>
+    <nav class="navbar navbar-fixed">
+        ...
+    </nav>
+    <nav class="navbar">
+        ...
+    </nav>
+    <nav class="navbar">
+        ...
+    </nav>
+    <div class='navbar-fixed-shadow shadow-4'></div>
+</header>
+{% endhighlight %}
+    </div>
+    <div class="code danger col-12" style="font-size: 1rem">
+If you have <b>MORE THAN ONE</b> and <b>ONLY</b> fixed navbars, don't forget to setup <span class="code-class">margin-top</span> for the first element after the header in your css file.<br>
+Navbar sizes and breakpoint settings you can found in the <span class="code-class">_variables.sass</span> file.
+
+{% highlight scss %}
+$breakpoint-desktop: (d, 12, 900) !default
+
+$navbar-height: 56px !default
+$navbar-height-desktop: 64px !default
+
+/*-- add this code for your css file */
+.firstElementAfterHeader {
+    margin-top: calc(56px * howManyFixedNavbarYouHave);
+}
+@media only screen and (min-width: 900px) {
+    .firstElementAfterHeader {
+        margin-top: calc(64px * howManyFixedNavbarYouHave);
+    }
+}
+{% endhighlight %}
+    </div>
+
+    <h6> dropdown in the navbar</h6>
+    <p class="col-12">
+        Use dropdown in the header as well if you want.
+        Don't use dropdown menu on fixed navbar if the next navbar fixed as well!
+    </p>
+    <div class="code code-large info col-12 m-b-3">
+{% highlight html %}
+<!-- fixed -->
+<header>
+    <nav class="navbar">
+        <span class="navbar-title"></span>
+        <!-- push the dropdown to the right side -->
+        <div class="spacer"></div>
+        <!-- dropdown in navbar, menu aligned to right side -->
+        <div class="dropdown">
+            <label class="navbar-item">dropdown</label>
+            <div class="dropdown-content right menu">
+                <a class="menu-item" href="#">link</a>
+                <a class="menu-item" href="#">link</a>
+                <a class="menu-item" href="#">link</a>
+            </div>
+        </div>
+    </nav>
+</header>
+{% endhighlight %}
+    </div>
+
+    <h6>Colors</h6>
+    <p class="col-6">
+        The default color for the navbar is the primary color. Howewer if you can turn off in the <span class="code-class">_variables.sass</span> file. (This opton turn off the color for all component). Or use the <span class="code-class">bg-</span> prefix with the chosen color from the color palette to override the default.
+    </p>
+    <div class="code code-large info col-6 m-b-3">
+{% highlight html %}
+<!-- fixed -->
+<header>
+    <nav class="navbar bg-red">
+        ...
+    </nav>
+</header>
+{% endhighlight %}
+    </div>
+</div>

@@ -1,29 +1,29 @@
 <nav class="drawer drawer-fixed">
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-start">Getting Started</label>
-        <div class="collapsible-content is-visible" id="drawer-collapsible-start">
+        <div class="collapsible-content" id="drawer-collapsible-start">
             <a class="drawer-item l-end" href="#template">install</a>
             <a class="drawer-item l-end" href="#template">about</a>
         </div>
     </div>
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-tmp">Templates</label>
-        <div class="collapsible-content is-visible" id="drawer-collapsible-tmp">
+        <div class="collapsible-content" id="drawer-collapsible-tmp">
             <a class="drawer-item l-end" href="#template">template</a>
         </div>
     </div>
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-obj">Objects</label>
-        <div class="collapsible-content is-visible" id="drawer-collapsible-obj">
-            <a class="drawer-item l-end" href="{{ site.baseurl }}/components/grid.html">grid</a>
-            <a class="drawer-item l-end" href="{{ site.baseurl }}/components/drawer.html">drawer</a>
-            <a class="drawer-item l-end" href="{{ site.baseurl }}/components/navbar.html">navbar</a>
-            <a class="drawer-item l-end" href="{{ site.baseurl }}/components/dialog.html">dialogs</a>
+        <div class="collapsible-content {% if page.objects %}is-visible{% endif %}" id="drawer-collapsible-obj">
+            <a class="drawer-item l-end" href="{{ site.baseurl }}/objects/grid.html">grid</a>
+            <a class="drawer-item l-end" href="{{ site.baseurl }}/objects/drawer.html">drawer</a>
+            <a class="drawer-item l-end" href="{{ site.baseurl }}/objects/navbar.html">navbar</a>
+            <a class="drawer-item l-end" href="{{ site.baseurl }}/objects/dialog.html">dialogs</a>
         </div>
     </div>
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-comp">Components</label>
-        <div class="collapsible-content is-visible" id="drawer-collapsible-comp">
+        <div class="collapsible-content" id="drawer-collapsible-comp">
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/alert.html">alert</a>
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/badges.html">badges</a>
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/buttons.html">buttons</a>
@@ -41,7 +41,7 @@
     </div>
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-util">Utilities</label>
-        <div class="collapsible-content is-visible" id="drawer-collapsible-util">
+        <div class="collapsible-content" id="drawer-collapsible-util">
             <a class="drawer-item l-end" href="{{ site.baseurl }}/components/colors.html">colors</a>
         </div>
     </div>

@@ -39,10 +39,10 @@ $enable--basic-palette: true !default;
 $root-font-size: 18px !default;
 
 $brand_font: "Source Sans Pro", -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif !default;
-$console_font: "Source Code Pro" monospace !default;
+$console_font: "Source Code Pro", monospace !default;
 
-//spacing
-$spacer: 0.25rem, 0.5rem, 1rem, 3rem, 5rem !default;
+//spacing    1      2     3     4     5
+$spacer: 0.25rem, 0.5rem, 1rem, 2.5rem, 5rem !default;
 
 // border radius
 $brand-border-radius: 0.15rem !default;
@@ -264,7 +264,7 @@ $drawer-border-color: $primary-color-dark !default;
 $drawer-color-active-item: 75% !default;
 $drawer-close-layer-background: $black !default;
 
-$drawer-width: 340px;
+$drawer-width: 300px;
 $drawer-item-height: 2rem !default;
 $drawer-padding: 0 $base-padding 0 $base-padding !default;
 $drawer-font-size: 1rem !default;

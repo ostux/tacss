@@ -8,10 +8,12 @@
 
 // Mixins for width calculation.
 @mixin partial-size($size, $columns, $gutter) {
+  //if gutter enabled we add the gutter by default for the column
   @if $enable-gutter {
     flex-basis: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
     max-width: calc(#{$size / $columns * 100 + "%"} - (#{$gutter} * 2));
     margin: ($gutter / 2) $gutter;
+    //and add the oportunity to remove the gutter to individual cell
     &.#{$class-grid-no-gutter} {
       flex-basis: #{$size / $columns * 100 + "%"};
       max-width: #{$size / $columns * 100 + "%"};
@@ -25,10 +27,12 @@
 
 }
 
+//calculate the percentage of the column
 @function get-col-percent($column-num, $column-num-total) {
   @return ($column-num / $column-num-total) * 100%;
 }
 
+//create the grid for the default and the namespaced columns as well
 @mixin grid($namespace, $columns, $maxcollumns, $gutter) {
   @for $i from 1 through $maxcollumns {
     @if (($i / $columns * 100) < 101) {
@@ -38,13 +42,15 @@
       }
     }
     @else {
-      .#{$class-grid-column-prefix}#{$i} {
+      .#{$class-grid-column-prefix}#{$i},
+      .#{$class-grid-column-prefix}#{$namespace}-#{$i} {
         @include partial-size($columns, $columns, $gutter);
       }
     }
   }
 }
 
+// grid just for namespaced columns
 @mixin grid-namespace($namespace, $columns, $gutter) {
   @for $i from 1 through $columns {
     .#{$class-grid-column-prefix}#{$namespace}-#{$i} {
@@ -53,6 +59,7 @@
   }
 }
 
+//grid just for default columns
 @mixin grid-core($columns, $gutter) {
   @for $i from 1 through $columns {
     .#{$class-grid-column-prefix}#{$i} {
@@ -61,7 +68,7 @@
   }
 }
 
-
+//offset columns for default and namespaced
 @mixin grid-off($namespace, $columns, $maxcollumns) {
   @for $i from 1 through $maxcollumns {
     // Don't include the .off class for the last column
@@ -104,20 +111,20 @@
   }
 }
 
+//max columns set by the desktop columns. (so make sure desktop has more or equal then tablet or mobile)
 $max-columns: nth($breakpoint-desktop, 2);
 
+//aply default cell styles
 @for $i from 1 through $max-columns {
   .#{$class-grid-column-prefix}#{$i} {
     @extend %cell-styles;
   }
 }
 
-//basic gewnerate first so the rest can override the rules.
+//basic generate first so the rest can override the rules.
 @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
   @include grid-core(nth($breakpoint-desktop, 2), nth($breakpoint-desktop, 4));
   @include grid-off-core(nth($breakpoint-desktop, 2));
-} @else {
-
 }
 
 // mobile
@@ -128,17 +135,21 @@ $max-columns: nth($breakpoint-desktop, 2);
 }
 
 @media only screen and (max-width: #{nth($breakpoint-mobile, 3)}px) {
+  //if fixed grid system then generate scc just for namespaced coluns
   @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
     @include grid-namespace(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2), nth($breakpoint-mobile, 4));
     @include grid-off-namespace(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2));
+  //if dynamic (diferent column number per screen size) then generate default and namespaced css for each screen size
   } @else {
     @include grid(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2), $max-columns, nth($breakpoint-mobile, 4));
     @include grid-off(nth($breakpoint-mobile, 1), nth($breakpoint-mobile, 2), $max-columns);
   }
 
+  //hide and only
   .#{nth($breakpoint-mobile, 1)}-hide.#{nth($breakpoint-mobile, 1)}-hide,
   .#{nth($breakpoint-tablet, 1)}-only.#{nth($breakpoint-tablet, 1)}-only,
   .#{nth($breakpoint-desktop, 1)}-only.#{nth($breakpoint-desktop, 1)}-only {
+    //TODO: check accessibility
     display: none;
   }
 }
@@ -151,14 +162,17 @@ $max-columns: nth($breakpoint-desktop, 2);
 }
 
 @media only screen and (min-width: #{nth($breakpoint-tablet, 3)}px) and (max-width: #{nth($breakpoint-desktop, 3) - 1}px) {
+  //if fixed grid system then generate scc just for namespaced coluns
   @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
     @include grid-namespace(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2), nth($breakpoint-tablet, 4));
     @include grid-off-namespace(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2));
+  //if dynamic (diferent column number per screen size) then generate default and namespaced css for each screen size
   } @else {
     @include grid(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2), $max-columns, nth($breakpoint-tablet, 4));
     @include grid-off(nth($breakpoint-tablet, 1), nth($breakpoint-tablet, 2), $max-columns);
   }
 
+  //hide and only
   .#{nth($breakpoint-mobile, 1)}-only.#{nth($breakpoint-mobile, 1)}-only,
   .#{nth($breakpoint-tablet, 1)}-hide.#{nth($breakpoint-tablet, 1)}-hide,
   .#{nth($breakpoint-desktop, 1)}-only.#{nth($breakpoint-desktop, 1)}-only {
@@ -174,15 +188,17 @@ $max-columns: nth($breakpoint-desktop, 2);
 }
 
 @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-  //@include grid-namespace(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), nth($breakpoint-tablet, 4));
+  //if fixed grid system then generate scc just for namespaced coluns
   @if ((nth($breakpoint-mobile, 2) == nth($breakpoint-desktop, 2)) and (nth($breakpoint-tablet, 2) == nth($breakpoint-desktop, 2))) {
     @include grid-namespace(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), nth($breakpoint-desktop, 4));
     @include grid-off-namespace(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2));
+  //if dynamic (diferent column number per screen size) then generate default and namespaced css for each screen size
   } @else {
     @include grid(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), $max-columns, nth($breakpoint-desktop, 4));
     @include grid-off(nth($breakpoint-desktop, 1), nth($breakpoint-desktop, 2), $max-columns);
   }
 
+  //hide and only
   .#{nth($breakpoint-mobile, 1)}-only.#{nth($breakpoint-mobile, 1)}-only,
   .#{nth($breakpoint-tablet, 1)}-only.#{nth($breakpoint-tablet, 1)}-only,
   .#{nth($breakpoint-desktop, 1)}-hide.#{nth($breakpoint-desktop, 1)}-hide {

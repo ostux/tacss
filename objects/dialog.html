@@ -1,0 +1,117 @@
+---
+layout: page
+title: Dialog
+description: The dialog object allows for verification of user actions, simple data input, and alerts to provide extra information to users.
+source: https://github.com/ostux/tacss/blob/master/_sass/tacss/objects/_dialog.scss
+objects: true
+---
+
+<div class="row p-3">
+    <h6>drawer setup</h6>
+    <div class="code col-12 info p-3 m-b-3">
+{% highlight scss %}
+/*  dialog class names in "core/classnames.scss" */
+$class-dialog: "dialog" !default;
+$class-dialog-title: "dialog-title" !default;
+$class-dialog-border: "dialog-border" !default;
+$class-dialog-content: "dialog-content" !default;
+$class-dialog-actions: "dialog-actions" !default;
+
+/*  dialog setups in "core/_variables.scss" */
+$dialog-color-background: $white !default;
+{% endhighlight %}
+    </div>
+    <p>
+        The dialog component allows for verification of user actions, simple data input, and alerts to provide extra information to users.
+    </p>
+    <h6>actions order</h6>
+    <p>
+        The order is automatically reversed for actions. So, the first action you create will appear last on the action bar.
+    </p>
+    <h6>responsible dialog and allert width</h6>
+    <p>
+        On phone screen the dialog width: 90% fixed. Up to 3/2 part of tablet screen the dialog width: 80% fixed.
+        Otherwise the dialog wide what you request within the <span class="code-class">dialog</span> class.
+    </p>
+    <p>
+        <span class="code-class">dialog-content</span> scrollable. The dialog max height: 90% of the screen. After the content srollable.
+        So feel free to use longer lists inside.
+        Dialog can use even for alert as well...
+    </p>
+    <h6>predefined styles</h6>
+    <p>
+        For styling, you can use one of the five predefinied classes (
+            <span class="code-class">.primary</span>,
+            <span class="code-class">.success</span>,
+            <span class="code-class">.info</span>,
+            <span class="code-class">.warning</span>,
+            <span class="code-class">.danger</span>) <br>
+        To use the predefinied classes require to set <span class="code-class">$enable-variants: true !default</span> in core/_variations.sass!
+    </p>
+    <h6>shadow</h6>
+    You can use shadow around the dialog which one you want. <span class="code-class">TODO:Link to SHADOW PAGE</span> Howewer the I prefer to use the <span class="code-class">shadow-full</span> class for it. This shadow class "designed" to the alert and dialog.
+</div>
+<div class="row p-3">
+    <h6>
+        Examples
+    </h6>
+    <p class="col-6 m-b-3">
+        <button class="btn ripple bg-blue colored" toggle-for="dialog-js">dialog</button>
+    </p>
+    <p class="col-6 m-b-3">
+        <button class="btn ripple bg-blue colored" toggle-for="alert-js">alert style dialog</button>
+    </p>
+    <div class="dialog col-6 col-t-8 shadow-full" id="dialog-js">
+        <span class="dialog-title"> Dialog title </span>
+        <div class="dialog-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestiae unde aspernatur id, ratione distinctio, neque, repellat debitis vero redivhenderit aliquid, corrupti vitae placeat recusandae totam tenetur hic iste. Quia!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempora amet nulla, voluptates ea ex quos consequatur facere vel unde a. Beatae magni est deserunt, ut quis sint natus neque.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestiae unde aspernatur id, ratione distinctio, neque, repellat debitis vero redivhenderit aliquid, corrupti vitae placeat recusandae totam tenetur hic iste. Quia!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempora amet nulla, voluptates ea ex quos consequatur facere vel unde a. Beatae magni est deserunt, ut quis sint natus neque.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestiae unde aspernatur id, ratione distinctio, neque, repellat debitis vero redivhenderit aliquid, corrupti vitae placeat recusandae totam tenetur hic iste. Quia!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempora amet nulla, voluptates ea ex quos consequatur facere vel unde a. Beatae magni est deserunt, ut quis sint natus neque.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestiae unde aspernatur id, ratione distinctio, neque, repellat debitis vero redivhenderit aliquid, corrupti vitae placeat recusandae totam tenetur hic iste. Quia!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempora amet nulla, voluptates ea ex quos consequatur facere vel unde a. Beatae magni est deserunt, ut quis sint natus neque.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestiae unde aspernatur id, ratione distinctio, neque, repellat debitis vero redivhenderit aliquid, corrupti vitae placeat recusandae totam tenetur hic iste. Quia!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempora amet nulla, voluptates ea ex quos consequatur facere vel unde a. Beatae magni est deserunt, ut quis sint natus neque.
+        </div>
+        <div class="dialog-actions">
+            <button class="btn ripple text-green"> ok </button>
+            <button class="btn ripple text-red" toggle-for="dialog-js"> cancel </button>
+        </div>
+    </div>
+    <div class="code info col-6 col-t-8">
+{% highlight html %}
+<button class="btn ripple bg-blue colored" toggle-for="dialog-js">dialog</button>
+<div class="dialog col-6 col-tablet-6 shadow-full" id="dialog-js">
+    <span class="dialog-title"> Dialog title </span>
+    <div class="dialog-content">
+        ...
+    </div>
+    <div class="dialog-actions">
+        <button class="btn ripple text-green"> ok </button>
+        <button class="btn ripple text-red" toggle-for="dialog-js"> cancel </button>
+    </div>
+</div>
+{% endhighlight %}
+    </div>
+    <div class="dialog success col-4 shadow-full" id="alert-js">
+        <span class="dialog-content"> Discard draft? </span>
+        <div class="dialog-actions">
+            <button class="btn ripple text-blue"> discard </button>
+            <button class="btn ripple text-blue" toggle-for="alert-js"> cancel </button>
+        </div>
+    </div>
+    <div class="code info col-6 col-t-8">
+{% highlight html %}
+<button class="btn ripple bg-blue colored" toggle-for="alert-js">alert style dialog</button>
+<div class="dialog success col-4" id="alert-js">
+    <span class="dialog-content"> Discard draft? </span>
+    <div class="dialog-actions">
+        <button class="btn ripple text-blue"> discard </button>
+        <button class="btn ripple text-blue" toggle-for="alert-js"> cancel </button>
+    </div>
+</div>
+{% endhighlight %}
+    </div>
+</div>

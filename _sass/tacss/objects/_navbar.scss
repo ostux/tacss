@@ -113,11 +113,15 @@
     }
     &:nth-child(#{$i}) + .#{$class-drawer} {
       top: $navbar-height * $i;
-      height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
+      &:not(.#{$class-isVisible}) {
+        height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
+      }
 
       @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
         top: $navbar-height-desktop * $i;
-        height: calc( 100% - ( #{$navbar-height-desktop} *  #{$i} ));
+        &:not(.#{$class-isVisible}) {
+          height: calc( 100% - ( #{$navbar-height-desktop} *  #{$i} ));
+        }
       }
     }
   }

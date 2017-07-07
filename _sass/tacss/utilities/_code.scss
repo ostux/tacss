@@ -19,7 +19,7 @@
   // unicode-bidi: embed
   // white-space: pre-wrap
   // word-break: keep-all
-  overflow: scroll;
+  overflow: auto;
 
   @include border-radius($code-border-radius);
 

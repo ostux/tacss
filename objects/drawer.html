@@ -8,7 +8,7 @@ objects: true
 <div class="row">
     <div class="col-12 col-t-8 p-3">
         <p>
-            taCss at the moment only one drawer object can handle per page and this drawer is in the left side. Howewer if you need more or in the other site, just grab the source and alter it as you wish. (I don't need more, I don't need in the other side and no one else use this so why the effort...)
+            taCss can handle only one drawer per page at the moment and this drawer is in the left side. Howewer if you need more or in the other site, just grab the source and alter it as you wish. (I don't need more, I don't need in the other side and no one else use this so...)
         </p>
         <p>
             Drawer shoud be the direct children of the body. Preferable the first. (Or the second if you want to use full width navbar).
@@ -22,15 +22,16 @@ $class-drawer-item: "drawer-item" !default;
 $class-drawer-title: "drawer-title" !default;
 $class-drawer-fixed: "drawer-fixed" !default;
 $class-drawer-toggler: "drawer-toggler" !default;
+$class-drawer-fixed-toggler: "drawer-fixed-toggler" !default;
 $class-drawer-close: "drawer--close" !default;
 
-/*  grid setups in "core/_variables.scss" */
+/*  drawer setups in "core/_variables.scss" */
 $hamburger-color: set-font-color($navbar-color-background, $brand-font-color);
 /*  if colors disabled, than no color apply to any drawer element  */
 $enable-colors: true !default;
 
 /*  drawer-fixed in opening view not colorized to get the page color theme, howewer
-    if you want just turn tu true. Even if this variant false the drawer will use this colors
+    if you want just turn to true. Even if this variant false the drawer will use this colors
     when not fixed. */
 $enable-drawer-colors-for-default: false !default;
 
@@ -55,9 +56,12 @@ $drawer-font-size: 1rem !default;
         <p>
             The open icon, button or whatever you want you can put anywhere in your page. What is important to use the <span class="code-class">drawer-toggler</span> class.
         </p>
+        <p>
+            In case you have fixed drawer use the  <span class="code-class">drawer-fixed-toggler</span> class. Or make sure your hamburger menu visible just when you need it.
+        </p>
     </div>
     <div class=" col-6 col-t-8 p-3">
-        <div class="code info">
+        <div class="code code-medium info">
 {% highlight html %}
 <nav class="drawer">
     <!-- drawer content -->
@@ -66,6 +70,15 @@ $drawer-font-size: 1rem !default;
         <header>
             <nav class="navbar">
                 <span class="drawer-toggler"></span>
+                ...
+<!--                or -->
+<nav class="drawer drawer-fixed">
+    <!-- drawer content -->
+</nav>
+    <main>
+        <header>
+            <nav class="navbar">
+                <span class="drawer-toggler drawer-fixed-toggler"></span>
                 ...
 {% endhighlight %}
         </div>
@@ -91,7 +104,6 @@ $drawer-font-size: 1rem !default;
         <h6>drawer title and items</h6>
         <p>
             Drawer title height is minimum the navbar height.<br>
-            How to use:
         </p>
     </div>
     <div class=" col-6 col-t-8 p-3">
@@ -121,7 +133,7 @@ $drawer-font-size: 1rem !default;
     <div class="collapsible">
         <label class="drawer-item l-end" toggle-for="drawer-collapsible-obj">Objects</label>
         <div class="collapsible-content is-visible" id="drawer-collapsible-obj">
-            <a class="drawer-item l-end" href="{{ site.baseurl }}/components/drawer.html">drawer</a>
+            <a class="drawer-item l-end" href="{{ site.baseurl }}/objects/drawer.html">drawer</a>
         </div>
     </div>
     <a class="drawer-item" href="#">link</a>

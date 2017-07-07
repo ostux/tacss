@@ -1,6 +1,12 @@
 /* _shadow.sass */
 .#{$class-shadow-2} {
-  @include shadow-2dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-2dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-2dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
@@ -12,7 +18,13 @@
 }
 
 .#{$class-shadow-3} {
-  @include shadow-3dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-3dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-3dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
@@ -24,7 +36,13 @@
 }
 
 .#{$class-shadow-4} {
-  @include shadow-4dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-4dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-4dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
@@ -36,7 +54,13 @@
 }
 
 .#{$class-shadow-6} {
-  @include shadow-6dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-6dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-6dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
@@ -48,7 +72,13 @@
 }
 
 .#{$class-shadow-8} {
-  @include shadow-8dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-8dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-8dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
@@ -60,7 +90,13 @@
 }
 
 .#{$class-shadow-16} {
-  @include shadow-16dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-16dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-16dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
@@ -72,13 +108,31 @@
 }
 
 .#{$class-shadow-24} {
-  @include shadow-24dp;
+  &:not(.#{$class-navbar}) {
+    @include shadow-24dp;
+  }
+
+  &.#{$class-navbar} {
+    @include navbar-shadow-24dp;
+  }
 
   &.#{$class-shadow--hover} {
     box-shadow: none;
 
     &:hover {
       @include shadow-24dp;
+    }
+  }
+}
+
+.#{$class-shadow-full} {
+  @include shadow-full;
+
+  &.#{$class-shadow--hover} {
+    box-shadow: none;
+
+    &:hover {
+      @include shadow-full;
     }
   }
 }
