@@ -262,7 +262,7 @@ $drawer-color-text: set-font-color($primary-color-light, $brand-font-color);
 $drawer-border-color: $primary-color-dark !default;
 
 $drawer-color-active-item: 75% !default;
-$drawer-close-layer-background: $black !default;
+$drawer-close-layer-background: $primary-color !default;
 
 $drawer-width: 300px;
 $drawer-item-height: 2rem !default;

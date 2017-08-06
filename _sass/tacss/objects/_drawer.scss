@@ -89,8 +89,6 @@
     @if $enable-colors {
       &:hover:not(.#{$class-drawer-title}) {
         background-color: $drawer-color-background;
-        -webkit-filter: brightness($drawer-color-active-item);
-        filter: brightness($drawer-color-active-item);
       }
     }
   }
@@ -151,34 +149,3 @@
     }
   }
 }
-
-// fixed navbar full width
-// body > .#{$class-navbar} {
-//   &.#{$class-navbar-fixed} {
-//     @for $i from 1 through $navbar-max-nth-child {
-//       &:nth-of-type(#{$i}) ~ .#{$class-navbar-fixed-shadw} {
-//         height: $navbar-height * $i;
-
-//         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-//           height: $navbar-height-desktop * $i;
-//         }
-//       }
-//       &:nth-child(#{$i}) + .#{$class-navbar} {
-//         margin-top: $navbar-height * $i;
-
-//         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-//           margin-top: $navbar-height-desktop * $i;
-//         }
-//       }
-//       &:nth-child(#{$i}) + .#{$class-drawer} {
-//         top: $navbar-height * $i;
-//         max-height: calc( 100% - ( #{$navbar-height} *  #{$i} ));
-
-//         @media only screen and (min-width: #{nth($breakpoint-desktop, 3)}px) {
-//           top: $navbar-height-desktop * $i;
-//           max-height: calc( 100% - ( #{$navbar-height} * #{$i} ));
-//         }
-//       }
-//     }
-//   }
-// }
